@@ -1,2 +1,10 @@
 <h3>Merchant Component</h3>
 <p>Welcome to Angular Seed</p>
+
+<select (change)="onChangeCitySize($event.target.value)">
+    <option *ngFor="let i of citySizes">{{i}}</option>
+</select>
+
+<select (change)="onChangeMerchantType($event.target.value)">
+    <option *ngFor="let i of merchantTypes">{{i}}</option>
+</select>
