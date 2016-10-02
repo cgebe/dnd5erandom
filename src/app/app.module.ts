@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core'
 import {RouterModule} from "@angular/router";
 import {rootRouterConfig} from "./app.routes";
-import {AppComponent} from "./app";
 import {Github} from "./github/shared/github";
 import {FormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
@@ -12,6 +11,8 @@ import {RepoBrowser} from './github/repo-browser/repo-browser';
 import {RepoList} from './github/repo-list/repo-list';
 import {RepoDetail} from './github/repo-detail/repo-detail';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AppComponent }  from './app.component';
 
 @NgModule({
   declarations: [AppComponent, About, RepoBrowser, RepoList, RepoDetail, Home],
