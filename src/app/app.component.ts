@@ -1,8 +1,8 @@
-import {Component} from '@angular/core'
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  template: `<alert type="info">ng2-bootstrap hello world!</alert>`
+  selector   : 'app',
+  templateUrl: './app.html',
 })
 export class AppComponent {
 }
