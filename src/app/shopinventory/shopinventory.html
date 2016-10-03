@@ -1,0 +1,28 @@
+
+
+<h3>Shopkeeper Inventory Generator</h3>
+
+<select (change)="onChangeCitySize($event.target.value)">
+    <option *ngFor="let i of citySizes">{{i}}</option>
+</select>
+
+<select (change)="onChangeShopkeeperType($event.target.value)">
+    <option *ngFor="let i of shopkeeperTypes">{{i}}</option>
+</select>
+
+<label>Magic Items?</label>
+<input #magicitemscb type="checkbox" (change)="magicitemsEnabled = magicitemscb.checked" />
+
+<br>
+
+<button class="btn btn-primary" (click)="generateShopInventory">Generate Inventory</button>
+<button class="btn btn-primary" (click)="newGoods()">New Goods!</button>
+
+<br>
+
+<table>
+    <tr *ngFor="let item of inventory">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+    </tr>
+</table>
