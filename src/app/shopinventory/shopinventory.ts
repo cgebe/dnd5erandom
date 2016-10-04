@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 
-import item = require("../classes/item")
+import database = require("../classes/database");
+import item = require("../classes/item");
 
 @Component({
   selector: 'shopinventory',
@@ -12,7 +13,7 @@ export class ShopInventory {
     citySizes = 'Hamlet_Village_Small Town_Large Town_Small City_Large City'.split('_');
     selectedCitySize = 'small';
 
-    shopkeeperTypes = 'Armorer_Merchant_Alchemist_Scribe_Fisher_Miner'.split('_');
+    shopkeeperTypes = 'Armorer_Merchant_Alchemist_Scholar_Fisher_Miner'.split('_');
     selectedShopkeeperType = 'weapon';
 
     inventory : item.Item[];
@@ -33,10 +34,9 @@ export class ShopInventory {
         // ... do other stuff here ...
     }
 
-
-
     pick() {
         let slots : number;
+        let items : item.Item[];
         switch(this.selectedCitySize) {
         case "Hamlet":
             slots = 3;
@@ -60,18 +60,35 @@ export class ShopInventory {
             slots = 0;
         }
 
-        switch(this.selectedShopkeeperType) {
+        items = this.getShopItems(this.selectedShopkeeperType);
+        items = this.pickItems(items, slots);
+    }
+
+    private getShopItems(shopkeeperType:string):item.Item[] {
+        return null;
+        /*
+        switch(shopkeeperType) {
         case "Armorer":
-            this.pickArmorsAndWeapons(this.selectedCitySize);
-            break;
+            return database.Database.getShopItems("armorer");
+        case "Merchant":
+            return database.Database.getShopItems("merchant");
+        case "Alchemist":
+            return database.Database.getShopItems("alchemist");
+        case "Scholar":
+            return database.Database.getShopItems("scholar");
+        case "Fisher":
+            return database.Database.getShopItems("fisher");
+        case "Miner":
+            return database.Database.getShopItems("miner");
         }
+        */
     }
 
-    private pickArmorsAndWeapons(citySize:string) {
-
+    private pickItems(items:item.Item[], slots):item.Item[] {
+        return null;
     }
 
-    pickItem(items:item.Item[]){
+    pickItem(items:item.Item[]):item.Item {
         return items[Math.floor(Math.random() * items.length)];
     }
 

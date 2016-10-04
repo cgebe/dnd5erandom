@@ -1,7 +1,7 @@
-import price = require("./price")
+import coins = require("./coins")
 
 export class Item {
     public id : string;
     public name : string;
-    public price : price.Price;
+    public coins : coins.Coins;
 }

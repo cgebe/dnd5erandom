@@ -1,11 +1,11 @@
 
 
-export class Price {
-    public gp : number;
-    public sp : number;
-    public cp : number;
-    public ep : number;
-    public pp : number;
+export class Coins {
+    public gp : number = 0;
+    public sp : number = 0;
+    public cp : number = 0;
+    public ep : number = 0;
+    public pp : number = 0;
 
     normalize() {
         // normalize cp to sp
@@ -44,23 +44,23 @@ export class Price {
     }
 
     toString() {
-        let inWords : string;
+        let inWords : string = "";
         if (this.pp > 0) {
-            inWords += this.pp + " pp,";
+            inWords += " " + this.pp + " pp,";
         }
         if (this.gp > 0) {
-            inWords += this.gp + " gp,";
+            inWords += " " + this.gp + " gp,";
         }
         if (this.ep > 0) {
-            inWords += this.ep + " ep,";
+            inWords += " " + this.ep + " ep,";
         }
         if (this.sp > 0) {
-            inWords += this.sp + " sp,";
+            inWords += " " + this.sp + " sp,";
         }
         if (this.cp > 0) {
-            inWords += this.pp + " cp,";
+            inWords += " " + this.cp + " cp,";
         }
-        inWords = inWords.substring(0, inWords.length);
+        inWords = inWords.substring(1, inWords.length - 1);
         if (inWords.length > 0) {
             inWords += ".";
         }
