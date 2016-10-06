@@ -8,12 +8,12 @@ import random = require("../classes/random");
 
 @Component({
   selector: 'treasure',
-  styleUrls: ['./treasure.css'],
+  styleUrls: ['../css/main.css', './treasure.css'],
   templateUrl: './treasure.html'
 })
 export class Treasure {
-    criticalRatings = '0-4_5-10_11-16_17+'.split('_');
-    selectedCriticalRating = '0-4';
+    challengeRatings = '0-4_5-10_11-16_17+'.split('_');
+    selectedChallengeRating = '0-4';
 
     treasureTypes = 'Individual_Hoard'.split('_');
     selectedTreasureType = 'Individual';
@@ -21,9 +21,9 @@ export class Treasure {
     treasure : item.Item[];
     reward : string;
 
-    onChangeCriticalRating(newValue) {
+    onChangeChallengeRating(newValue) {
         console.log(newValue);
-        this.selectedCriticalRating = newValue;
+        this.selectedChallengeRating = newValue;
         // ... do other stuff here ...
     }
 
@@ -34,15 +34,15 @@ export class Treasure {
     }
 
     generateCoins() {
-        let c : coins.Coins = this.rollCoins(this.selectedCriticalRating, this.selectedTreasureType);
+        let c : coins.Coins = this.rollCoins(this.selectedChallengeRating, this.selectedTreasureType);
         this.reward = c.toString();
     }
 
-    rollCoins(criticalRating:string, type:string):coins.Coins {
+    rollCoins(challengeRating:string, type:string):coins.Coins {
         let d100 : number = random.Random.rolld100();
         switch(type) {
         case "Individual":
-            switch(criticalRating) {
+            switch(challengeRating) {
             case "0-4":
                 return this.generateIndividualCR04Coins(d100);
             case "5-10":
@@ -53,7 +53,7 @@ export class Treasure {
                 return this.generateIndividualCR17Coins(d100);
             }
         case "Hoard":
-            switch(criticalRating) {
+            switch(challengeRating) {
             case "0-4":
                 return this.generateHoardCR04Coins();
             case "5-10":
@@ -67,10 +67,9 @@ export class Treasure {
         }
     }
 
-    generateGems(criticalRating:string) : gem.Gem[] {
-        return null;
-        /*
-        switch(criticalRating) {
+    generateGems(challengeRating:string) : gem.Gem[] {
+
+        switch(challengeRating) {
         case "0-4":
             return this.generateGemsCR04(d100);
         case "5-10":
@@ -80,8 +79,18 @@ export class Treasure {
         case "17+":
             return this.generateGemsCR17(d100);
         }
-        */
+
     }
+
+
+    generateGemsCR04(d100 : number) {
+        let gems : gem.Gem[] = database.Database.getInstance().getGems();
+
+
+
+    }
+
+
 
     generateIndividualCR04Coins(d100:number) : coins.Coins {
         let reward : coins.Coins = new coins.Coins();

@@ -13,6 +13,10 @@ var tradegoods = require("json!../data/tradegoods.json");
 var trinkets = require("json!../data/trinkets.json");
 */
 
+var gems = require("json!../data/gems.json");
+
+import gem = require("./gem");
+
 export class Database {
     private static instance:Database = new Database();
 
@@ -35,6 +39,8 @@ export class Database {
 
     }
 
+    public getGems() : gem.Gem[] {
 
+    }
 
 }

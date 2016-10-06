@@ -5,7 +5,7 @@ import item = require("../classes/item");
 
 @Component({
   selector: 'shopinventory',
-  styleUrls: ['./shopinventory.css'],
+  styleUrls: ['../css/main.css', './shopinventory.css'],
   templateUrl: './shopinventory.html'
 })
 export class ShopInventory {

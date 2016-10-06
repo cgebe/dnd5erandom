@@ -2,10 +2,12 @@
 
 <h3>Treasure Generator</h3>
 
-<select (change)="onChangeCriticalRating($event.target.value)">
-    <option *ngFor="let i of criticalRatings">{{i}}</option>
+<label>Challenge Rating: </label>
+<select (change)="onChangeChallengeRating($event.target.value)">
+    <option *ngFor="let i of challengeRatings">{{i}}</option>
 </select>
 
+<label>Treasure Type: </label>
 <select (change)="onChangeTreasureType($event.target.value)">
     <option *ngFor="let i of treasureTypes">{{i}}</option>
 </select>
