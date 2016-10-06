@@ -1,0 +1,34 @@
+[
+    {
+      "name": "Ale (Gallon)",
+      "cost": "2 sp"
+    },
+    {
+      "name": "Ale (Mug)",
+      "cost": "4 cp"
+    },
+    {
+      "name": "Banquet (per person)",
+      "cost": "10 gp"
+    },
+    {
+      "name": "Bread, loaf",
+      "cost": "2 cp"
+    },
+    {
+      "name": "Cheese, hunk",
+      "cost": "1 sp"
+    }
+    {
+      "name": "Meat, chunk",
+      "cost": "3 sp"
+    },
+    {
+      "name": "Common Wine (pitcher)",
+      "cost": "2 sp"
+    },
+    {
+      "name": "Fine Wine (bottle)",
+      "cost": "10 gp"
+    }
+]

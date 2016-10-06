@@ -1,0 +1,62 @@
+[
+    {
+        "name" : "Bloodstone",
+        "colors" : ["opaque dark gray with red flecks"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Carnelian",
+        "colors" : ["opaque orange","opaque red-brown"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Chalcedony",
+        "colors" : ["opaque white"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Chrysoprase",
+        "colors" : ["translucent green"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Citrine",
+        "colors" : ["translucent pale yellow-brown"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Jasper",
+        "colors" : ["opaque blue", "opaque black", "opaque brown"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Moonstone",
+        "colors" : ["translucent white with pale blue glow"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Onyx",
+        "colors" : ["opaque bands of black and white", "pure black", "pure white"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Quartz",
+        "colors" : ["transparent white", "smoky gray", "yellow"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Sardonyx",
+        "colors" : ["opaque bands of red and white"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Star rose quartz",
+        "colors" : ["translucent rosy with white star-shaped center"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Zircon",
+        "colors" : ["transparent pale blue-green"],
+        "cost" : "50 gp"
+    }
+]

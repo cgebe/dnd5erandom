@@ -1,0 +1,50 @@
+[
+    {
+      "name": "Camel",
+      "cost": "50 gp",
+      "speed": "50 ft.",
+      "capacity": "480 lb."
+    },
+    {
+      "name": "Donkey or mule",
+      "cost": "8 gp",
+      "speed": "40 ft.",
+      "capacity": "420 lb."
+    },
+    {
+      "name": "Elephant",
+      "cost": "200 gp",
+      "speed": "40 ft.",
+      "capacity": "1,320 lb."
+    },
+    {
+      "name": "Horse, draft",
+      "cost": "50 gp",
+      "speed": "40 ft.",
+      "capacity": "540 lb."
+    },
+    {
+      "name": "Horse, riding",
+      "cost": "75 gp",
+      "speed": "60 ft.",
+      "capacity": "480 lb."
+    },
+    {
+      "name": "Mastiff",
+      "cost": "25 gp",
+      "speed": "40 ft.",
+      "capacity": "195 lb."
+    },
+    {
+      "name": "Pony",
+      "cost": "30 gp",
+      "speed": "40 ft.",
+      "capacity": "225 lb."
+    },
+    {
+      "name": "Warhorse",
+      "cost": "400 gp",
+      "speed": "60 ft.",
+      "capacity": "540 lb."
+    }
+]

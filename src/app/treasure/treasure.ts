@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 
-import database = require("../classes/database");
+import treasuredb = require("../classes/treasuredb");
 import item = require("../classes/item");
 import coins = require("../classes/coins");
 import gem = require("../classes/gem");
@@ -19,7 +19,8 @@ export class Treasure {
     selectedTreasureType = 'Individual';
 
     treasure : item.Item[];
-    reward : string;
+    coinReward : string;
+    gemReward : gem.Gem[];
 
     onChangeChallengeRating(newValue) {
         console.log(newValue);
@@ -33,64 +34,43 @@ export class Treasure {
         // ... do other stuff here ...
     }
 
-    generateCoins() {
-        let c : coins.Coins = this.rollCoins(this.selectedChallengeRating, this.selectedTreasureType);
-        this.reward = c.toString();
-    }
-
-    rollCoins(challengeRating:string, type:string):coins.Coins {
-        let d100 : number = random.Random.rolld100();
-        switch(type) {
-        case "Individual":
-            switch(challengeRating) {
-            case "0-4":
-                return this.generateIndividualCR04Coins(d100);
-            case "5-10":
-                return this.generateIndividualCR510Coins(d100);
-            case "11-16":
-                return this.generateIndividualCR1116Coins(d100);
-            case "17+":
-                return this.generateIndividualCR17Coins(d100);
-            }
-        case "Hoard":
-            switch(challengeRating) {
-            case "0-4":
-                return this.generateHoardCR04Coins();
-            case "5-10":
-                return this.generateHoardCR510Coins();
-            case "11-16":
-                return this.generateHoardCR1116Coins();
-            case "17+":
-                return this.generateHoardCR17Coins();
-            }
-            break;
+    generateTreasure() {
+        if (this.selectedTreasureType == "Individual") {
+            let d100 = random.Random.rolld100();
+            this.coinReward = this.generateIndividualCoins(this.selectedChallengeRating, d100).toString();
+        }
+        if (this.selectedTreasureType == "Hoard") {
+            let d100 = random.Random.rolld100();
+            this.coinReward = this.generateHoardCoins(this.selectedChallengeRating).toString();
+            this.gemReward = this.generateGems(this.selectedChallengeRating, d100);
         }
     }
 
-    generateGems(challengeRating:string) : gem.Gem[] {
-
+    generateIndividualCoins(challengeRating:string, d100:number) : coins.Coins {
         switch(challengeRating) {
         case "0-4":
-            return this.generateGemsCR04(d100);
+            return this.generateIndividualCR04Coins(d100);
         case "5-10":
-            return this.generateGemsCR511(d100);
+            return this.generateIndividualCR510Coins(d100);
         case "11-16":
-            return this.generateGemsCR1116(d100);
+            return this.generateIndividualCR1116Coins(d100);
         case "17+":
-            return this.generateGemsCR17(d100);
+            return this.generateIndividualCR17Coins(d100);
         }
-
     }
 
-
-    generateGemsCR04(d100 : number) {
-        let gems : gem.Gem[] = database.Database.getInstance().getGems();
-
-
-
+    generateHoardCoins(challengeRating:string) : coins.Coins {
+        switch(challengeRating) {
+        case "0-4":
+            return this.generateHoardCR04Coins();
+        case "5-10":
+            return this.generateHoardCR510Coins();
+        case "11-16":
+            return this.generateHoardCR1116Coins();
+        case "17+":
+            return this.generateHoardCR17Coins();
+        }
     }
-
-
 
     generateIndividualCR04Coins(d100:number) : coins.Coins {
         let reward : coins.Coins = new coins.Coins();
@@ -204,4 +184,115 @@ export class Treasure {
         reward.pp = random.Random.rollXtimesY(8, 6) * 1000;
         return reward;
     }
+
+    generateGems(challengeRating:string, d100:number) : gem.Gem[] {
+        switch (challengeRating) {
+        case "0-4":
+            return this.generateCR04Gems(d100);
+        case "5-10":
+            return this.generateCR510Gems(d100);
+        case "11-16":
+            return this.generateCR1116Gems(d100);
+        case "17+":
+            return this.generateCR17Gems(d100);
+        }
+    }
+
+    generateCR04Gems(d100:number) : gem.Gem[] {
+        if ( 7 <= d100 && d100 <= 16 ||
+            37 <= d100 && d100 <= 44 ||
+            61 <= d100 && d100 <= 65 ||
+            76 <= d100 && d100 <= 78 ||
+            7 <= d100 && d100 <= 16){
+
+            return treasuredb.TreasureDB.getInstance().getGems10(random.Random.rollXtimesY(2, 6));
+        }
+        if (27 <= d100 && d100 <= 36 ||
+            53 <= d100 && d100 <= 60 ||
+            71 <= d100 && d100 <= 75 ||
+            81 <= d100 && d100 <= 85 ||
+            93 <= d100 && d100 <= 97 ||
+            100 == d100){
+
+            return treasuredb.TreasureDB.getInstance().getGems50(random.Random.rollXtimesY(2, 6));
+        }
+        return [];
+    }
+
+    generateCR510Gems(d100:number) : gem.Gem[] {
+        if (11 <= d100 && d100 <= 16 ||
+            33 <= d100 && d100 <= 36 ||
+            50 <= d100 && d100 <= 54 ||
+            67 <= d100 && d100 <= 69 ||
+            77 <= d100 && d100 <= 78 ||
+            85 <= d100 && d100 <= 88) {
+
+            return treasuredb.TreasureDB.getInstance().getGems50(random.Random.rollXtimesY(3, 6));
+        }
+        if (17 <= d100 && d100 <= 22 ||
+            37 <= d100 && d100 <= 40 ||
+            55 <= d100 && d100 <= 59 ||
+            70 <= d100 && d100 <= 72 ||
+            79 == d100               ||
+            89 <= d100 && d100 <= 91 ||
+            95 <= d100 && d100 <= 96 ||
+            99 == d100) {
+
+            return treasuredb.TreasureDB.getInstance().getGems100(random.Random.rollXtimesY(3, 6));
+        }
+        return [];
+    }
+
+    generateCR1116Gems(d100:number) : gem.Gem[] {
+        if (11 <= d100 && d100 <= 12 ||
+            24 <= d100 && d100 <= 26 ||
+            41 <= d100 && d100 <= 45 ||
+            59 <= d100 && d100 <= 62 ||
+            71 <= d100 && d100 <= 72 ||
+            79 <= d100 && d100 <= 80 ||
+            89 <= d100 && d100 <= 90 ||
+            97 <= d100 && d100 <= 98 ) {
+
+            return treasuredb.TreasureDB.getInstance().getGems500(random.Random.rollXtimesY(3, 6));
+        }
+
+        if (13 <= d100 && d100 <= 15 ||
+            27 <= d100 && d100 <= 29 ||
+            46 <= d100 && d100 <= 50 ||
+            63 <= d100 && d100 <= 66 ||
+            73 <= d100 && d100 <= 74 ||
+            81 <= d100 && d100 <= 82 ||
+            91 <= d100 && d100 <= 92 ||
+            99 <= d100 && d100 <= 100 ) {
+
+            return treasuredb.TreasureDB.getInstance().getGems1000(random.Random.rollXtimesY(3, 6));
+        }
+        return [];
+    }
+
+    generateCR17Gems(d100:number) : gem.Gem[] {
+        if ( 3 <= d100 && d100 <= 5  ||
+            15 <= d100 && d100 <= 22 ||
+            47 <= d100 && d100 <= 52 ||
+            69 == d100               ||
+            73 <= d100 && d100 <= 74 ||
+            81 <= d100 && d100 <= 85) {
+
+            return treasuredb.TreasureDB.getInstance().getGems1000(random.Random.rollXtimesY(3, 6));
+        }
+        if (12 <= d100 && d100 <= 14 ||
+            39 <= d100 && d100 <= 46 ||
+            64 <= d100 && d100 <= 68 ||
+            72 == d100               ||
+            79 <= d100 && d100 <= 80 ||
+            96 <= d100 && d100 <= 100) {
+
+            return treasuredb.TreasureDB.getInstance().getGems5000(random.Random.rollXtimesY(1, 8));
+        }
+        return [];
+    }
+
+
+
+
 }

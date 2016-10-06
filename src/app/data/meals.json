@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Squalid",
+      "cost": "3 cp"
+    },
+    {
+      "name": "Poor",
+      "cost": "6 cp"
+    },
+    {
+      "name": "Modest",
+      "cost": "3 sp"
+    },
+    {
+      "name": "Comfortable",
+      "cost": "5 sp"
+    },
+    {
+      "name": "Wealthy",
+      "cost": "8 sp"
+    },
+    {
+      "name": "Aristocratic",
+      "cost": "2 gp"
+    }
+]

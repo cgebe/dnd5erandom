@@ -14,12 +14,22 @@
 
 <br>
 
-<button class="btn btn-primary" (click)="generateCoins()">Generate Treasure</button>
+<button class="btn btn-primary" (click)="generateTreasure()">Generate Treasure</button>
 
 <br>
 
 <table>
     <tr>
-        <td>Coins: {{reward}}</td>
+        <td>Coins:</td>
+    </tr>
+    <tr>
+        <td>{{coinReward}}</td>
+    </tr>
+    <tr>
+        <td>Gems:</td>
+    </tr>
+    <tr *ngFor="let gem of gemReward">
+        <td>{{gem.name}} ({{gem.color}})</td>
+        <td>{{gem.cost}}</td>
     </tr>
 </table>

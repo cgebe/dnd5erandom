@@ -1,0 +1,75 @@
+[
+    {
+      "name": "Barding",
+      "cost": "×4",
+      "speed": "×2"
+    },
+    {
+      "name": "Bit and bridle",
+      "cost": "2 gp",
+      "speed": "1 lb."
+    },
+    {
+      "name": "Carriage",
+      "cost": "100 gp",
+      "speed": "600 lb."
+    },
+    {
+      "name": "Cart",
+      "cost": "15 gp",
+      "speed": "200 lb."
+    },
+    {
+      "name": "Chariot",
+      "cost": "250 gp",
+      "speed": "100 lb."
+    },
+    {
+      "name": "Feed (per day)",
+      "cost": "5 cp",
+      "speed": "10 lb."
+    },
+    {
+      "name": "Saddle"
+    },
+    {
+      "name": "Exotic",
+      "cost": "60 gp",
+      "speed": "40 lb."
+    },
+    {
+      "name": "Military",
+      "cost": "20 gp",
+      "speed": "30 lb."
+    },
+    {
+      "name": "Pack",
+      "cost": "5 gp",
+      "speed": "15 lb."
+    },
+    {
+      "name": "Riding",
+      "cost": "10 gp",
+      "speed": "25 lb."
+    },
+    {
+      "name": "Saddlebags",
+      "cost": "4 gp",
+      "speed": "8 lb."
+    },
+    {
+      "name": "Sled",
+      "cost": "20 gp",
+      "speed": "300 lb."
+    },
+    {
+      "name": "Stabling (per day)",
+      "cost": "5 sp",
+      "speed": "—"
+    },
+    {
+      "name": "Wagon",
+      "cost": "35 gp",
+      "speed": "400 lb."
+    }
+]

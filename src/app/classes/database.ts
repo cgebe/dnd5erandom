@@ -40,7 +40,7 @@ export class Database {
     }
 
     public getGems() : gem.Gem[] {
-
+        return null;
     }
 
 }

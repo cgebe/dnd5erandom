@@ -1,0 +1,30 @@
+[
+    {
+      "name": "Wretched",
+      "cost": "—"
+    },
+    {
+      "name": "Squalid",
+      "cost": "1 sp"
+    },
+    {
+      "name": "Poor",
+      "cost": "2 sp"
+    },
+    {
+      "name": "Modest",
+      "cost": "1 gp"
+    },
+    {
+      "name": "Comfortable",
+      "cost": "2 gp"
+    },
+    {
+      "name": "Wealthy",
+      "cost": "4 gp"
+    },
+    {
+      "name": "Aristocratic",
+      "cost": "10 gp minimum"
+    }
+]

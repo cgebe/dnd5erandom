@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Galley",
+      "cost": "30,000 gp",
+      "speed": "4 mph"
+    },
+    {
+      "name": "Keelboat",
+      "cost": "3,000 gp",
+      "speed": "1 mph"
+    },
+    {
+      "name": "Longship",
+      "cost": "10,000 gp",
+      "speed": "3 mph"
+    },
+    {
+      "name": "Rowboat",
+      "cost": "50 gp",
+      "speed": "10.5 ½ mph"
+    },
+    {
+      "name": "Sailing ship",
+      "cost": "10,000 gp",
+      "speed": "2 mph"
+    },
+    {
+      "name": "Warship",
+      "cost": "25,000 gp",
+      "speed": "20.5 ½ mph"
+    }
+]

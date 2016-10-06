@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "Alexandrite",
+        "colors" : ["transparent dark green"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Aquamarine",
+        "colors" : ["transparent pale blue-green"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Black Pearl",
+        "colors" : ["opaque pure black"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Blue Spinel",
+        "colors" : ["transparent deep-blue"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Peridot",
+        "colors" : ["transparent rich olive green"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Topaz",
+        "colors" : ["transparent golden yellow"],
+        "cost" : "500 gp"
+    }
+]

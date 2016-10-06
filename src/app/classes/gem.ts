@@ -2,5 +2,11 @@ import coins = require("./coins");
 
 export class Gem {
     public name : string;
-    public cost : coins.Coins = new coins.Coins();
+    public color : string;
+    public cost : string;
+
+    public toString() : string {
+        return this.name + " (" + this.color + ", " + this.cost + ")";
+    }
+
 }

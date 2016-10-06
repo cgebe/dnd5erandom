@@ -1,0 +1,30 @@
+[
+    {
+      "name": "Coach cab between towns",
+      "cost": "3 cp per mile"
+    },
+    {
+      "name": "Coach cab within a city",
+      "cost": "1 cp"
+    },
+    {
+      "name": "Skilled Hireling",
+      "cost": "2 gp per day"
+    },
+    {
+      "name": "Untrained Hireling",
+      "cost": "2 sp per day"
+    },
+    {
+      "name": "Messenger",
+      "cost": "2 cp per mile"
+    },
+    {
+      "name": "Road or gate toll",
+      "cost": "1 cp"
+    },
+    {
+      "name": "Ship’s passage",
+      "cost": "1 sp per mile"
+    }
+]
