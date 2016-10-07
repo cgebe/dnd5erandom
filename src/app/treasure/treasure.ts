@@ -4,6 +4,7 @@ import treasuredb = require("../classes/treasuredb");
 import item = require("../classes/item");
 import coins = require("../classes/coins");
 import gem = require("../classes/gem");
+import artobject = require("../classes/artobject");
 import random = require("../classes/random");
 
 @Component({
@@ -18,20 +19,17 @@ export class Treasure {
     treasureTypes = 'Individual_Hoard'.split('_');
     selectedTreasureType = 'Individual';
 
-    treasure : item.Item[];
-    coinReward : string;
-    gemReward : gem.Gem[];
+    coinReward : string = null;
+    gemReward : gem.Gem[] = [];
+    artReward : artobject.ArtObject[] = [];
+    itemReward : item.Item[] = [];
 
-    onChangeChallengeRating(newValue) {
-        console.log(newValue);
+    onChangeChallengeRating(newValue : string) {
         this.selectedChallengeRating = newValue;
-        // ... do other stuff here ...
     }
 
     onChangeTreasureType(newValue:string) {
-        console.log(newValue);
         this.selectedTreasureType = newValue;
-        // ... do other stuff here ...
     }
 
     generateTreasure() {
@@ -43,6 +41,7 @@ export class Treasure {
             let d100 = random.Random.rolld100();
             this.coinReward = this.generateHoardCoins(this.selectedChallengeRating).toString();
             this.gemReward = this.generateGems(this.selectedChallengeRating, d100);
+            this.artReward = this.generateArtObjects(this.selectedChallengeRating, d100);
         }
     }
 
@@ -292,7 +291,104 @@ export class Treasure {
         return [];
     }
 
+    generateArtObjects(challengeRating:string, d100:number) : artobject.ArtObject[] {
+        switch (challengeRating) {
+        case "0-4":
+            return this.generateCR04ArtObjects(d100);
+        case "5-10":
+            return this.generateCR510ArtObjects(d100);
+        case "11-16":
+            return this.generateCR1116ArtObjects(d100);
+        case "17+":
+            return this.generateCR17ArtObjects(d100);
+        }
+    }
 
+    generateCR04ArtObjects(d100:number) : artobject.ArtObject[] {
+        if (17 <= d100 && d100 <= 26 ||
+            45 <= d100 && d100 <= 52 ||
+            66 <= d100 && d100 <= 70 ||
+            79 <= d100 && d100 <= 80 ||
+            86 <= d100 && d100 <= 92 ||
+            98 <= d100 && d100 <= 99 ) {
+
+            return treasuredb.TreasureDB.getInstance().getArtObjects25(random.Random.rollXtimesY(2, 4));
+        }
+        return [];
+    }
+
+    generateCR510ArtObjects(d100:number) : artobject.ArtObject[] {
+        if ( 5 <= d100 && d100 <= 10 ||
+            29 <= d100 && d100 <= 32 ||
+            45 <= d100 && d100 <= 49 ||
+            64 <= d100 && d100 <= 66 ||
+            75 <= d100 && d100 <= 76 ||
+            81 <= d100 && d100 <= 84 ) {
+
+            return treasuredb.TreasureDB.getInstance().getArtObjects25(random.Random.rollXtimesY(3, 6));
+        }
+        if (23 <= d100 && d100 <= 28 ||
+            41 <= d100 && d100 <= 44 ||
+            60 <= d100 && d100 <= 63 ||
+            73 <= d100 && d100 <= 74 ||
+            80 == d100               ||
+            92 <= d100 && d100 <= 94 ||
+            97 <= d100 && d100 <= 98 ||
+            100 == d100) {
+
+            return treasuredb.TreasureDB.getInstance().getArtObjects250(random.Random.rollXtimesY(3, 6));
+        }
+        return [];
+    }
+
+    generateCR1116ArtObjects(d100:number) : artobject.ArtObject[] {
+        if ( 4 <= d100 && d100 <= 6  ||
+            16 <= d100 && d100 <= 19 ||
+            30 <= d100 && d100 <= 35 ||
+            51 <= d100 && d100 <= 54 ||
+            67 <= d100 && d100 <= 68 ||
+            75 <= d100 && d100 <= 76 ||
+            83 <= d100 && d100 <= 85 ||
+            93 <= d100 && d100 <= 94 ) {
+
+            return treasuredb.TreasureDB.getInstance().getArtObjects250(random.Random.rollXtimesY(2, 4));
+        }
+
+        if ( 7 <= d100 && d100 <=  9 ||
+            20 <= d100 && d100 <= 23 ||
+            36 <= d100 && d100 <= 40 ||
+            55 <= d100 && d100 <= 58 ||
+            69 <= d100 && d100 <= 70 ||
+            77 <= d100 && d100 <= 78 ||
+            86 <= d100 && d100 <= 88 ||
+            95 <= d100 && d100 <= 96 ) {
+
+            return treasuredb.TreasureDB.getInstance().getArtObjects750(random.Random.rollXtimesY(2, 4));
+        }
+        return [];
+    }
+
+    generateCR17ArtObjects(d100:number) : artobject.ArtObject[] {
+        if ( 6 <= d100 && d100 <= 8  ||
+            23 <= d100 && d100 <= 30 ||
+            53 <= d100 && d100 <= 58 ||
+            70 == d100               ||
+            75 <= d100 && d100 <= 76 ||
+            86 <= d100 && d100 <= 90) {
+
+            return treasuredb.TreasureDB.getInstance().getArtObjects2500(random.Random.rollXtimesY(1, 10));
+        }
+        if ( 9 <= d100 && d100 <= 11 ||
+            31 <= d100 && d100 <= 38 ||
+            59 <= d100 && d100 <= 63 ||
+            71 == d100               ||
+            77 <= d100 && d100 <= 78 ||
+            91 <= d100 && d100 <= 95) {
+
+            return treasuredb.TreasureDB.getInstance().getArtObjects7500(random.Random.rollXtimesY(1, 4));
+        }
+        return [];
+    }
 
 
 }

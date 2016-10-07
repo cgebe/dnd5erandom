@@ -19,17 +19,27 @@
 <br>
 
 <table>
-    <tr>
-        <td>Coins:</td>
+    <tr *ngIf="coinReward != null">
+        <td colspan="2" class="bold no-border">Coins</td>
     </tr>
     <tr>
-        <td>{{coinReward}}</td>
+        <td colspan="2">{{coinReward}}</td>
     </tr>
-    <tr>
-        <td>Gems:</td>
+    <tr class="no-border divider">
+        <td class="no-border" colspan="2"></td>
+    </tr>
+    <tr *ngIf="gemReward.length > 0">
+        <td class="bold no-border">Gems</td>
     </tr>
     <tr *ngFor="let gem of gemReward">
         <td>{{gem.name}} ({{gem.color}})</td>
         <td>{{gem.cost}}</td>
+    </tr>
+    <tr *ngIf="artReward.length > 0">
+        <td class="bold no-border">Art Objects</td>
+    </tr>
+    <tr *ngFor="let art of artReward">
+        <td>{{art.name}}</td>
+        <td>{{art.cost}}</td>
     </tr>
 </table>
