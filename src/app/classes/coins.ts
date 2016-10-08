@@ -61,9 +61,11 @@ export class Coins {
             inWords += " " + this.cp + " cp,";
         }
         inWords = inWords.substring(1, inWords.length - 1);
+        /*
         if (inWords.length > 0) {
             inWords += ".";
         }
+        */
         return inWords;
     }
 }

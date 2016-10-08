@@ -1,0 +1,50 @@
+[
+    {
+        "name":"Potion of healing",
+        "rarity":"common",
+        "min":"1",
+        "max":"50"
+    },
+    {
+        "name":"Spell scroll (cantrip)",
+        "rarity":"common",
+        "min":"51",
+        "max":"60"
+    },
+    {
+        "name":"Potion of climbing",
+        "rarity":"common",
+        "min":"61",
+        "max":"70"
+    },
+    {
+        "name":"Spell scroll (1st level)",
+        "rarity":"common",
+        "min":"71",
+        "max":"90"
+    },
+    {
+        "name":"Spell scroll (2nd level)",
+        "rarity":"common",
+        "min":"91",
+        "max":"94"
+    },
+    {
+        "name":"Potion of greater healing",
+        "rarity":"common",
+        "min":"95",
+        "max":"98"
+    },
+    {
+        "name":"Bag of holding",
+        "rarity":"common",
+        "min":"99",
+        "max":"99"
+    },
+    {
+        "name":"Driftglobe",
+        "rarity":"common",
+        "min":"100",
+        "max":"100"
+    }
+]

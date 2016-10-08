@@ -1,0 +1,362 @@
+[
+    {
+        "name":"Weapon, +1",
+        "rarity":"legendary",
+        "min":"1",
+        "max":"15"
+    },
+    {
+        "name":"Shield,+ 1",
+        "rarity":"legendary",
+        "min":"16",
+        "max":"18"
+    },
+    {
+        "name":"Sentinel shield",
+        "rarity":"legendary",
+        "min":"19",
+        "max":"21"
+    },
+    {
+        "name":"Amulet of proof against detection and location",
+        "rarity":"legendary",
+        "min":"22",
+        "max":"23"
+    },
+    {
+        "name":"Boots of elvenkind",
+        "rarity":"legendary",
+        "min":"24",
+        "max":"25"
+    },
+    {
+        "name":"Boots of striding and springing",
+        "rarity":"legendary",
+        "min":"26",
+        "max":"27"
+    },
+    {
+        "name":"Bracers of archery",
+        "rarity":"legendary",
+        "min":"28",
+        "max":"29"
+    },
+    {
+        "name":"Brooch of shielding",
+        "rarity":"legendary",
+        "min":"30",
+        "max":"31"
+    },
+    {
+        "name":"Broom of flying",
+        "rarity":"legendary",
+        "min":"32",
+        "max":"33"
+    },
+    {
+        "name":"Cloak of elvenkind",
+        "rarity":"legendary",
+        "min":"34",
+        "max":"35"
+    },
+    {
+        "name":"Cloak of protection",
+        "rarity":"legendary",
+        "min":"36",
+        "max":"37"
+    },
+    {
+        "name":"Gauntlets of ogre power",
+        "rarity":"legendary",
+        "min":"38",
+        "max":"39"
+    },
+    {
+        "name":"Hat of disguise",
+        "rarity":"legendary",
+        "min":"40",
+        "max":"41"
+    },
+    {
+        "name":"Javelin of lightning",
+        "rarity":"legendary",
+        "min":"42",
+        "max":"43"
+    },
+    {
+        "name":"Pearl of power",
+        "rarity":"legendary",
+        "min":"44",
+        "max":"45"
+    },
+    {
+        "name":"Rod of the pact keeper, + 1",
+        "rarity":"legendary",
+        "min":"46",
+        "max":"47"
+    },
+    {
+        "name":"Slippers of spider climbing",
+        "rarity":"legendary",
+        "min":"48",
+        "max":"49"
+    },
+    {
+        "name":"Staff of the adder",
+        "rarity":"legendary",
+        "min":"50",
+        "max":"51"
+    },
+    {
+        "name":"Staff of the python",
+        "rarity":"legendary",
+        "min":"52",
+        "max":"53"
+    },
+    {
+        "name":"Sword of vengeance",
+        "rarity":"legendary",
+        "min":"54",
+        "max":"55"
+    },
+    {
+        "name":"Trident of fish command",
+        "rarity":"legendary",
+        "min":"56",
+        "max":"57"
+    },
+    {
+        "name":"Wand of magic missiles",
+        "rarity":"legendary",
+        "min":"58",
+        "max":"59"
+    },
+    {
+        "name":"Wand of the war mage, + 1",
+        "rarity":"legendary",
+        "min":"60",
+        "max":"61"
+    },
+    {
+        "name":"Wand of web",
+        "rarity":"legendary",
+        "min":"62",
+        "max":"63"
+    },
+    {
+        "name":"Weapon of warning",
+        "rarity":"legendary",
+        "min":"64",
+        "max":"65"
+    },
+    {
+        "name":"Adamantine armor (chain mail)",
+        "rarity":"legendary",
+        "min":"66",
+        "max":"66"
+    },
+    {
+        "name":"Adamantine armor (chain shirt)",
+        "rarity":"legendary",
+        "min":"67",
+        "max":"67"
+    },
+    {
+        "name":"Adamantine armor (scale mail)",
+        "rarity":"legendary",
+        "min":"68",
+        "max":"68"
+    },
+    {
+        "name":"Bag of tricks (gray)",
+        "rarity":"legendary",
+        "min":"69",
+        "max":"69"
+    },
+    {
+        "name":"Bag of tricks (rust)",
+        "rarity":"legendary",
+        "min":"70",
+        "max":"70"
+    },
+    {
+        "name":"Bag of tricks (tan)",
+        "rarity":"legendary",
+        "min":"71",
+        "max":"71"
+    },
+    {
+        "name":"Boots of the winterlands",
+        "rarity":"legendary",
+        "min":"72",
+        "max":"72"
+    },
+    {
+        "name":"Circlet of blasting",
+        "rarity":"legendary",
+        "min":"73",
+        "max":"73"
+    },
+    {
+        "name":"Deck of illusions",
+        "rarity":"legendary",
+        "min":"74",
+        "max":"74"
+    },
+    {
+        "name":"Eversmoking bottle",
+        "rarity":"legendary",
+        "min":"75",
+        "max":"75"
+    },
+    {
+        "name":"Eyes of charming",
+        "rarity":"legendary",
+        "min":"76",
+        "max":"76"
+    },
+    {
+        "name":"Eyes of the eagle",
+        "rarity":"legendary",
+        "min":"77",
+        "max":"77"
+    },
+    {
+        "name":"Figurine of wondrous power (silver raven)",
+        "rarity":"legendary",
+        "min":"78",
+        "max":"78"
+    },
+    {
+        "name":"Gem of brightness",
+        "rarity":"legendary",
+        "min":"79",
+        "max":"79"
+    },
+    {
+        "name":"Gloves of missile snaring",
+        "rarity":"legendary",
+        "min":"80",
+        "max":"80"
+    },
+    {
+        "name":"Gloves of swimming and climbing",
+        "rarity":"legendary",
+        "min":"81",
+        "max":"81"
+    },
+    {
+        "name":"Gloves of thievery",
+        "rarity":"legendary",
+        "min":"82",
+        "max":"82"
+    },
+    {
+        "name":"Headband of intellect",
+        "rarity":"legendary",
+        "min":"83",
+        "max":"83"
+    },
+    {
+        "name":"Helm of telepathy",
+        "rarity":"legendary",
+        "min":"84",
+        "max":"84"
+    },
+    {
+        "name":"Instrument of the bards (Doss lute)",
+        "rarity":"legendary",
+        "min":"85",
+        "max":"85"
+    },
+    {
+        "name":"Instrument of the bards (Fochlucan bandore)",
+        "rarity":"legendary",
+        "min":"86",
+        "max":"86"
+    },
+    {
+        "name":"Instrument of the bards (Mac-Fuimidh cittern)",
+        "rarity":"legendary",
+        "min":"87",
+        "max":"87"
+    },
+    {
+        "name":"Medallion of thoughts",
+        "rarity":"legendary",
+        "min":"88",
+        "max":"88"
+    },
+    {
+        "name":"Necklace of adaptation",
+        "rarity":"legendary",
+        "min":"89",
+        "max":"89"
+    },
+    {
+        "name":"Periapt of wound closure",
+        "rarity":"legendary",
+        "min":"90",
+        "max":"90"
+    },
+    {
+        "name":"Pipes of haunting",
+        "rarity":"legendary",
+        "min":"91",
+        "max":"91"
+    },
+    {
+        "name":"Pipes of the sewers",
+        "rarity":"legendary",
+        "min":"92",
+        "max":"92"
+    },
+    {
+        "name":"Ring of jumping",
+        "rarity":"legendary",
+        "min":"93",
+        "max":"93"
+    },
+    {
+        "name":"Ring of mind shielding",
+        "rarity":"legendary",
+        "min":"94",
+        "max":"94"
+    },
+    {
+        "name":"Ring of warmth",
+        "rarity":"legendary",
+        "min":"95",
+        "max":"95"
+    },
+    {
+        "name":"Ring of water walking",
+        "rarity":"legendary",
+        "min":"96",
+        "max":"96"
+    },
+    {
+        "name":"Quiver of Ehlonna",
+        "rarity":"legendary",
+        "min":"97",
+        "max":"97"
+    },
+    {
+        "name":"Stone of good luck",
+        "rarity":"legendary",
+        "min":"98",
+        "max":"98"
+    },
+    {
+        "name":"Wind fan",
+        "rarity":"legendary",
+        "min":"99",
+        "max":"99"
+    },
+    {
+        "name":"Winged boots",
+        "rarity":"legendary",
+        "min":"100",
+        "max":"100"
+    }
+]

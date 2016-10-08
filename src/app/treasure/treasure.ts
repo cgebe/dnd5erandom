@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
 
 import treasuredb = require("../classes/treasuredb");
-import item = require("../classes/item");
+import items = require("../classes/items");
 import coins = require("../classes/coins");
 import gem = require("../classes/gem");
 import artobject = require("../classes/artobject");
 import random = require("../classes/random");
+import roll = require("../classes/roll");
 
 @Component({
   selector: 'treasure',
@@ -22,7 +23,7 @@ export class Treasure {
     coinReward : string = null;
     gemReward : gem.Gem[] = [];
     artReward : artobject.ArtObject[] = [];
-    itemReward : item.Item[] = [];
+    itemReward : items.MagicItem[] = [];
 
     onChangeChallengeRating(newValue : string) {
         this.selectedChallengeRating = newValue;
@@ -33,15 +34,21 @@ export class Treasure {
     }
 
     generateTreasure() {
+        this.coinReward = null;
+        this.gemReward = [];
+        this.artReward = [];
+        this.itemReward = [];
         if (this.selectedTreasureType == "Individual") {
-            let d100 = random.Random.rolld100();
-            this.coinReward = this.generateIndividualCoins(this.selectedChallengeRating, d100).toString();
+            //let r = new roll.Rolls();
+            //r.rolled(new roll.Roll(random.Random.rolld100());
+            this.coinReward = this.generateIndividualCoins(this.selectedChallengeRating, random.Random.rolld100()).toString();
         }
         if (this.selectedTreasureType == "Hoard") {
             let d100 = random.Random.rolld100();
             this.coinReward = this.generateHoardCoins(this.selectedChallengeRating).toString();
             this.gemReward = this.generateGems(this.selectedChallengeRating, d100);
             this.artReward = this.generateArtObjects(this.selectedChallengeRating, d100);
+            this.itemReward = this.generateMagicItems(this.selectedChallengeRating, d100);
         }
     }
 
@@ -55,19 +62,6 @@ export class Treasure {
             return this.generateIndividualCR1116Coins(d100);
         case "17+":
             return this.generateIndividualCR17Coins(d100);
-        }
-    }
-
-    generateHoardCoins(challengeRating:string) : coins.Coins {
-        switch(challengeRating) {
-        case "0-4":
-            return this.generateHoardCR04Coins();
-        case "5-10":
-            return this.generateHoardCR510Coins();
-        case "11-16":
-            return this.generateHoardCR1116Coins();
-        case "17+":
-            return this.generateHoardCR17Coins();
         }
     }
 
@@ -151,6 +145,19 @@ export class Treasure {
             reward.pp = random.Random.rollXtimesY(2, 6) * 100;
         }
         return reward;
+    }
+
+    generateHoardCoins(challengeRating:string) : coins.Coins {
+        switch(challengeRating) {
+        case "0-4":
+            return this.generateHoardCR04Coins();
+        case "5-10":
+            return this.generateHoardCR510Coins();
+        case "11-16":
+            return this.generateHoardCR1116Coins();
+        case "17+":
+            return this.generateHoardCR17Coins();
+        }
     }
 
     generateHoardCR04Coins() : coins.Coins {
@@ -386,6 +393,112 @@ export class Treasure {
             91 <= d100 && d100 <= 95) {
 
             return treasuredb.TreasureDB.getInstance().getArtObjects7500(random.Random.rollXtimesY(1, 4));
+        }
+        return [];
+    }
+
+    generateMagicItems(challengeRating:string, d100:number) : items.MagicItem[] {
+        switch (challengeRating) {
+        case "0-4":
+            return this.generateCR04MagicItems(d100);
+        case "5-10":
+            return this.generateCR510MagicItems(d100);
+        case "11-16":
+            return this.generateCR1116MagicItems(d100);
+        case "17+":
+            return this.generateCR17MagicItems(d100);
+        }
+    }
+
+    generateCR04MagicItems(d100:number) : items.MagicItem[] {
+        if (37 <= d100 && d100 <= 60) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsA(random.Random.rollXtimesY(1, 6));
+        }
+        if (61 <= d100 && d100 <= 75) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsB(random.Random.rollXtimesY(1, 4));
+        }
+        if (76 <= d100 && d100 <= 85) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsC(random.Random.rollXtimesY(1, 4));
+        }
+        if (86 <= d100 && d100 <= 97) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsF(random.Random.rollXtimesY(1, 4));
+        }
+        if (98 <= d100 && d100 <= 100) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsG(1);
+        }
+        return [];
+    }
+
+    generateCR510MagicItems(d100:number) : items.MagicItem[] {
+        if (29 <= d100 && d100 <= 44) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsA(random.Random.rollXtimesY(1, 6));
+        }
+        if (45 <= d100 && d100 <= 63) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsB(random.Random.rollXtimesY(1, 4));
+        }
+        if (64 <= d100 && d100 <= 74) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsC(random.Random.rollXtimesY(1, 4));
+        }
+        if (75 <= d100 && d100 <= 80) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsD(1);
+        }
+        if (81 <= d100 && d100 <= 94) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsF(random.Random.rollXtimesY(1, 4));
+        }
+        if (95 <= d100 && d100 <= 98) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsG(random.Random.rollXtimesY(1, 4));
+        }
+        if (99 <= d100 && d100 <= 100) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsH(1);
+        }
+        return [];
+    }
+
+    generateCR1116MagicItems(d100:number) : items.MagicItem[] {
+        if (16 <= d100 && d100 <= 29) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsA(random.Random.rollXtimesY(1, 4)).concat(
+                   treasuredb.TreasureDB.getInstance().getMagicItemsB(random.Random.rollXtimesY(1, 6)));
+        }
+        if (30 <= d100 && d100 <= 50) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsC(random.Random.rollXtimesY(1, 6));
+        }
+        if (51 <= d100 && d100 <= 66) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsD(random.Random.rollXtimesY(1, 4));
+        }
+        if (67 <= d100 && d100 <= 74) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsE(1);
+        }
+        if (75 <= d100 && d100 <= 82) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsF(1).concat(
+                   treasuredb.TreasureDB.getInstance().getMagicItemsG(random.Random.rollXtimesY(1, 4)));
+        }
+        if (83 <= d100 && d100 <= 92) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsH(random.Random.rollXtimesY(1, 4));
+        }
+        if (93 <= d100 && d100 <= 100) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsI(1);
+        }
+        return [];
+    }
+
+    generateCR17MagicItems(d100:number) : items.MagicItem[] {
+        if ( 3 <= d100 && d100 <= 14) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsC(random.Random.rollXtimesY(1, 8));
+        }
+        if (15 <= d100 && d100 <= 46) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsD(random.Random.rollXtimesY(1, 6));
+        }
+        if (47 <= d100 && d100 <= 68) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsE(random.Random.rollXtimesY(1, 6));
+        }
+        if (69 <= d100 && d100 <= 72) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsG(random.Random.rollXtimesY(1, 4));
+        }
+        if (73 <= d100 && d100 <= 80) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsH(random.Random.rollXtimesY(1, 4));
+        }
+        if (81 <= d100 && d100 <= 100) {
+            return treasuredb.TreasureDB.getInstance().getMagicItemsI(random.Random.rollXtimesY(1, 4));
         }
         return [];
     }

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 import database = require("../classes/database");
-import item = require("../classes/item");
+import items = require("../classes/items");
 
 @Component({
   selector: 'shopinventory',
@@ -16,12 +16,12 @@ export class ShopInventory {
     shopkeeperTypes = 'Armorer_Merchant_Alchemist_Scholar_Fisher_Miner'.split('_');
     selectedShopkeeperType = 'weapon';
 
-    inventory : item.Item[];
+    inventory : items.Item[];
 
     onChangeCitySize(newValue) {
         console.log(newValue);
         this.selectedCitySize = newValue;
-        let i : item.Item;
+        let i : items.Item;
         i.name = "test";
         i.id = "0";
         this.inventory.push(i);
@@ -36,7 +36,7 @@ export class ShopInventory {
 
     pick() {
         let slots : number;
-        let items : item.Item[];
+        let items : items.Item[];
         switch(this.selectedCitySize) {
         case "Hamlet":
             slots = 3;
@@ -64,7 +64,7 @@ export class ShopInventory {
         items = this.pickItems(items, slots);
     }
 
-    private getShopItems(shopkeeperType:string):item.Item[] {
+    private getShopItems(shopkeeperType:string):items.Item[] {
         return null;
         /*
         switch(shopkeeperType) {
@@ -84,11 +84,11 @@ export class ShopInventory {
         */
     }
 
-    private pickItems(items:item.Item[], slots):item.Item[] {
+    private pickItems(items:items.Item[], slots):items.Item[] {
         return null;
     }
 
-    pickItem(items:item.Item[]):item.Item {
+    pickItem(items:items.Item[]):items.Item {
         return items[Math.floor(Math.random() * items.length)];
     }
 

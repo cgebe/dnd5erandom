@@ -1,0 +1,320 @@
+[
+    {
+        "name":"Defender",
+        "rarity":"legendary",
+        "min":"1",
+        "max":"05"
+    },
+    {
+        "name":"Hammer of thunderbolts",
+        "rarity":"legendary",
+        "min":"06",
+        "max":"10"
+    },
+    {
+        "name":"Luck blade",
+        "rarity":"legendary",
+        "min":"11",
+        "max":"15"
+    },
+    {
+        "name":"Sword of answering",
+        "rarity":"legendary",
+        "min":"16",
+        "max":"20"
+    },
+    {
+        "name":"Holy avenger",
+        "rarity":"legendary",
+        "min":"21",
+        "max":"23"
+    },
+    {
+        "name":"Ring of djinni summoning",
+        "rarity":"legendary",
+        "min":"24",
+        "max":"26"
+    },
+    {
+        "name":"Ring of invisibility",
+        "rarity":"legendary",
+        "min":"27",
+        "max":"29"
+    },
+    {
+        "name":"Ring of spell turning",
+        "rarity":"legendary",
+        "min":"30",
+        "max":"32"
+    },
+    {
+        "name":"Rod of lordly might",
+        "rarity":"legendary",
+        "min":"33",
+        "max":"35"
+    },
+    {
+        "name":"Staff of the magi",
+        "rarity":"legendary",
+        "min":"36",
+        "max":"38"
+    },
+    {
+        "name":"Vorpal sword",
+        "rarity":"legendary",
+        "min":"39",
+        "max":"41"
+    },
+    {
+        "name":"Belt of cloud giant strength",
+        "rarity":"legendary",
+        "min":"42",
+        "max":"43"
+    },
+    {
+        "name":"Armor, +2 breastplate",
+        "rarity":"legendary",
+        "min":"44",
+        "max":"45"
+    },
+    {
+        "name":"Armor, +3 chain mail",
+        "rarity":"legendary",
+        "min":"46",
+        "max":"47"
+    },
+    {
+        "name":"Armor, +3 chain shirt",
+        "rarity":"legendary",
+        "min":"48",
+        "max":"49"
+    },
+    {
+        "name":"Cloak of invisibility",
+        "rarity":"legendary",
+        "min":"50",
+        "max":"51"
+    },
+    {
+        "name":"Crystal ball (legendary version)",
+        "rarity":"legendary",
+        "min":"52",
+        "max":"53"
+    },
+    {
+        "name":"Armor, + 1 half plate",
+        "rarity":"legendary",
+        "min":"54",
+        "max":"55"
+    },
+    {
+        "name":"Iron flask",
+        "rarity":"legendary",
+        "min":"56",
+        "max":"57"
+    },
+    {
+        "name":"Armor, +3 leather",
+        "rarity":"legendary",
+        "min":"58",
+        "max":"59"
+    },
+    {
+        "name":"Armor, +1 plate",
+        "rarity":"legendary",
+        "min":"60",
+        "max":"61"
+    },
+    {
+        "name":"Robe of the archmagi",
+        "rarity":"legendary",
+        "min":"62",
+        "max":"63"
+    },
+    {
+        "name":"Rod of resurrection",
+        "rarity":"legendary",
+        "min":"64",
+        "max":"65"
+    },
+    {
+        "name":"Armor, +1 scale mail",
+        "rarity":"legendary",
+        "min":"66",
+        "max":"67"
+    },
+    {
+        "name":"Scarab of protection",
+        "rarity":"legendary",
+        "min":"68",
+        "max":"69"
+    },
+    {
+        "name":"Armor, +2 splint",
+        "rarity":"legendary",
+        "min":"70",
+        "max":"71"
+    },
+    {
+        "name":"Armor, +2 studded leather",
+        "rarity":"legendary",
+        "min":"72",
+        "max":"73"
+    },
+    {
+        "name":"Well of many worlds",
+        "rarity":"legendary",
+        "min":"74",
+        "max":"75"
+    },
+    {
+        "name":"Magic armor (roll dl2)",
+        "rarity":"legendary",
+        "min":"76",
+        "max":"76"
+    },
+	    {
+        "name":"Apparatus of Kwalish",
+        "rarity":"legendary",
+        "min":"77",
+        "max":"77"
+    },
+    {
+        "name":"Armor of invulnerability",
+        "rarity":"legendary",
+        "min":"78",
+        "max":"78"
+    },
+    {
+        "name":"Belt of storm giant strength",
+        "rarity":"legendary",
+        "min":"79",
+        "max":"79"
+    },
+    {
+        "name":"Cubic gate",
+        "rarity":"legendary",
+        "min":"80",
+        "max":"80"
+    },
+    {
+        "name":"Deck of many things",
+        "rarity":"legendary",
+        "min":"81",
+        "max":"81"
+    },
+    {
+        "name":"Efreeti chain",
+        "rarity":"legendary",
+        "min":"82",
+        "max":"82"
+    },
+    {
+        "name":"Armor of resistance (half plate)",
+        "rarity":"legendary",
+        "min":"83",
+        "max":"83"
+    },
+    {
+        "name":"Horn ofValhalla (iron)",
+        "rarity":"legendary",
+        "min":"84",
+        "max":"84"
+    },
+    {
+        "name":"Instrument of the bards (OIIamh harp)",
+        "rarity":"legendary",
+        "min":"85",
+        "max":"85"
+    },
+    {
+        "name":"loun stone (greater absorption)",
+        "rarity":"legendary",
+        "min":"86",
+        "max":"86"
+    },
+    {
+        "name":"loun stone (mastery)",
+        "rarity":"legendary",
+        "min":"87",
+        "max":"87"
+    },
+    {
+        "name":"loun stone (regeneration)",
+        "rarity":"legendary",
+        "min":"88",
+        "max":"88"
+    },
+    {
+        "name":"Plate armor of etherealness",
+        "rarity":"legendary",
+        "min":"89",
+        "max":"89"
+    },
+    {
+        "name":"Plate armor of resistance",
+        "rarity":"legendary",
+        "min":"90",
+        "max":"90"
+    },
+    {
+        "name":"Ring of air elemental command",
+        "rarity":"legendary",
+        "min":"91",
+        "max":"91"
+    },
+    {
+        "name":"Ring of earth elemental command",
+        "rarity":"legendary",
+        "min":"92",
+        "max":"92"
+    },
+    {
+        "name":"Ring of fire elemental command",
+        "rarity":"legendary",
+        "min":"93",
+        "max":"93"
+    },
+    {
+        "name":"Ring of three wishes",
+        "rarity":"legendary",
+        "min":"94",
+        "max":"94"
+    },
+    {
+        "name":"Ring of water elemental command",
+        "rarity":"legendary",
+        "min":"95",
+        "max":"95"
+    },
+    {
+        "name":"Sphere of annihilation",
+        "rarity":"legendary",
+        "min":"96",
+        "max":"96"
+    },
+    {
+        "name":"Talisman of pure good",
+        "rarity":"legendary",
+        "min":"97",
+        "max":"97"
+    },
+    {
+        "name":"Talisman of the sphere",
+        "rarity":"legendary",
+        "min":"98",
+        "max":"98"
+    },
+    {
+        "name":"Talisman of ultimate evil",
+        "rarity":"legendary",
+        "min":"99",
+        "max":"99"
+    },
+    {
+        "name":"Tome of the stilled tongue",
+        "rarity":"legendary",
+        "min":"100",
+        "max":"100"
+    }
+]
