@@ -12,48 +12,6 @@
         "max":"14"
     },
     {
-        "name":"Bronze griffon",
-        "rarity":"legendary",
-        "min":"1",
-        "max":"1"
-    },
-    {
-        "name":"Ebony fly",
-        "rarity":"legendary",
-        "min":"2",
-        "max":"2"
-    },
-    {
-        "name":"Golden lions",
-        "rarity":"legendary",
-        "min":"3",
-        "max":"3"
-    },
-    {
-        "name":"Ivory goats",
-        "rarity":"legendary",
-        "min":"4",
-        "max":"4"
-    },
-    {
-        "name":"Marble elephant",
-        "rarity":"legendary",
-        "min":"5",
-        "max":"5"
-    },
-    {
-        "name":"Onyx dog",
-        "rarity":"legendary",
-        "min":"6",
-        "max":"7"
-    },
-    {
-        "name":"Serpentine owl",
-        "rarity":"legendary",
-        "min":"8",
-        "max":"8"
-    },
-    {
         "name":"Adamantine armor (breastplate)",
         "rarity":"legendary",
         "min":"15",
@@ -90,7 +48,7 @@
         "max":"20"
     },
     {
-        "name":"Belt of hill giant st rength",
+        "name":"Belt of hill giant strength",
         "rarity":"legendary",
         "min":"21",
         "max":"21"
@@ -144,7 +102,7 @@
         "max":"29"
     },
     {
-        "name":"Armor, +1 chain mail",
+        "name":"Armor, +1, chain mail",
         "rarity":"legendary",
         "min":"30",
         "max":"30"
@@ -156,7 +114,7 @@
         "max":"31"
     },
     {
-        "name":"Armor,+ 1 chain shirt",
+        "name":"Armor, +1, chain shirt",
         "rarity":"legendary",
         "min":"32",
         "max":"32"
@@ -300,7 +258,7 @@
         "max":"55"
     },
     {
-        "name":"Armor, + 1 leather",
+        "name":"Armor, + 1, leather",
         "rarity":"legendary",
         "min":"56",
         "max":"56"
@@ -426,7 +384,7 @@
         "max":"76"
     },
     {
-        "name":"Armor, +1 scale mail",
+        "name":"Armor, +1, scale mail",
         "rarity":"legendary",
         "min":"77",
         "max":"77"

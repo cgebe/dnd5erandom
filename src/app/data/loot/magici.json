@@ -3,12 +3,12 @@
         "name":"Defender",
         "rarity":"legendary",
         "min":"1",
-        "max":"05"
+        "max":"5"
     },
     {
         "name":"Hammer of thunderbolts",
         "rarity":"legendary",
-        "min":"06",
+        "min":"6",
         "max":"10"
     },
     {
@@ -72,19 +72,19 @@
         "max":"43"
     },
     {
-        "name":"Armor, +2 breastplate",
+        "name":"Armor, +2, breastplate",
         "rarity":"legendary",
         "min":"44",
         "max":"45"
     },
     {
-        "name":"Armor, +3 chain mail",
+        "name":"Armor, +3, chain mail",
         "rarity":"legendary",
         "min":"46",
         "max":"47"
     },
     {
-        "name":"Armor, +3 chain shirt",
+        "name":"Armor, +3, chain shirt",
         "rarity":"legendary",
         "min":"48",
         "max":"49"
@@ -102,7 +102,7 @@
         "max":"53"
     },
     {
-        "name":"Armor, + 1 half plate",
+        "name":"Armor, + 1, half plate",
         "rarity":"legendary",
         "min":"54",
         "max":"55"
@@ -114,13 +114,13 @@
         "max":"57"
     },
     {
-        "name":"Armor, +3 leather",
+        "name":"Armor, +3, leather",
         "rarity":"legendary",
         "min":"58",
         "max":"59"
     },
     {
-        "name":"Armor, +1 plate",
+        "name":"Armor, +1, plate",
         "rarity":"legendary",
         "min":"60",
         "max":"61"
@@ -138,7 +138,7 @@
         "max":"65"
     },
     {
-        "name":"Armor, +1 scale mail",
+        "name":"Armor, +1, scale mail",
         "rarity":"legendary",
         "min":"66",
         "max":"67"
@@ -150,13 +150,13 @@
         "max":"69"
     },
     {
-        "name":"Armor, +2 splint",
+        "name":"Armor, +2, splint",
         "rarity":"legendary",
         "min":"70",
         "max":"71"
     },
     {
-        "name":"Armor, +2 studded leather",
+        "name":"Armor, +2, studded leather",
         "rarity":"legendary",
         "min":"72",
         "max":"73"
@@ -168,12 +168,12 @@
         "max":"75"
     },
     {
-        "name":"Magic armor (roll dl2)",
+        "name":"Magic armor (roll d12)",
         "rarity":"legendary",
         "min":"76",
         "max":"76"
     },
-	    {
+	{
         "name":"Apparatus of Kwalish",
         "rarity":"legendary",
         "min":"77",

@@ -6,7 +6,7 @@
         "max":"15"
     },
     {
-        "name":"Shield,+ 1",
+        "name":"Shield, +1",
         "rarity":"legendary",
         "min":"16",
         "max":"18"
@@ -150,19 +150,19 @@
         "max":"65"
     },
     {
-        "name":"Adamantine armor (chain mail)",
+        "name":"Adamantine armor, chain mail",
         "rarity":"legendary",
         "min":"66",
         "max":"66"
     },
     {
-        "name":"Adamantine armor (chain shirt)",
+        "name":"Adamantine armor, chain shirt",
         "rarity":"legendary",
         "min":"67",
         "max":"67"
     },
     {
-        "name":"Adamantine armor (scale mail)",
+        "name":"Adamantine armor, scale mail",
         "rarity":"legendary",
         "min":"68",
         "max":"68"

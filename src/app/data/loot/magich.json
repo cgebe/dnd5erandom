@@ -168,7 +168,7 @@
         "max":"59"
     },
     {
-        "name":"Armor, + 1 breastplate",
+        "name":"Armor, + 1, breastplate",
         "rarity":"legendary",
         "min":"60",
         "max":"60"
@@ -186,13 +186,13 @@
         "max":"62"
     },
     {
-        "name":"Armor, +2 chain mail",
+        "name":"Armor, +2, chain mail",
         "rarity":"legendary",
         "min":"63",
         "max":"63"
     },
     {
-        "name":"Armor, +2 chain sh irt",
+        "name":"Armor, +2, chain shirt",
         "rarity":"legendary",
         "min":"64",
         "max":"64"
@@ -222,7 +222,7 @@
         "max":"68"
     },
     {
-        "name":"Dwarven pla te",
+        "name":"Dwarven plate",
         "rarity":"legendary",
         "min":"69",
         "max":"69"
@@ -258,7 +258,7 @@
         "max":"74"
     },
     {
-        "name":"Horn ofValhalla (bronze)",
+        "name":"Horn of Valhalla (bronze)",
         "rarity":"legendary",
         "min":"75",
         "max":"75"
@@ -348,7 +348,7 @@
         "max":"89"
     },
     {
-        "name":"Nine li ves stealer",
+        "name":"Nine lives stealer",
         "rarity":"legendary",
         "min":"90",
         "max":"90"
@@ -360,7 +360,7 @@
         "max":"91"
     },
     {
-        "name":"Armor, +2 scale mail",
+        "name":"Armor, +2, scale mail",
         "rarity":"legendary",
         "min":"92",
         "max":"92"
@@ -372,19 +372,19 @@
         "max":"93"
     },
     {
-        "name":"Armor, + 1 splint",
+        "name":"Armor, + 1, splint",
         "rarity":"legendary",
         "min":"94",
         "max":"94"
     },
     {
-        "name":"Armor of res istance (splint)",
+        "name":"Armor of resistance (splint)",
         "rarity":"legendary",
         "min":"95",
         "max":"95"
     },
     {
-        "name":"Armor, + 1 studded leather",
+        "name":"Armor, + 1, studded leather",
         "rarity":"legendary",
         "min":"96",
         "max":"96"

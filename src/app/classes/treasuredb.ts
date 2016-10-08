@@ -21,6 +21,20 @@ var magicg = require("json!../data/loot/magicg.json");
 var magich = require("json!../data/loot/magich.json");
 var magici = require("json!../data/loot/magici.json");
 
+var cantrips = require("json!../data/spells/cantrips.json");
+var spells1 = require("json!../data/spells/spells1.json");
+var spells2 = require("json!../data/spells/spells2.json");
+var spells3 = require("json!../data/spells/spells3.json");
+var spells4 = require("json!../data/spells/spells4.json");
+var spells5 = require("json!../data/spells/spells5.json");
+var spells6 = require("json!../data/spells/spells6.json");
+var spells7 = require("json!../data/spells/spells7.json");
+var spells8 = require("json!../data/spells/spells8.json");
+var spells9 = require("json!../data/spells/spells9.json");
+
+var weapons = require("json!../data/weapons.json");
+var ammunition = require("json!../data/ammunition.json");
+
 import gem = require("./gem");
 import artobject = require("./artobject");
 import items = require("./items");
@@ -76,7 +90,7 @@ export class TreasureDB {
     private getRandomGem(gemsJson) : gem.Gem {
         var gJson = gemsJson[Math.floor(Math.random() * gemsJson.length)];
         let g = new gem.Gem();
-        g.name = gJson.name;
+        g.name = gJson.name.charAt(0).toUpperCase() + gJson.name.slice(1).toLowerCase();
         g.color = gJson.colors[Math.floor(Math.random() * gJson.colors.length)];
         g.cost = gJson.cost;
         return g;
@@ -113,7 +127,7 @@ export class TreasureDB {
     private getRandomArtObject(artobjectsJson) {
         var aoJson = artobjectsJson[Math.floor(Math.random() * artobjectsJson.length)];
         let ao = new artobject.ArtObject();
-        ao.name = aoJson.name;
+        ao.name = aoJson.name.charAt(0).toUpperCase() + aoJson.name.slice(1).toLowerCase();
         ao.cost = aoJson.cost;
         return ao;
     }
@@ -169,7 +183,7 @@ export class TreasureDB {
             for (let i = 0; i < magicJson.length; i++) {
                 if (parseInt(magicJson[i].min) <= d100 && d100 <= parseInt(magicJson[i].max)) {
                     let mi = new items.MagicItem();
-                    mi.name = magicJson[i].name;
+                    mi.name = this.alterName(magicJson[i].name);
                     mi.rarity = magicJson[i].rarity;
                     if (mi.rarity == "very rare" || mi.rarity == "legendary") {
                         //mi.creator = this.getRandomMagicItemCreator();
@@ -184,7 +198,7 @@ export class TreasureDB {
             for (let i = magicJson.length - 1; i >= 0; i--) {
                 if (parseInt(magicJson[i].min) <= d100 && d100 <= parseInt(magicJson[i].max)) {
                     let mi = new items.MagicItem();
-                    mi.name = magicJson[i].name;
+                    mi.name = this.alterName(magicJson[i].name);
                     mi.rarity = magicJson[i].rarity;
                     return mi;
                 }
@@ -193,6 +207,73 @@ export class TreasureDB {
         return null;
     }
 
+    private alterName(name:string) : string {
+        if (name.match(/weapon,/i)) {
+            return name + ", " + this.getRandomName(weapons);
+        }
 
+        if (name.match(/ammunition,/i)) {
+            let s : string = name.replace(/[^0-9]+/g, "");
+            let lvl : number = parseInt(s);
+            let count : number = 0;
+            count = random.Random.rollXtimesY(4 - lvl, 6); // +1 = 3d6, +2 = 2d6, +3 = 1d6
+            return name + ", " + this.getRandomName(ammunition) + " (" + count + ")";
+        }
+
+        if (name.match(/spell scroll/i)) {
+            let s : string = name.match(/\((.*?)\)/)[0];
+            if (s) {
+                if (s.match(/cantrip/i)) {
+                    return this.replaceSpellName(cantrips, name);
+                } else {
+                    s = s.replace(/[^0-9]+/g, "");
+                    let lvl : number = parseInt(s);
+                    if (lvl == 1) {
+                        return this.replaceSpellName(spells1, name);
+                    }
+                    if (lvl == 2) {
+                        return this.replaceSpellName(spells2, name);
+                    }
+                    if (lvl == 3) {
+                        return this.replaceSpellName(spells3, name);
+                    }
+                    if (lvl == 4) {
+                        return this.replaceSpellName(spells4, name);
+                    }
+                    if (lvl == 5) {
+                        return this.replaceSpellName(spells5, name);
+                    }
+                    if (lvl == 6) {
+                        return this.replaceSpellName(spells6, name);
+                    }
+                    if (lvl == 7) {
+                        return this.replaceSpellName(spells7, name);
+                    }
+                    if (lvl == 8) {
+                        return this.replaceSpellName(spells8, name);
+                    }
+                    if (lvl == 9) {
+                        return this.replaceSpellName(spells9, name);
+                    }
+                }
+            } else {
+                return name;
+            }
+        } else {
+            return name;
+        }
+    }
+
+    private getRandomName(json) : string {
+        return json[Math.floor(Math.random() * json.length)].name.toLowerCase();
+    }
+
+    private replaceSpellName(spellsJson, name : string) : string {
+        return name.replace(/\((.*?)\)/, "(" + this.getRandomSpellName(spellsJson)) + ")";
+    }
+
+    private getRandomSpellName(spellsJson) : string {
+        return spellsJson[Math.floor(Math.random() * spellsJson.length)].name.toLowerCase();
+    }
 
 }
