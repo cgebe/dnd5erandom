@@ -13,7 +13,7 @@ export class ShopInventory {
     citySizes = 'Hamlet_Village_Small Town_Large Town_Small City_Large City'.split('_');
     selectedCitySize = 'small';
 
-    shopkeeperTypes = 'Armorer_Merchant_Alchemist_Scholar_Fisher_Miner'.split('_');
+    shopkeeperTypes = 'Weapons & Armor_Trading Post_Alchemist\'s Workshop_Magic Academy_Temple_Tackle Shop_Miner\'s Exchange_Blackmarket'.split('_');
     selectedShopkeeperType = 'weapon';
 
     inventory : items.Item[];
@@ -35,33 +35,33 @@ export class ShopInventory {
     }
 
     pick() {
-        let slots : number;
+        let defaultSlots : number;
         let items : items.Item[];
         switch(this.selectedCitySize) {
         case "Hamlet":
-            slots = 3;
+            defaultSlots = 3;
             break;
         case "Village":
-            slots = 5;
+            defaultSlots = 5;
             break;
         case "Small Town":
-            slots = 7;
+            defaultSlots = 7;
             break;
         case "Large Town":
-            slots = 9;
+            defaultSlots = 9;
             break;
         case "Small City":
-            slots = 12;
+            defaultSlots = 12;
             break;
         case "Large City":
-            slots = 15;
+            defaultSlots = 15;
             break;
         default:
-            slots = 0;
+            defaultSlots = 0;
         }
 
         items = this.getShopItems(this.selectedShopkeeperType);
-        items = this.pickItems(items, slots);
+        items = this.pickItems(items, defaultSlots);
     }
 
     private getShopItems(shopkeeperType:string):items.Item[] {
@@ -84,7 +84,7 @@ export class ShopInventory {
         */
     }
 
-    private pickItems(items:items.Item[], slots):items.Item[] {
+    private pickItems(items:items.Item[], defaultSlots):items.Item[] {
         return null;
     }
 

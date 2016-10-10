@@ -68,4 +68,34 @@ export class Coins {
         */
         return inWords;
     }
+
+
+    public static parse(coins:string) : Coins {
+        let parts : string[] = coins.split(",");
+        let parsed : Coins = new Coins();
+        for (let i = 0; i < parts.length; i++) {
+            let part : string[] = parts[i].split(" ");
+            if (part.length != 2) {
+                return null; //new Coins();
+            } else {
+                let value = parseInt(part[0]);
+                if (part[1].toLowerCase() == "cp") {
+                    parsed.cp = value;
+                }
+                if (part[1].toLowerCase() == "sp") {
+                    parsed.sp = value;
+                }
+                if (part[1].toLowerCase() == "ep") {
+                    parsed.ep = value;
+                }
+                if (part[1].toLowerCase() == "gp") {
+                    parsed.gp = value;
+                }
+                if (part[1].toLowerCase() == "pp") {
+                    parsed.pp = value;
+                }
+            }
+        }
+        return parsed;
+    }
 }

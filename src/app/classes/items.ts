@@ -1,4 +1,5 @@
 import coins = require("./coins")
+import clock = require("./clock")
 
 export class Item {
     public id : string;
@@ -18,4 +19,13 @@ export class MagicItem {
     public propertyDescription : string;
     public quirk : string;
     public quirkDescription : string;
+}
+
+
+export class ShopItem {
+    public id : number;
+    public name : string;
+    public cost : coins.Coins;
+    public amount : number;
+    public restock : clock.Clock;
 }
