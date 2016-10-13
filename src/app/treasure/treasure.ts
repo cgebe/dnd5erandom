@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
 
-import treasuredb = require("../classes/treasuredb");
-import items = require("../classes/items");
-import coins = require("../classes/coins");
-import gem = require("../classes/gem");
-import artobject = require("../classes/artobject");
-import random = require("../classes/random");
-import roll = require("../classes/roll");
+import treasuredb = require("../classes/TreasureDB");
+import items = require("../classes/Items");
+import coins = require("../classes/Coins");
+import gem = require("../classes/Gem");
+import artobject = require("../classes/ArtObject");
+import random = require("../classes/Random");
+import roll = require("../classes/Roll");
 
 @Component({
   selector: 'treasure',

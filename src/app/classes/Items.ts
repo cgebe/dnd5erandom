@@ -1,10 +1,10 @@
-import coins = require("./coins")
-import clock = require("./clock")
+import coins = require("./Coins");
+import clock = require("./Clock");
 
 export class Item {
     public id : string;
     public name : string;
-    public coins : coins.Coins;
+    public cost : coins.Coins;
 }
 
 
@@ -22,10 +22,7 @@ export class MagicItem {
 }
 
 
-export class ShopItem {
-    public id : number;
-    public name : string;
-    public cost : coins.Coins;
+export class ShopItem extends Item {
     public amount : number;
     public restock : clock.Clock;
 }

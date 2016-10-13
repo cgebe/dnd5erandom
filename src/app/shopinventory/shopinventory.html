@@ -1,11 +1,9 @@
-
-
 <h3>Shopkeeper Inventory Generator</h3>
 
-<select (change)="onChangeCitySize($event.target.value)">
-    <option *ngFor="let i of citySizes">{{i}}</option>
-</select>
+<label class="bold">Slots:</label>
+<input type="number" [ngModel]='slots' min=0 max=100 step=1 />
 
+<label class="bold">Shopkeeper Type:</label>
 <select (change)="onChangeShopkeeperType($event.target.value)">
     <option *ngFor="let i of shopkeeperTypes">{{i}}</option>
 </select>
@@ -15,14 +13,46 @@
 
 <br>
 
-<button class="btn btn-primary" (click)="generateShopInventory">Generate Inventory</button>
+<button class="btn btn-primary" (click)="fillShop()">Fill Shop</button>
 <button class="btn btn-primary" (click)="newGoods()">New Goods!</button>
 
 <br>
 
-<table>
-    <tr *ngFor="let item of inventory">
-        <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
-    </tr>
-</table>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+          <table>
+              <thead>
+                  <tr>
+                      <th colspan="42">Inventory</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of inventory">
+                      <td>{{item.name}}</td>
+                      <td>{{item.cost}}</td>
+                      <td>{{item.amount}}</td>
+                      <td><a (click)="incrementItemAmount(item)"><i class="fa fa-chevron-up"></i></a>
+                          <td><a (click)="decrementItemAmount(item)"><i class="fa fa-chevron-down"></i></a>
+                              <td><a (click)="removeItem(item)"><i class="fa fa-close"></i></a>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="col-xs-6 col-md-4">
+          <table>
+              <thead>
+                  <tr>
+                      <th colspan="42">Supply</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of supplies">
+                      <td>{{item.name}}</td>
+                      <td><a (click)="addItem(item)"><i class="fa fa-check"></i></a>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    </div>
+</div>

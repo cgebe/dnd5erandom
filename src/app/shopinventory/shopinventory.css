@@ -1,0 +1,16 @@
+
+.no-border {
+    border-bottom:none;
+}
+
+.no-border:hover {
+    background-color: #fff;
+}
+
+.divider {
+    height: 10px !important;
+}
+
+.bold {
+    font-weight: bold;
+}

@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 
-import database = require("../classes/database");
-import items = require("../classes/items");
+import database = require("../classes/ShopInventoryDB");
+import dispatcher = require("../classes/CEventDispatcher");
+import items = require("../classes/Items");
 
 @Component({
   selector: 'shopinventory',
@@ -10,21 +11,17 @@ import items = require("../classes/items");
 })
 export class ShopInventory {
 
-    citySizes = 'Hamlet_Village_Small Town_Large Town_Small City_Large City'.split('_');
-    selectedCitySize = 'small';
+    slots = 0;
 
     shopkeeperTypes = 'Weapons & Armor_Trading Post_Alchemist\'s Workshop_Magic Academy_Temple_Tackle Shop_Miner\'s Exchange_Blackmarket'.split('_');
-    selectedShopkeeperType = 'weapon';
+    selectedShopkeeperType = 'Weapons & Armor';
 
-    inventory : items.Item[];
+    inventory : items.ShopItem[] = [];
+    supplies : items.ShopItem[] = [];
 
-    onChangeCitySize(newValue) {
+    onChangeSlots(newValue) {
         console.log(newValue);
-        this.selectedCitySize = newValue;
-        let i : items.Item;
-        i.name = "test";
-        i.id = "0";
-        this.inventory.push(i);
+        this.slots = newValue;
         // ... do other stuff here ...
     }
 
@@ -34,65 +31,46 @@ export class ShopInventory {
         // ... do other stuff here ...
     }
 
-    pick() {
-        let defaultSlots : number;
-        let items : items.Item[];
-        switch(this.selectedCitySize) {
-        case "Hamlet":
-            defaultSlots = 3;
-            break;
-        case "Village":
-            defaultSlots = 5;
-            break;
-        case "Small Town":
-            defaultSlots = 7;
-            break;
-        case "Large Town":
-            defaultSlots = 9;
-            break;
-        case "Small City":
-            defaultSlots = 12;
-            break;
-        case "Large City":
-            defaultSlots = 15;
-            break;
-        default:
-            defaultSlots = 0;
-        }
-
-        items = this.getShopItems(this.selectedShopkeeperType);
-        items = this.pickItems(items, defaultSlots);
+    public fillShop() {
+        this.inventory = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
+        this.inventory = this.pickItems(this.inventory, this.slots);
     }
 
-    private getShopItems(shopkeeperType:string):items.Item[] {
-        return null;
-        /*
-        switch(shopkeeperType) {
-        case "Armorer":
-            return database.Database.getShopItems("armorer");
-        case "Merchant":
-            return database.Database.getShopItems("merchant");
-        case "Alchemist":
-            return database.Database.getShopItems("alchemist");
-        case "Scholar":
-            return database.Database.getShopItems("scholar");
-        case "Fisher":
-            return database.Database.getShopItems("fisher");
-        case "Miner":
-            return database.Database.getShopItems("miner");
-        }
-        */
-    }
 
-    private pickItems(items:items.Item[], defaultSlots):items.Item[] {
-        return null;
+    private pickItems(inventory:items.ShopItem[], defaultSlots):items.ShopItem[] {
+        return inventory;
     }
 
     pickItem(items:items.Item[]):items.Item {
         return items[Math.floor(Math.random() * items.length)];
     }
 
-    generateShopInventory() {
+    public startRestock(hours:number, minutes:number) {
+
+    }
+
+    public incrementItemAmount(item:items.ShopItem) {
+        item.amount++;
+    }
+
+    public decrementItemAmount(item:items.ShopItem) {
+        if (item.amount > 0) {
+            item.amount--;
+        }
+        if (item.amount == 0) {
+            let index : number = this.inventory.indexOf(item);
+            if (index > -1) {
+                this.inventory.splice(index, 1);
+            }
+            this.supplies.push(item);
+        }
+    }
+
+    public removeItem(item:items.ShopItem) {
+        console.log("clicked2");
+    }
+
+    public addItem(item:items.ShopItem) {
 
     }
 

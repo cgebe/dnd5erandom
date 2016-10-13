@@ -1,6 +1,5 @@
-
-
 <h3>Treasure Generator</h3>
+
 
 <label>Challenge Rating: </label>
 <select (change)="onChangeChallengeRating($event.target.value)">
@@ -18,38 +17,81 @@
 
 <br>
 
-<table>
-    <tr *ngIf="coinReward != null">
-        <td colspan="2" class="bold no-border">Coins</td>
-    </tr>
-    <tr>
-        <td colspan="2">{{coinReward}}</td>
-    </tr>
-    <tr class="no-border divider">
-        <td class="no-border" colspan="2"></td>
-    </tr>
-    <tr *ngIf="gemReward.length > 0">
-        <td class="bold no-border">Gems</td>
-    </tr>
-    <tr *ngFor="let gem of gemReward">
-        <td>{{gem.name}} ({{gem.color}})</td>
-        <td>{{gem.cost}}</td>
-    </tr>
-    <tr *ngIf="artReward.length > 0">
-        <td class="bold no-border">Art Objects</td>
-    </tr>
-    <tr *ngFor="let art of artReward">
-        <td>{{art.name}}</td>
-        <td>{{art.cost}}</td>
-    </tr>
-    <tr class="no-border divider">
-        <td class="no-border" colspan="2"></td>
-    </tr>
-    <tr *ngIf="itemReward.length > 0">
-        <td class="bold no-border">Magic Items</td>
-    </tr>
-    <tr *ngFor="let item of itemReward">
-        <td>{{item.name}}</td>
-        <td>{{item.rarity}}</td>
-    </tr>
-</table>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="text-align:left">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <label>Coins</label>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="coinReward != null">
+                        <td>{{coinReward}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <label>Gems</label>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let gem of gemReward">
+                        <td>{{gem.name}} ({{gem.color}})</td>
+                        <td>{{gem.cost}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <label>Art Objects</label>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let art of artReward">
+                        <td>{{art.name}}</td>
+                        <td>{{art.cost}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <label>Magic Items</label>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of itemReward">
+                        <td>{{item.name}}</td>
+                        <td>{{item.rarity}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>

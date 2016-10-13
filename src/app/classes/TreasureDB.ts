@@ -35,11 +35,11 @@ var spells9 = require("json!../data/spells/spells9.json");
 var weapons = require("json!../data/weapons.json");
 var ammunition = require("json!../data/ammunition.json");
 
-import gem = require("./gem");
-import artobject = require("./artobject");
-import items = require("./items");
-import random = require("./random");
-import roll = require("./roll");
+import gem = require("./Gem");
+import artobject = require("./ArtObject");
+import items = require("./Items");
+import random = require("./Random");
+import roll = require("./Roll");
 
 export class TreasureDB {
     private static instance:TreasureDB = new TreasureDB();

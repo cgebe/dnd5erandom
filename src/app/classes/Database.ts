@@ -15,7 +15,7 @@ var trinkets = require("json!../data/trinkets.json");
 
 var gems = require("json!../data/gems.json");
 
-import gem = require("./gem");
+import gem = require("./Gem");
 
 export class Database {
     private static instance:Database = new Database();
