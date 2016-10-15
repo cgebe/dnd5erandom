@@ -14,3 +14,16 @@
 .bold {
     font-weight: bold;
 }
+
+table {
+    width: 100%;
+}
+
+.table-container {
+    height: 300px;
+    overflow-y: auto;
+}
+
+.a-btn {
+    cursor: pointer;
+}
