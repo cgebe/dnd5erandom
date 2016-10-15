@@ -65,7 +65,6 @@ export class ShopInventory {
                 this.inventory.push(randomItem);
             }
         }
-    this.sortInventory();
     this.sortSupply();
     }
 
@@ -134,6 +133,30 @@ export class ShopInventory {
         }
         item.amount = 1;
         this.inventory.push(item);
+    }
+
+    public exchangeItem(item:items.ShopItem) {
+        // remove old item
+        var index1 = this.inventory.indexOf(item);
+        if (index1 > -1) {
+           this.inventory.splice(index1, 1);
+        }
+        item.amount = 0;
+
+        // choose random new item
+        let index2 = Math.floor(Math.random() * this.supplies.length);
+        let randomItem = this.supplies[index2];
+
+        this.supplies.splice(index2, 1); // remove from supply
+        let higher = random.Random.rolld4();
+        let amount = 0;
+        if (higher == 4) {
+            amount = random.Random.rolld4();
+        } else {
+            amount = 1;
+        }
+        randomItem.amount = amount;
+        this.inventory.splice(index1, 0, randomItem); // insert
     }
 
     private sortInventory() {
