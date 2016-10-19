@@ -6,4 +6,4 @@ var scraper = require("./scraper.js");
 //scraper.items_to_json("https://www.dandwiki.com/wiki/5e_SRD:Adventuring_Gear", ['name', 'cost', 'weight'], "test.json");
 //scraper.items_to_json("https://www.dandwiki.com/wiki/5e_SRD:Tools", ['name', 'cost', 'weight'], "test.json");
 //scraper.items_to_json("https://www.dandwiki.com/wiki/5e_SRD:Trade_Goods", ['name','cost'], "test.json");
-scraper.items_to_json("https://www.dandwiki.com/wiki/5e_SRD:Mounts_and_Vehicles", ['name','cost', 'weight'], "test.json");
+scraper.items_to_json("https://www.dnd-spells.com/spell/abi-dalzims-horrid-wilting", ['casting_time','range', 'components', 'duration'], "test.json");

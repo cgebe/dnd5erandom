@@ -1,29 +1,28 @@
 <h3>Shopkeeper Inventory Generator</h3>
 
-<label class="bold">Slots:</label>
-<input type="number" [(ngModel)]='slots' min=0 max=100 step=1/>
+<div class="container-fluid">
+    <div class="row">
+        <label class="bold">Slots:</label>
+        <input type="number" [(ngModel)]='slots' min=0 max=100 step=1/>
 
-<label class="bold">Shopkeeper Type:</label>
-<select (change)="onChangeShopkeeperType($event.target.value)">
-    <option *ngFor="let i of shopkeeperTypes">{{i}}</option>
-</select>
+        <label class="bold">Shopkeeper Type:</label>
+        <select (change)="onChangeShopkeeperType($event.target.value)">
+            <option *ngFor="let i of shopkeeperTypes">{{i}}</option>
+        </select>
 
-<label>Magic Items?</label>
-<input #magicitemscb type="checkbox" (change)="magicitemsEnabled = magicitemscb.checked" />
+        <label>Magic Items?</label>
+        <input #magicitemscb type="checkbox" (change)="magicitemsEnabled = magicitemscb.checked" />
 
-<br>
-
-<button class="btn btn-primary" (click)="fillShop()">Fill Shop</button>
-<button class="btn btn-primary" (click)="newGoods()">New Goods!</button>
-
-<br>
-
+        <button class="btn btn-primary" (click)="generateShopInventory()">Generate Shop Inventory</button>
+        <button class="btn btn-primary" (click)="newGoods()">New Goods!</button>
+    </div>
+</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-2 col-md-2"></div>
         <div class="col-xs-6 col-md-4">
             <label>Inventory</label>
-            <table>
+            <table *ngIf="inventory.length > 0">
                 <tr>
                     <td width="50%">Name</td>
                     <td width="17%">Cost</td>
@@ -46,7 +45,7 @@
         </div>
         <div class="col-xs-6 col-md-4">
             <label>Supply</label>
-            <table>
+            <table *ngIf="supplies.length > 0">
                 <tr>
                     <td width="100%">Name</td>
                 </tr>

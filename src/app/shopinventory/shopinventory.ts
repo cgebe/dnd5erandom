@@ -32,16 +32,16 @@ export class ShopInventory {
         this.supplies = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
     }
 
-    public fillShop() {
+    public generateShopInventory() {
         this.inventory = [];
         this.supplies = [];
         let allShopItems = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
-        this.pickItems(allShopItems, this.slots, this.inventory, this.supplies);
+        this.pickItems(allShopItems, this.slots);
     }
 
-    newGoods() {
-        if (this.supplies.length >= 5) {
-            for (let i = 0; i < 5; i++) {
+    public newGoods() {
+        if (this.supplies.length >= this.slots) {
+            for (let i = 0; i < this.slots; i++) {
                 let index = Math.floor(Math.random() * this.supplies.length);
                 let randomItem = this.supplies[index];
                 let amount = random.Random.rolld4();
@@ -65,10 +65,10 @@ export class ShopInventory {
                 this.inventory.push(randomItem);
             }
         }
-    this.sortSupply();
+        this.sortSupply();
     }
 
-    private pickItems(shopItems:items.ShopItem[], slots, inventory:items.ShopItem[], supplies:items.ShopItem[]) {
+    private pickItems(shopItems:items.ShopItem[], slots) {
         let availableItems : items.ShopItem[] = [];
         for (let i = 0; i < slots; i++) {
             let index = Math.floor(Math.random() * shopItems.length);

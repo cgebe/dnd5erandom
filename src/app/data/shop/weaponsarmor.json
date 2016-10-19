@@ -260,7 +260,7 @@
     "props": "Special, thrown (range 5/15)"
   },
   {
-    "name": "Leather",
+    "name": "Light Armor - Leather",
     "cost": "10 gp",
     "ac": "11 + Dex modifier",
     "strength": "—",
@@ -268,7 +268,7 @@
     "weight": "10 lb."
   },
   {
-    "name": "Padded",
+    "name": "Light Armor - Padded",
     "cost": "5 gp",
     "ac": "11 + Dex modifier",
     "strength": "—",
@@ -276,7 +276,7 @@
     "weight": "8 lb."
   },
   {
-    "name": "Studded Leather",
+    "name": "Light Armor - Studded Leather",
     "cost": "45 gp",
     "ac": "12 + Dex modifier",
     "strength": "—",
@@ -284,7 +284,7 @@
     "weight": "13 lb."
   },
   {
-    "name": "Hide",
+    "name": "Medium Armor - Hide",
     "cost": "10 gp",
     "ac": "12 + Dex modifier (max 2)",
     "strength": "—",
@@ -292,7 +292,7 @@
     "weight": "12 lb."
   },
   {
-    "name": "Breastplate",
+    "name": "Medium Armor - Breastplate",
     "cost": "400 gp",
     "ac": "14 + Dex modifier (max 2)",
     "strength": "—",
@@ -300,7 +300,7 @@
     "weight": "20 lb."
   },
   {
-    "name": "Half Plate",
+    "name": "Medium Armor - Half Plate",
     "cost": "750 gp",
     "ac": "15 + Dex modifier (max 2)",
     "strength": "—",
@@ -308,7 +308,7 @@
     "weight": "40 lb."
   },
   {
-    "name": "Chain Shirt",
+    "name": "Medium Armor - Chain Shirt",
     "cost": "50 gp",
     "ac": "13 + Dex modifier (max 2)",
     "strength": "—",
@@ -316,7 +316,7 @@
     "weight": "20 lb."
   },
   {
-    "name": "Scale Mail",
+    "name": "Medium Armor - Scale Mail",
     "cost": "50 gp",
     "ac": "14 + Dex modifier (max 2)",
     "strength": "—",
@@ -324,7 +324,7 @@
     "weight": "45 lb."
   },
   {
-    "name": "Ring Mail",
+    "name": "Heavy Armor - Ring Mail",
     "cost": "30 gp",
     "ac": "14",
     "strength": "—",
@@ -332,15 +332,15 @@
     "weight": "40 lb."
   },
   {
-    "name": "Plate",
-    "cost": "1,500 gp",
+    "name": "Heavy Armor - Plate",
+    "cost": "1500 gp",
     "ac": "18",
     "strength": "Str 15",
     "stealth": "Disadvantage",
     "weight": "65 lb."
   },
   {
-    "name": "Chain Mail",
+    "name": "Heavy Armor - Chain Mail",
     "cost": "75 gp",
     "ac": "16",
     "strength": "Str 13",
@@ -348,7 +348,7 @@
     "weight": "55 lb."
   },
   {
-    "name": "Splint",
+    "name": "Heavy Armor - Splint",
     "cost": "200 gp",
     "ac": "17",
     "strength": "Str 15",
