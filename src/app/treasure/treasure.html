@@ -29,7 +29,7 @@
                 </thead>
                 <tbody>
                     <tr *ngIf="coinReward != null">
-                        <td>{{coinReward}}</td>
+                        <td width="100%">{{coinReward}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -47,8 +47,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let gem of gemReward">
-                        <td>{{gem.name}} ({{gem.color}})</td>
-                        <td style="white-space: nowrap;">{{gem.cost}}</td>
+                        <td width="85%">{{gem.name}} ({{gem.color}})</td>
+                        <td width="15%">{{gem.cost}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -66,8 +66,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let art of artReward">
-                        <td>{{art.name}}</td>
-                        <td>{{art.cost}}</td>
+                        <td width="85%">{{art.name}}</td>
+                        <td width="15%">{{art.cost}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -85,8 +85,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of itemReward">
-                        <td>{{item.name}}</td>
-                        <td>{{item.rarity}}</td>
+                        <td width="85%">{{item.name}}</td>
+                        <td width="15%">{{item.rarity}}</td>
                     </tr>
                 </tbody>
             </table>

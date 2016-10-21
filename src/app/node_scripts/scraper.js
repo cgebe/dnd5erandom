@@ -22,9 +22,13 @@ module.exports = {
 module.exports = {
     items_to_json : function(url, props, path) {
 	var prop_to_css_sel = {};
+    /*
 	props.forEach(function(e, i) {
-	    prop_to_css_sel[e] = 'td:nth-child(' + (i + 1) + ')' + ' | trim';
+	    prop_to_css_sel[e] = 'td:nth-child(' + (8 + 1) + ')' + ' | trim';
 	});
-	x(url, 'ee', [prop_to_css_sel]).write(path);
+    */
+    prop_to_css_sel['name'] = 'td:nth-child(2) > a:nth-child(1) | trim';
+    prop_to_css_sel['source'] = 'td:nth-child(9) | trim';
+	x(url, '#example > tbody > tr', [prop_to_css_sel]).write(path);
     }
 }

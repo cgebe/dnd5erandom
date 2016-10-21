@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 import database = require("../classes/ShopInventoryDB");
 import dispatcher = require("../classes/CEventDispatcher");
-import items = require("../classes/Items");
+import dto = require("../classes/DTO");
 import random = require("../classes/Random");
 
 @Component({
@@ -17,8 +17,8 @@ export class ShopInventory {
     shopkeeperTypes = 'Alchemist\'s Workshop_Blackmarket_Magic Academy_Miner\'s Exchange_Tackle Shop_Temple_Trading Post_Weapons & Armor'.split('_');
     selectedShopkeeperType = "Alchemist's Workshop";
 
-    inventory : items.ShopItem[] = [];
-    supplies : items.ShopItem[] = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
+    inventory : dto.ShopItem[] = [];
+    supplies : dto.ShopItem[] = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
 
     onChangeSlots(newValue) {
         console.log(newValue);
@@ -68,8 +68,8 @@ export class ShopInventory {
         this.sortSupply();
     }
 
-    private pickItems(shopItems:items.ShopItem[], slots) {
-        let availableItems : items.ShopItem[] = [];
+    private pickItems(shopItems:dto.ShopItem[], slots) {
+        let availableItems : dto.ShopItem[] = [];
         for (let i = 0; i < slots; i++) {
             let index = Math.floor(Math.random() * shopItems.length);
             let randomItem = shopItems[index];
@@ -92,7 +92,7 @@ export class ShopInventory {
         this.sortSupply();
     }
 
-    pickItem(items:items.Item[]):items.Item {
+    pickItem(items:dto.Item[]):dto.Item {
         return items[Math.floor(Math.random() * items.length)];
     }
 
@@ -100,11 +100,11 @@ export class ShopInventory {
 
     }
 
-    public incrementItemAmount(item:items.ShopItem) {
+    public incrementItemAmount(item:dto.ShopItem) {
         item.amount++;
     }
 
-    public decrementItemAmount(item:items.ShopItem) {
+    public decrementItemAmount(item:dto.ShopItem) {
         if (item.amount > 0) {
             item.amount--;
         }
@@ -117,7 +117,7 @@ export class ShopInventory {
         }
     }
 
-    public removeItem(item:items.ShopItem) {
+    public removeItem(item:dto.ShopItem) {
         var index = this.inventory.indexOf(item);
         if (index > -1) {
            this.inventory.splice(index, 1);
@@ -126,7 +126,7 @@ export class ShopInventory {
         this.supplies.push(item);
     }
 
-    public addItem(item:items.ShopItem) {
+    public addItem(item:dto.ShopItem) {
         var index = this.supplies.indexOf(item);
         if (index > -1) {
            this.supplies.splice(index, 1);
@@ -135,7 +135,7 @@ export class ShopInventory {
         this.inventory.push(item);
     }
 
-    public exchangeItem(item:items.ShopItem) {
+    public exchangeItem(item:dto.ShopItem) {
         // remove old item
         var index1 = this.inventory.indexOf(item);
         if (index1 > -1) {

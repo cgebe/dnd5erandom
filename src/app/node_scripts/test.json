@@ -1,1 +1,1638 @@
-[]
+[
+  {
+    "name": "Acid Splash",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Aid",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Alarm (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Alter Self",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Animal Friendship",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Animal Messenger (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Animal Shapes",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Animate Dead",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Animate Objects",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Antilife Shell",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Antimagic Field",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Antipathy/Sympathy",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Arcane Eye",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Arcane Gate",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Arcane Lock",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Armor of Agathys",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Arms of Hadar",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Astral Projection",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Augury (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Aura of Life",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Aura of Purity",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Aura of Vitality",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Awaken",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Bane",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Banishing Smite",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Banishment",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Barkskin",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Beacon of Hope",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Beast Sense (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Bestow Curse",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Bigby’s Hand",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Blade Barrier",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Blade Ward",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Bless",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Blight",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Blinding Smite",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Blindness/Deafness",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Blink",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Blur",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Branding Smite",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Burning Hands",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Call Lightning",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Calm Emotions",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Chain Lightning",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Charm Person",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Chill Touch",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Chromatic Orb",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Circle of Death",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Circle of Power",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Clairvoyance",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Clone",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Cloud of Daggers",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Cloudkill",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Color Spray",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Command",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Commune (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Commune with Nature (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Compelled Duel",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Comprehend Languages (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Compulsion",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Cone of Cold",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Confusion",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Conjure Animals",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Conjure Barrage",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Conjure Celestial",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Conjure Elemental",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Conjure Fey",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Conjure Minor Elementals",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Conjure Volley",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Conjure Woodland Beings",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Contact Other Plane (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Contagion",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Contingency",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Continual Flame",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Control Water",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Control Weather",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Cordon of Arrows",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Counterspell",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Create Food and Water",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Create or Destroy Water",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Create Undead",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Creation",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Crown of Madness",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Crusader’s Mantle",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Cure Wounds",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dancing Lights",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Darkness",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Darkvision",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Daylight",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Death Ward",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Delayed Blast Fireball",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Demiplane",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Destructive Wave",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Detect Evil and Good",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Detect Magic (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Detect Poison and Disease",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Detect Thoughts",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dimension Door",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Disguise Self",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Disintegrate",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dispel Evil and Good",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dispel Magic",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dissonant Whispers",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Divination (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Divine Favor",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Divine Word",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dominate Beast",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dominate Monster",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dominate Person",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Drawmij’s Instant Summons (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Dream",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Druidcraft",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Earthquake",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Eldritch Blast",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Elemental Weapon",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Enhance Ability",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Enlarge/Reduce",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Ensnaring Strike",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Entangle",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Enthrall",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Etherealness",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Evard’s Black Tentacles",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Expeditious Retreat",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Eyebite",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Fabricate",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Faerie Fire",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "False Life",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Fear",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Feather Fall",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Feeblemind",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Feign Death (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Find Familiar (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Find Steed",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Find the Path",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Find Traps",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Finger of Death",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Fire Bolt",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Fire Shield",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Fire Storm",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Fireball",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Flame Blade",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Flame Strike",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Flaming Sphere",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Flesh to Stone",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Fly",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Fog Cloud",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Forbiddance (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Forcecage",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Foresight",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Freedom of Movement",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Friends",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Gaseous Form",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Gate",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Geas",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Gentle Repose (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Giant Insect",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Glibness",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Globe of Invulnerability",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Glyph of Warding",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Goodberry",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Grasping Vine",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Grease",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Greater Invisibility",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Greater Restoration",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Guardian of Faith",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Guards and Wards",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Guidance",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Guiding Bolt",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Gust of Wind",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hail of Thorns",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hallow",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hallucinatory Terrain",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Harm",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Haste",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Heal",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Healing Word",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Heat Metal",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hellish Rebuke",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Heroes’ Feast",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Heroism",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hex",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hold Monster",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hold Person",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Holy Aura",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hunger of Hadar",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hunter’s Mark",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Hypnotic Pattern",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Ice Storm",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Identify (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Illusory Script (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Imprisonment",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Incendiary Cloud",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Inflict Wounds",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Insect Plague",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Invisibility",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Jump",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Knock",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Legend Lore",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Leomund’s Secret Chest",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Leomund’s Tiny Hut (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Lesser Restoration",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Levitate",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Light",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Lightning Arrow",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Lightning Bolt",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Locate Animals or Plants (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Locate Creature",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Locate Object",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Longstrider",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mage Armor",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mage Hand",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Magic Circle",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Magic Jar",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Magic Missile",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Magic Mouth (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Magic Weapon",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Major Image",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mass Cure Wounds",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mass Heal",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mass Healing Word",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mass Suggestion",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Maze",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Meld into Stone (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Melf’s Acid Arrow",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mending",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Message",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Meteor Swarm",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mind Blank",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Minor Illusion",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mirage Arcane",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mirror Image",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mislead",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Misty Step",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Modify Memory",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Moonbeam",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mordenkainen’s Faithful Hound",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mordenkainen’s Magnificent Mansion",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mordenkainen’s Private Sanctum",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Mordenkainen’s Sword",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Move Earth",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Nondetection",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Nystul’s Magic Aura",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Otiluke’s Freezing Sphere",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Otiluke’s Resilient Sphere",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Otto’s Irresistible Dance",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Pass Without Trace",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Passwall",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Phantasmal Force",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Phantasmal Killer",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Phantom Steed (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Planar Ally",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Planar Binding",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Plane Shift",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Plant Growth",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Poison Spray",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Polymorph",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Power Word Kill",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Power Word Stun",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Prayer of Healing",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Prestidigitation",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Prismatic Spray",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Prismatic Wall",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Produce Flame",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Programmed Illusion",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Project Image",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Protection from Energy",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Protection from Evil and Good",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Protection from Poison",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Purify Food and Drink (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Raise Dead",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Rary’s Telepathic Bond (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Ray of Enfeeblement",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Ray of Frost",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Ray of Sickness",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Regenerate",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Reincarnate",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Remove Curse",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Resistance",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Resurrection",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Reverse Gravity",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Revivify",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Rope Trick",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Sacred Flame",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Sanctuary",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Scorching Ray",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Scrying",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Searing Smite",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "See invisibility",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Seeming",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Sending",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Sequester",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Shapechange",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Shatter",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Shield",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Shield of Faith",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Shillelagh",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Shocking Grasp",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Silence (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Silent Image",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Simulacrum",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Sleep",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Sleet Storm",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Slow",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Spare the Dying",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Speak with Animals (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Speak with Dead",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Speak with Plants",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Spider Climb",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Spike Growth",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Spirit Guardians",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Spiritual Weapon",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Staggering Smite",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Stinking Cloud",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Stone Shape",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Stoneskin",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Storm of Vengeance",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Suggestion",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Sunbeam",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Sunburst",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Swift Quiver",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Symbol",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Tasha’s Hideous Laughter",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Telekinesis",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Telepathy",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Teleport",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Teleportation Circle",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Tenser’s Floating Disk (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Thaumaturgy",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Thorn Whip",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Thunderous Smite",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Thunderwave",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Time Stop",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Tongues",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Transport via Plants",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Tree Stride",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "True Polymorph",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "True Resurrection",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "True Seeing",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "True Strike",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Tsunami",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Unseen Servant (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Vampiric Touch",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wall of Fire",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wall of Force",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wall of Ice",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wall of Stone",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wall of Thorns",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Warding Bond",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Water Breathing (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Water Walk (Ritual)",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Web",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Weird",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wind Walk",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wind Wall",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wish",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Witch Bolt",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Word of Recall",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Wrathful Smite",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Zone of Truth",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Power Word Heal",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Vicious Mockery",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Trap the Soul",
+    "source": "Players Handbook"
+  },
+  {
+    "name": "Thunderclap",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Earth Tremor",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Pyrotechnics",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Skywrite (Ritual)",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Warding Wind",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Create Bonfire",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Control Flames",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Frostbite",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Gust",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Magic Stone",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Mold earth",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Shape Water",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Absorb Elements",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Beast Bond",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Ice Knife",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Dust Devil",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Earthbind",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Erupting Earth",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Flame Arrows",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Tidal Wave",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Wall of Water",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Elemental Bane",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Watery Sphere",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Control Winds",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Maelstrom",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Transmute Rock",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Bones of the Earth",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Investiture of Flame",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Investiture of Ice",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Investiture of Stone",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Investiture of Wind",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Primordial Ward",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Whirlwind",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Catapult",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Aganazzar’s Scorcher",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Maximilian’s Earthen Grasp",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Snilloc’s Snowball Swarm",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Melf’s Minute Meteors",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Storm Sphere",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Vitriolic Sphere",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Immolation",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Abi-Dalzim’s Horrid Wilting",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Wall of Sand",
+    "source": "Elemental Evil"
+  },
+  {
+    "name": "Booming Blade",
+    "source": "Sword Coast adv. guide"
+  },
+  {
+    "name": "Green-Flame Blade",
+    "source": "Sword Coast adv. guide"
+  },
+  {
+    "name": "Lightning Lure",
+    "source": "Sword Coast adv. guide"
+  },
+  {
+    "name": "Sword Burst",
+    "source": "Sword Coast adv. guide"
+  }
+]

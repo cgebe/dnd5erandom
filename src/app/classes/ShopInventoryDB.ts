@@ -1,14 +1,11 @@
 
-
-
 var alchemists_workshop = require("json!../data/shop/alchemistsworkshop.json");
 
 var miners_exchange = require("json!../data/shop/minersexchange.json");
 var trading_post = require("json!../data/shop/tradingpost.json");
 var weapons_and_armor = require("json!../data/shop/weaponsarmor.json");
 
-import coins = require("../classes/Coins");
-import items = require("../classes/Items");
+import dto = require("../classes/DTO");
 
 export class ShopInventoryDB {
     private static instance:ShopInventoryDB = new ShopInventoryDB();
@@ -24,7 +21,7 @@ export class ShopInventoryDB {
         return ShopInventoryDB.instance;
     }
 
-    public getShopInventory(shopType:string) : items.ShopItem[] {
+    public getShopInventory(shopType:string) : dto.ShopItem[] {
         switch(shopType) {
         case "Alchemist's Workshop":
             return this.getShopItems(alchemists_workshop);
@@ -47,13 +44,13 @@ export class ShopInventoryDB {
         }
     }
 
-    private getShopItems(shopJson) : items.ShopItem[] {
-        let inventory : items.ShopItem[] = [];
+    private getShopItems(shopJson) : dto.ShopItem[] {
+        let inventory : dto.ShopItem[] = [];
         for (let i = 0; i < shopJson.length; i++) {
-            let item : items.ShopItem = new items.ShopItem();
+            let item : dto.ShopItem = new dto.ShopItem();
             //item.id = shopJson[i].id;
             item.name = shopJson[i].name;
-            item.cost = coins.Coins.parse(shopJson[i].cost);
+            item.cost = dto.Coins.parse(shopJson[i].cost);
             item.amount = 0;
             inventory.push(item);
         }

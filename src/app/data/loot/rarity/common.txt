@@ -1,0 +1,4 @@
+Potion of climbing
+Potion of healing
+Spell scroll (1st level)
+Spell scroll (cantrip)

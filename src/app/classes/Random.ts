@@ -2,8 +2,6 @@
 
 export class Random {
 
-
-
     public static rolld100():number {
         return Random.roll(100);
     }
@@ -32,7 +30,7 @@ export class Random {
         return Random.roll(4);
     }
 
-    public static rollXtimesY(count:number, pips:number):number {
+    public static rollXdY(count:number, pips:number):number {
         let result : number = 0;
         for (let i = 0; i < count; i++) {
             result += Random.roll(pips);

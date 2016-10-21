@@ -1,0 +1,22 @@
+[
+    {
+      "name": "Arrows",
+      "cost": "1 gp",
+      "damage": "1 lb."
+    },
+    {
+      "name": "Blowgun Needles",
+      "cost": "1 gp",
+      "damage": "1 lb."
+    },
+    {
+      "name": "Crossbow Bolts",
+      "cost": "1 gp",
+      "damage": "10.5 ½ lb."
+    },
+    {
+      "name": "Sling Bullets",
+      "cost": "4 cp",
+      "damage": "10.5 ½ lb."
+    }
+]

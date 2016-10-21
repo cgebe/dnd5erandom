@@ -1,0 +1,262 @@
+[
+    {
+        "name" : "Azurite",
+        "colors" : ["opaque mottled deep blue"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Banded Agate",
+        "colors" : ["translucent striped brown", "translucent blue", "translucent white", "translucent red"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Blue Quartz",
+        "colors" : ["transparent pale blue"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Eye Agate",
+        "colors" : ["transparent circles of gray", "transparent circles of white", "transparent circles of brown", "transparent circles of blue", "transparent circles of green"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Hematite",
+        "colors" : ["opaque gray-black"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Lapis Lazuli",
+        "colors" : ["opaque light and dark blue with yellow flecks"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Malachite",
+        "colors" : ["opaque striated light and dark green"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Moss Agate",
+        "colors" : ["translucent pink", "yellow-white with mossy gray", "green markings"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Obsidian",
+        "colors" : ["opaque black"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Rhodochrosite",
+        "colors" : ["opaque light pink"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Tiger Eye",
+        "colors" : ["translucent brown with golden center"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Turquoise",
+        "colors" : ["opaque light blue-green"],
+        "cost" : "10 gp"
+    },
+    {
+        "name" : "Bloodstone",
+        "colors" : ["opaque dark gray with red flecks"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Carnelian",
+        "colors" : ["opaque orange","opaque red-brown"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Chalcedony",
+        "colors" : ["opaque white"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Chrysoprase",
+        "colors" : ["translucent green"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Citrine",
+        "colors" : ["translucent pale yellow-brown"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Jasper",
+        "colors" : ["opaque blue", "opaque black", "opaque brown"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Moonstone",
+        "colors" : ["translucent white with pale blue glow"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Onyx",
+        "colors" : ["opaque bands of black and white", "pure black", "pure white"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Quartz",
+        "colors" : ["transparent white", "smoky gray", "yellow"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Sardonyx",
+        "colors" : ["opaque bands of red and white"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Star rose quartz",
+        "colors" : ["translucent rosy with white star-shaped center"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Zircon",
+        "colors" : ["transparent pale blue-green"],
+        "cost" : "50 gp"
+    },
+    {
+        "name" : "Amber",
+        "colors" : ["transparent watery", "rich gold"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Amethyst",
+        "colors" : ["transparent deep purple"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Chrysoberyl",
+        "colors" : ["transparent yellow-green" , "pale green"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Coral",
+        "colors" : ["opaque crimson"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Garnet",
+        "colors" : ["transparent red", "transparent brown-green", "transparent violet"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Jade",
+        "colors" : ["translucent light green", "translucent deep green", "translucent white"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Jet",
+        "colors" : ["opaque deep black"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Pearl",
+        "colors" : ["opaque lustrous white", "opaque lustrous yellow", "opaque lustrous pink"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Spinel",
+        "colors" : ["transparent red", "transparent red-brown", "transparent deep-green"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Tourmaline",
+        "colors" : ["transparent pale green", "transparent pale blue", "transparent pale brown", "transparent pale red"],
+        "cost" : "100 gp"
+    },
+    {
+        "name" : "Alexandrite",
+        "colors" : ["transparent dark green"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Aquamarine",
+        "colors" : ["transparent pale blue-green"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Black Pearl",
+        "colors" : ["opaque pure black"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Blue Spinel",
+        "colors" : ["transparent deep-blue"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Peridot",
+        "colors" : ["transparent rich olive green"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Topaz",
+        "colors" : ["transparent golden yellow"],
+        "cost" : "500 gp"
+    },
+    {
+        "name" : "Black Opal",
+        "colors" : ["translucent dark green with black mottling and golden flecks"],
+        "cost" : "1000 gp"
+    },
+    {
+        "name" : "Blue Sapphire",
+        "colors" : ["transparent blue-white", "medium blue"],
+        "cost" : "1000 gp"
+    },
+    {
+        "name" : "Emerald",
+        "colors" : ["transparent deep bright green"],
+        "cost" : "1000 gp"
+    },
+    {
+        "name" : "Fire Opal",
+        "colors" : ["translucent fiery red"],
+        "cost" : "1000 gp"
+    },
+    {
+        "name" : "Opal",
+        "colors" : ["translucent pale blue with green and golden mottling"],
+        "cost" : "1000 gp"
+    },
+    {
+        "name" : "Star Ruby",
+        "colors" : ["translucent ruby with white star-shaped center"],
+        "cost" : "1000 gp"
+    },
+    {
+        "name" : "Star Sapphire",
+        "colors" : ["translucent blue with white star-shaped center"],
+        "cost" : "1000 gp"
+    },
+    {
+        "name" : "Yellow Sapphire",
+        "colors" : ["transparent fiery yellow" , "transparent fiery yellow-green"],
+        "cost" : "1000 gp"
+    },
+    {
+        "name" : "Black Sapphire",
+        "colors" : ["translucent lustrous black with glowing highlights"],
+        "cost" : "5000 gp"
+    },
+    {
+        "name" : "Diamond",
+        "colors" : ["transparent blue-white", "transparent canary", "transparent pink", "transparent brown", "transparent blue"],
+        "cost" : "5000 gp"
+    },
+    {
+        "name" : "Jacinth",
+        "colors" : ["transparent fiery orange"],
+        "cost" : "5000 gp"
+    },
+    {
+        "name" : "Ruby",
+        "colors" : ["transparent clear", "deep-crimson"],
+        "cost" : "5000 gp"
+    }
+]

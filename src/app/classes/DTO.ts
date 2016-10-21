@@ -1,5 +1,22 @@
 
 
+export class ArtObject {
+    public name : string;
+    public cost : string;
+
+    public toString() : string {
+        return this.name + " (" + this.cost + ")";
+    }
+
+    public fill(json) : ArtObject {
+        //this.name = json.name.charAt(0).toUpperCase() + json.name.slice(1).toLowerCase();
+        this.name = json.name;
+        this.cost = json.cost;
+        return this;
+    }
+
+}
+
 export class Coins {
     public gp : number = 0;
     public sp : number = 0;
@@ -98,4 +115,93 @@ export class Coins {
         }
         return parsed;
     }
+}
+
+
+export class Gem {
+    public name : string;
+    public color : string;
+    public cost : string;
+
+    public toString() : string {
+        return this.name + " (" + this.color + ", " + this.cost + ")";
+    }
+
+    public fill(json) : Gem {
+        this.name = json.name.charAt(0).toUpperCase() + json.name.slice(1).toLowerCase();
+        this.color = json.colors[Math.floor(Math.random() * json.colors.length)]; // random color, only used for loot anyways
+        this.cost = json.cost;
+        return this;
+    }
+}
+
+export class Rolls {
+    public rolls : Roll[];
+
+    public rolled(roll:Roll) {
+        this.rolls.push(roll);
+    }
+
+    public getLatestRoll() : Roll {
+        return this.rolls[this.rolls.length];
+    }
+}
+
+export class Roll {
+    public description : string;
+    public result : number;
+}
+
+
+export class Spell {
+    public name : string;
+    public id : number;
+    public level : number;
+    public source : string;
+    public castingTime : string;
+    public range: string;
+    public components : string;
+    public duration : string;
+    public description : string;
+    public school : string;
+
+    public fill(json) : Spell {
+        this.name = json.name;
+        this.id = json.id;
+        this.level = json.level;
+        this.source = json.source;
+        this.castingTime = json.casting_time;
+        this.range = json.range;
+        this.components = json.components;
+        this.duration = json.duration;
+        this.description = json.description;
+        this.school = json.school;
+        return this;
+    }
+}
+
+export class Item {
+    public id : string;
+    public name : string;
+    public cost : Coins;
+}
+
+
+export class MagicItem {
+    public name : string;
+    public rarity : string;
+    public creator : string;
+    public creatorDescription : string;
+    public history : string;
+    public historyDescription : string;
+    public property : string;
+    public propertyDescription : string;
+    public quirk : string;
+    public quirkDescription : string;
+}
+
+
+export class ShopItem extends Item {
+    public amount : number;
+    //public restock : clock.Clock;
 }

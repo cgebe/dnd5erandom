@@ -53,10 +53,10 @@
       "name": "Vial",
       "cost": "1 gp",
       "weight": "—"
-  },
-  {
-    "name": "Alchemist’s supplies",
-    "cost": "50 gp",
-    "weight": "8 lb."
-  },
+    },
+    {
+      "name": "Alchemist’s supplies",
+      "cost": "50 gp",
+      "weight": "8 lb."
+    }
 ]
