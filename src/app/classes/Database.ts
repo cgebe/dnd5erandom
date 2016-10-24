@@ -151,10 +151,10 @@ export class MagicItemDatabase {
             let s : string = mi.name.match(/\((.*?)\)/)[0];
             if (s) {
                 if (s.match(/cantrip/i)) {
-                    mi.name = this.replaceSpellName(SpellDatabase.getInstance().getRandomSpellByLevel(0).name);
+                    mi.name = mi.name.replace(/\((.*?)\)/, "(" + SpellDatabase.getInstance().getRandomSpellByLevel(0).name + ")");
                 } else {
                     s = s.replace(/[^0-9]+/g, "");
-                    mi.name = this.replaceSpellName(SpellDatabase.getInstance().getRandomSpellByLevel(parseInt(s)).name);
+                    mi.name = mi.name.replace(/\((.*?)\)/, "(" + SpellDatabase.getInstance().getRandomSpellByLevel(parseInt(s)).name + ")");
                 }
             }
         }
@@ -169,10 +169,6 @@ export class MagicItemDatabase {
 
     private getRandomItem(json) : string {
         return json[Math.floor(Math.random() * json.length)].name.toLowerCase();
-    }
-
-    private replaceSpellName(name : string) : string {
-        return name.replace(/\((.*?)\)/, "(" + name + ")");
     }
 
 }
