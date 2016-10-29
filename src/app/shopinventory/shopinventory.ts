@@ -12,7 +12,7 @@ import random = require("../classes/Random");
 })
 export class ShopInventory {
 
-    slots = 4 + random.Random.rolld4();
+    slots = 10;
 
     shopkeeperTypes = 'Alchemist\'s Workshop_Blackmarket_Magic Academy_Miner\'s Exchange_Tackle Shop_Temple_Trading Post_Weapons & Armor'.split('_');
     selectedShopkeeperType = "Alchemist's Workshop";
@@ -29,6 +29,7 @@ export class ShopInventory {
     onChangeShopkeeperType(newValue:string) {
         console.log(newValue);
         this.selectedShopkeeperType = newValue;
+        this.inventory = [];
         this.supplies = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
     }
 
@@ -142,6 +143,7 @@ export class ShopInventory {
            this.inventory.splice(index1, 1);
         }
         item.amount = 0;
+        this.supplies.push(item);
 
         // choose random new item
         let index2 = Math.floor(Math.random() * this.supplies.length);

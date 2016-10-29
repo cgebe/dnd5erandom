@@ -1,7 +1,6 @@
 import {Routes} from '@angular/router';
 import {Home} from './home/home';
-import {ShopInventory} from './shopinventory/shopinventory';
-import {Treasure} from './treasure/treasure';
+import {Random} from './random/random';
 import {RepoBrowser} from './github/repo-browser/repo-browser';
 import {RepoList} from './github/repo-list/repo-list';
 import {RepoDetail} from './github/repo-detail/repo-detail';
@@ -9,8 +8,7 @@ import {RepoDetail} from './github/repo-detail/repo-detail';
 export const rootRouterConfig: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: Home},
-  {path: 'shopinventory', component: ShopInventory},
-  {path: 'treasure', component: Treasure},
+  {path: 'random', component: Random},
   {path: 'github', component: RepoBrowser,
     children: [
       {path: '', component: RepoList},

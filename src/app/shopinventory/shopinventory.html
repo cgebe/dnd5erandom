@@ -1,65 +1,60 @@
-<h3>Shopkeeper Inventory Generator</h3>
+<div class="row">
+    <label class="bold">Slots:</label>
+    <input type="number" [(ngModel)]='slots' min=0 max=100 step=1/>
 
-<div class="container-fluid">
-    <div class="row">
-        <label class="bold">Slots:</label>
-        <input type="number" [(ngModel)]='slots' min=0 max=100 step=1/>
+    <label class="bold">Type:</label>
+    <select (change)="onChangeShopkeeperType($event.target.value)">
+        <option *ngFor="let i of shopkeeperTypes">{{i}}</option>
+    </select>
 
-        <label class="bold">Shopkeeper Type:</label>
-        <select (change)="onChangeShopkeeperType($event.target.value)">
-            <option *ngFor="let i of shopkeeperTypes">{{i}}</option>
-        </select>
+<!--
+    <label>Magic Items?</label>
+    <input #magicitemscb type="checkbox" (change)="magicitemsEnabled = magicitemscb.checked" />
+-->
 
-        <label>Magic Items?</label>
-        <input #magicitemscb type="checkbox" (change)="magicitemsEnabled = magicitemscb.checked" />
-
-        <button class="btn btn-primary" (click)="generateShopInventory()">Generate Shop Inventory</button>
-        <button class="btn btn-primary" (click)="newGoods()">New Goods!</button>
-    </div>
+    <button class="btn btn-primary" (click)="generateShopInventory()"><i class="fa fa-refresh"></i></button>
+    <button class="btn btn-primary" (click)="newGoods()"><i class="fa fa-plus"></i></button>
 </div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-2 col-md-2"></div>
-        <div class="col-xs-6 col-md-4">
-            <label>Inventory</label>
-            <table *ngIf="inventory.length > 0">
-                <tr>
-                    <td width="50%">Name</td>
-                    <td width="17%">Cost</td>
-                    <td width="33%">Amount</td>
-                </tr>
-            </table>
-            <div class="table-container">
-                <table>
-                    <tr *ngFor="let item of inventory">
-                        <td width="50%">{{item.name}}</td>
-                        <td width="20%">{{item.cost}}</td>
-                        <td width="10%">{{item.amount}}</td>
-                        <td width="5%"><a class="a-btn" (click)="incrementItemAmount(item)"><i class="fa fa-chevron-up"></i></a></td>
-                        <td width="5%"><a class="a-btn" (click)="decrementItemAmount(item)"><i class="fa fa-chevron-down"></i></a></td>
-                        <td width="5%"><a class="a-btn" (click)="exchangeItem(item)"><i class="fa fa-refresh"></i></a></td>
-                        <td width="5%"><a class="a-btn" (click)="removeItem(item)"><i class="fa fa-arrow-right"></i></a></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <label>Supply</label>
-            <table *ngIf="supplies.length > 0">
-                <tr>
-                    <td width="100%">Name</td>
-                </tr>
-            </table>
-            <div class="table-container">
-                <table>
-                    <tr *ngFor="let item of supplies">
-                        <td width="90%">{{item.name}}</td>
-                        <td width="10%"><a class="a-btn" (click)="addItem(item)"><i class="fa fa-arrow-left"></i></a></td>
-                    </tr>
-                </table>
-            </div>
 
+
+<div class="row">
+    <div class="col-md-6">
+        <label>Inventory</label>
+        <table *ngIf="inventory.length > 0">
+            <tr>
+                <td width="50%"><label>Name</label></td>
+                <td width="17%"><label>Cost</label></td>
+                <td width="33%"><label>Amount</label></td>
+            </tr>
+        </table>
+        <div class="table-container">
+            <table>
+                <tr *ngFor="let item of inventory">
+                    <td width="50%">{{item.name}}</td>
+                    <td width="20%">{{item.cost}}</td>
+                    <td width="10%">{{item.amount}}</td>
+                    <td width="5%"><a class="a-btn" (click)="incrementItemAmount(item)"><i class="fa fa-chevron-up"></i></a></td>
+                    <td width="5%"><a class="a-btn" (click)="decrementItemAmount(item)"><i class="fa fa-chevron-down"></i></a></td>
+                    <td width="5%"><a class="a-btn" (click)="exchangeItem(item)"><i class="fa fa-refresh"></i></a></td>
+                    <td width="5%"><a class="a-btn" (click)="removeItem(item)"><i class="fa fa-arrow-right"></i></a></td>
+                </tr>
+            </table>
         </div>
     </div>
-    <div class="col-xs-2 col-md-2"></div>
+    <div class="col-md-6">
+        <label>Supply</label>
+        <table *ngIf="supplies.length > 0">
+            <tr>
+                <td width="100%"><label>Name</label></td>
+            </tr>
+        </table>
+        <div class="table-container">
+            <table>
+                <tr *ngFor="let item of supplies">
+                    <td width="97%">{{item.name}}</td>
+                    <td width="3%"><a class="a-btn" (click)="addItem(item)"><i class="fa fa-arrow-left"></i></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>

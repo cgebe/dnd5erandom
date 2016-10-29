@@ -8,6 +8,7 @@ import {HttpModule} from "@angular/http";
 import {About} from './about/about';
 import {Home} from './home/home';
 import {Treasure} from './treasure/treasure';
+import {Random} from './random/random';
 import {ShopInventory} from './shopinventory/shopinventory';
 import {NPC} from './npc/npc';
 import {RepoBrowser} from './github/repo-browser/repo-browser';
@@ -18,7 +19,7 @@ import {Ng2BootstrapModule} from 'ng2-bootstrap/ng2-bootstrap';
 import {AppComponent}  from './app.component';
 
 @NgModule({
-  declarations: [AppComponent, RepoBrowser, RepoList, RepoDetail, Home, ShopInventory, Treasure, NPC],
+  declarations: [AppComponent, RepoBrowser, RepoList, RepoDetail, Home, ShopInventory, Random, Treasure, NPC],
   imports     : [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(rootRouterConfig)],
   providers   : [Github, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap   : [AppComponent]

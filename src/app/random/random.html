@@ -1,0 +1,26 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 npc-component random-component-container" *ngFor="let npc of npccomponents">
+            <div class="random-component">
+                <npc></npc>
+            </div>
+        </div>
+        <div class="col-md-3 npc-component">
+            <button class="btn btn-primary npc-component-add" (click)="addNPCComponent()"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 random-component-container">
+            <div class="random-component">
+                <shopinventory></shopinventory>
+            </div>
+        </div>
+        <div class="col-md-4 random-component-container">
+            <div class="random-component">
+                <treasure></treasure>
+            </div>
+        </div>
+    </div>
+</div>

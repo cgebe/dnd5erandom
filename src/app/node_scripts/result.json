@@ -1,542 +1,242 @@
 [
 	{
-		"name": "Acele"
+		"name": "Silver Ewer",
+		"cost": "25 gp",
+		"id": 1
 	},
 	{
-		"name": "Acholate"
+		"name": "Carved Bone Statuette",
+		"cost": "25 gp",
+		"id": 2
 	},
 	{
-		"name": "Ada"
+		"name": "Small Gold Bracelet",
+		"cost": "25 gp",
+		"id": 3
 	},
 	{
-		"name": "Adiannon"
+		"name": "Cloth-of-gold Vestments",
+		"cost": "25 gp",
+		"id": 4
 	},
 	{
-		"name": "Adorra"
+		"name": "Black Velvet Mask stitched with Silver Thread",
+		"cost": "25 gp",
+		"id": 5
 	},
 	{
-		"name": "Ahanna"
+		"name": "Copper Chalice with Silver filigree",
+		"cost": "25 gp",
+		"id": 6
 	},
 	{
-		"name": "Akara"
+		"name": "Pair of Engraved Bone Dice",
+		"cost": "25 gp",
+		"id": 7
 	},
 	{
-		"name": "Akassa"
+		"name": "Small Mirror Set in a Painted Wooden Frame",
+		"cost": "25 gp",
+		"id": 8
 	},
 	{
-		"name": "Akia"
+		"name": "Embroidered Silk Handkerchief",
+		"cost": "25 gp",
+		"id": 9
 	},
 	{
-		"name": "Amaerilde"
+		"name": "Gold Locket with a Painted Portrait Inside",
+		"cost": "25 gp",
+		"id": 10
 	},
 	{
-		"name": "Amara"
+		"name": "Gold Ring Set with Bloodstones",
+		"cost": "250 gp",
+		"id": 11
 	},
 	{
-		"name": "Amarisa"
+		"name": "Carved Ivory Statuette",
+		"cost": "250 gp",
+		"id": 12
 	},
 	{
-		"name": "Amarizi"
+		"name": "Large Gold Bracelet",
+		"cost": "250 gp",
+		"id": 13
 	},
 	{
-		"name": "Ana"
+		"name": "Silver Necklace with a Gemstone Pendant",
+		"cost": "250 gp",
+		"id": 14
 	},
 	{
-		"name": "Andonna"
+		"name": "Bronze Crown",
+		"cost": "250 gp",
+		"id": 15
 	},
 	{
-		"name": "Ani"
+		"name": "Silk, Robe with Gold Embroidery",
+		"cost": "250 gp",
+		"id": 16
 	},
 	{
-		"name": "Annalyn"
+		"name": "Large Well-Made Tapestry",
+		"cost": "250 gp",
+		"id": 17
 	},
 	{
-		"name": "Archane"
+		"name": "Brass Mug with Jade Inlay",
+		"cost": "250 gp",
+		"id": 18
 	},
 	{
-		"name": "Ariannona"
+		"name": "Box of Turquoise Animal Figurines",
+		"cost": "250 gp",
+		"id": 19
 	},
 	{
-		"name": "Arina"
+		"name": "Gold Bird Cage with Electrum filigree",
+		"cost": "250 gp",
+		"id": 20
 	},
 	{
-		"name": "Arryn"
+		"name": "Silver Chalice Set with Moonstones",
+		"cost": "750 gp",
+		"id": 21
 	},
 	{
-		"name": "Asada"
+		"name": "Silver-Plated Steel Longsword with Jet Set in Hilt",
+		"cost": "750 gp",
+		"id": 22
 	},
 	{
-		"name": "Awnia"
+		"name": "Carved Harp of Exotic Wood with Ivory Inlay and Zircon Gems",
+		"cost": "750 gp",
+		"id": 23
 	},
 	{
-		"name": "Ayne"
+		"name": "Small Gold Idol",
+		"cost": "750 gp",
+		"id": 24
 	},
 	{
-		"name": "Basete"
+		"name": "Gold Dragon Comb Set with Red Garnets as Eyes",
+		"cost": "750 gp",
+		"id": 25
 	},
 	{
-		"name": "Bathelie"
+		"name": "Bottle Stopper Cork Embossed with Gold Leaf and Set with Ametysts",
+		"cost": "750 gp",
+		"id": 26
 	},
 	{
-		"name": "Bethe"
+		"name": "Ceremonial Electrum Dagger with a Black Pearl in the Pommel",
+		"cost": "750 gp",
+		"id": 27
 	},
 	{
-		"name": "Brana"
+		"name": "Silver and Gold Brooch",
+		"cost": "750 gp",
+		"id": 28
 	},
 	{
-		"name": "Brianan"
+		"name": "Obsidian statuette with Gold Fittings and Inlay",
+		"cost": "750 gp",
+		"id": 29
 	},
 	{
-		"name": "Bridonna"
+		"name": "Painted Gold War Mask",
+		"cost": "750 gp",
+		"id": 30
 	},
 	{
-		"name": "Brynhilde"
+		"name": "Fine Gold Chain Set with a Fire Opal",
+		"cost": "2500 gp",
+		"id": 31
 	},
 	{
-		"name": "Calene"
+		"name": "Old Masterpiece Painting",
+		"cost": "2500 gp",
+		"id": 32
 	},
 	{
-		"name": "Calina"
+		"name": "Embroidered Silk and Velvet Mantle Set with Numerous Moonstones",
+		"cost": "2500 gp",
+		"id": 33
 	},
 	{
-		"name": "Celestine"
+		"name": "Platinum bracelet Set with a Sapphire",
+		"cost": "2500 gp",
+		"id": 34
 	},
 	{
-		"name": "Celoa"
+		"name": "Embroidered Glove Set with Jewel Chips",
+		"cost": "2500 gp",
+		"id": 35
 	},
 	{
-		"name": "Cephenrene"
+		"name": "Jeweled Anklet",
+		"cost": "2500 gp",
+		"id": 36
 	},
 	{
-		"name": "Chani"
+		"name": "Gold Music Box",
+		"cost": "2500 gp",
+		"id": 37
 	},
 	{
-		"name": "Chivahle"
+		"name": "Gold Circlet Set with Four Aquamarines",
+		"cost": "2500 gp",
+		"id": 38
 	},
 	{
-		"name": "Chrystyne"
+		"name": "Eye Patch with a Mock Eye Set in Blue Sapphire and Moonstone",
+		"cost": "2500 gp",
+		"id": 39
 	},
 	{
-		"name": "Corda"
+		"name": "A Necklace String of Small Pink Pearls",
+		"cost": "2500 gp",
+		"id": 40
 	},
 	{
-		"name": "Cyelena"
+		"name": "Jeweled Gold Crown",
+		"cost": "7500 gp",
+		"id": 41
 	},
 	{
-		"name": "Dalavesta"
+		"name": "Jeweled Platinum Ring",
+		"cost": "7500 gp",
+		"id": 42
 	},
 	{
-		"name": "Desini"
+		"name": "Small Gold Statuette",
+		"cost": "7500 gp",
+		"id": 43
 	},
 	{
-		"name": "Dylena"
+		"name": "Gold Cup Set with Emeralds",
+		"cost": "7500 gp",
+		"id": 44
 	},
 	{
-		"name": "Ebatryne"
+		"name": "Gold Jewelry Box with Platiunum Filigree",
+		"cost": "7500 gp",
+		"id": 45
 	},
 	{
-		"name": "Ecematare"
+		"name": "Painted Gold Child's Sarcophagus",
+		"cost": "7500 gp",
+		"id": 46
 	},
 	{
-		"name": "Efari"
+		"name": "Jade Game Board with Solid Gold Playing Pieces",
+		"cost": "7500 gp",
+		"id": 47
 	},
 	{
-		"name": "Enaldie"
-	},
-	{
-		"name": "Enoka"
-	},
-	{
-		"name": "Enoona"
-	},
-	{
-		"name": "Errinaya"
-	},
-	{
-		"name": "Fayne"
-	},
-	{
-		"name": "Frederika"
-	},
-	{
-		"name": "Frida"
-	},
-	{
-		"name": "Gene"
-	},
-	{
-		"name": "Gessane"
-	},
-	{
-		"name": "Gronalyn"
-	},
-	{
-		"name": "Gvene"
-	},
-	{
-		"name": "Gwethana"
-	},
-	{
-		"name": "Halete"
-	},
-	{
-		"name": "Helenia"
-	},
-	{
-		"name": "Hildandi"
-	},
-	{
-		"name": "Hyza"
-	},
-	{
-		"name": "Idona"
-	},
-	{
-		"name": "Ikini"
-	},
-	{
-		"name": "Ilene"
-	},
-	{
-		"name": "Illia"
-	},
-	{
-		"name": "Iona"
-	},
-	{
-		"name": "Jessika"
-	},
-	{
-		"name": "Jezzine"
-	},
-	{
-		"name": "Justalyne"
-	},
-	{
-		"name": "Kassina"
-	},
-	{
-		"name": "Kilayox"
-	},
-	{
-		"name": "Kilia"
-	},
-	{
-		"name": "Kilyne"
-	},
-	{
-		"name": "Kressara"
-	},
-	{
-		"name": "Laela"
-	},
-	{
-		"name": "Laenaya"
-	},
-	{
-		"name": "Lelani"
-	},
-	{
-		"name": "Lenala"
-	},
-	{
-		"name": "Linovahle"
-	},
-	{
-		"name": "Linyah"
-	},
-	{
-		"name": "Lloyanda"
-	},
-	{
-		"name": "Lolinda"
-	},
-	{
-		"name": "Lyna"
-	},
-	{
-		"name": "Lynessa"
-	},
-	{
-		"name": "Mehande"
-	},
-	{
-		"name": "Melisande"
-	},
-	{
-		"name": "Midiga"
-	},
-	{
-		"name": "Mirayam"
-	},
-	{
-		"name": "Mylene"
-	},
-	{
-		"name": "Nachaloa"
-	},
-	{
-		"name": "Naria"
-	},
-	{
-		"name": "Narisa"
-	},
-	{
-		"name": "Nelenna"
-	},
-	{
-		"name": "Niraya"
-	},
-	{
-		"name": "Nymira"
-	},
-	{
-		"name": "Ochala"
-	},
-	{
-		"name": "Olivia"
-	},
-	{
-		"name": "Onathe"
-	},
-	{
-		"name": "Ondola"
-	},
-	{
-		"name": "Orwyne"
-	},
-	{
-		"name": "Parthinia"
-	},
-	{
-		"name": "Pascheine"
-	},
-	{
-		"name": "Pela"
-	},
-	{
-		"name": "Peri’el"
-	},
-	{
-		"name": "Pharysene"
-	},
-	{
-		"name": "Philadona"
-	},
-	{
-		"name": "Prisane"
-	},
-	{
-		"name": "Prysala"
-	},
-	{
-		"name": "Pythe"
-	},
-	{
-		"name": "Q’ara"
-	},
-	{
-		"name": "Q’pala"
-	},
-	{
-		"name": "Quasee"
-	},
-	{
-		"name": "Rhyanon"
-	},
-	{
-		"name": "Rivatha"
-	},
-	{
-		"name": "Ryiah"
-	},
-	{
-		"name": "Sanala"
-	},
-	{
-		"name": "Sathe"
-	},
-	{
-		"name": "Senira"
-	},
-	{
-		"name": "Sennetta"
-	},
-	{
-		"name": "Sepherene"
-	},
-	{
-		"name": "Serane"
-	},
-	{
-		"name": "Sevestra"
-	},
-	{
-		"name": "Sidara"
-	},
-	{
-		"name": "Sidathe"
-	},
-	{
-		"name": "Sina"
-	},
-	{
-		"name": "Sunete"
-	},
-	{
-		"name": "Synestra"
-	},
-	{
-		"name": "Sythini"
-	},
-	{
-		"name": "Szene"
-	},
-	{
-		"name": "Tabika"
-	},
-	{
-		"name": "Tabithi"
-	},
-	{
-		"name": "Tajule"
-	},
-	{
-		"name": "Tamare"
-	},
-	{
-		"name": "Teresse"
-	},
-	{
-		"name": "Tolida"
-	},
-	{
-		"name": "Tonica"
-	},
-	{
-		"name": "Treka"
-	},
-	{
-		"name": "Tressa"
-	},
-	{
-		"name": "Trinsa"
-	},
-	{
-		"name": "Tryane"
-	},
-	{
-		"name": "Tybressa"
-	},
-	{
-		"name": "Tycane"
-	},
-	{
-		"name": "Tysinni"
-	},
-	{
-		"name": "Undaria"
-	},
-	{
-		"name": "Uneste"
-	},
-	{
-		"name": "Urda"
-	},
-	{
-		"name": "Usara"
-	},
-	{
-		"name": "Useli"
-	},
-	{
-		"name": "Ussesa"
-	},
-	{
-		"name": "Venessa"
-	},
-	{
-		"name": "Veseere"
-	},
-	{
-		"name": "Voladea"
-	},
-	{
-		"name": "Vysarane"
-	},
-	{
-		"name": "Vythica"
-	},
-	{
-		"name": "Wanera"
-	},
-	{
-		"name": "Welisarne"
-	},
-	{
-		"name": "Wellisa"
-	},
-	{
-		"name": "Wesolyne"
-	},
-	{
-		"name": "Wyeta"
-	},
-	{
-		"name": "Yilvoxe"
-	},
-	{
-		"name": "Ysane"
-	},
-	{
-		"name": "Yve"
-	},
-	{
-		"name": "Yviene"
-	},
-	{
-		"name": "Yvonnette"
-	},
-	{
-		"name": "Yysara"
-	},
-	{
-		"name": "Zana"
-	},
-	{
-		"name": "Zathe"
-	},
-	{
-		"name": "Zecele"
-	},
-	{
-		"name": "Zenobia"
-	},
-	{
-		"name": "Zephale"
-	},
-	{
-		"name": "Zephere"
-	},
-	{
-		"name": "Zerma"
-	},
-	{
-		"name": "Zestia"
-	},
-	{
-		"name": "Zilka"
-	},
-	{
-		"name": "Zoura"
-	},
-	{
-		"name": "Zrye"
-	},
-	{
-		"name": "Zyneste"
-	},
-	{
-		"name": "Zynoa"
+		"name": "Bejeweled Ivory Drinking Horn with Gold Filigree",
+		"cost": "7500 gp",
+		"id": 48
 	}
 ]

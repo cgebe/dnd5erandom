@@ -1,96 +1,33 @@
-<h3>Treasure Generator</h3>
-
-<div class="container-fluid">
-    <div class="row">
-        <label>Challenge Rating: </label>
-        <select (change)="onChangeChallengeRating($event.target.value)">
-            <option *ngFor="let i of challengeRatings">{{i}}</option>
-        </select>
-
-        <label>Treasure Type: </label>
-        <select (change)="onChangeTreasureType($event.target.value)">
-            <option *ngFor="let i of treasureTypes">{{i}}</option>
-        </select>
-
-        <button class="btn btn-primary" (click)="generateTreasure()">Generate Treasure</button>
-    </div>
+<div class="row">
+    <button class="btn btn-primary" (click)="generateNPC()"><i class="fa fa-refresh"></i></button>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4" style="text-align:left">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <label>Coins</label>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngIf="coinReward != null">
-                        <td width="100%">{{coinReward}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <label>Gems</label>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let gem of gemReward">
-                        <td width="85%">{{gem.name}} ({{gem.color}})</td>
-                        <td width="15%">{{gem.cost}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <label>Art Objects</label>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let art of artReward">
-                        <td width="85%">{{art.name}}</td>
-                        <td width="15%">{{art.cost}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <label>Magic Items</label>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of itemReward">
-                        <td width="85%">{{item.name}}</td>
-                        <td width="15%">{{item.rarity}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
 
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <tbody>
+                <tr>
+                    <td width="20%"><label>Name:</label></td>
+                    <td width="80%">{{npc.name}}</td>
+                </tr>
+                <tr>
+                    <td width="20%"><label>Character:</label></td>
+                    <td width="80%">{{npc.character}}</td>
+                </tr>
+                <tr>
+                    <td width="20%"><label>Ideal:</label></td>
+                    <td width="80%">{{npc.ideal}}</td>
+                </tr>
+                <tr>
+                    <td width="20%"><label>Bond:</label></td>
+                    <td width="80%">{{npc.bond}}</td>
+                </tr>
+                <tr>
+                    <td width="20%"><label>Flaw:</label></td>
+                    <td width="80%">{{npc.flaw}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

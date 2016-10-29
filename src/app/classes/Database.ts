@@ -82,12 +82,6 @@ export class MagicItemDatabase {
         } else {
             mi = this.searchMagicItemFromEnd(this.magicItemsByTables[table], d100);
         }
-        if (mi.rarity == "very rare" || mi.rarity == "legendary") {
-            //mi.creator = this.getRandomMagicItemCreator();
-            //mi.history = this.getRandomMagicItemHistory();
-            //mi.property = this.getRandomMagicItemProperty();
-            //mi.quirk = this.getRandomMagicItemQuirk();
-        }
         return mi;
     }
 

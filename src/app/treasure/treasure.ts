@@ -42,8 +42,8 @@ export class Treasure {
         if (this.selectedTreasureType == "Hoard") {
             let d100 = random.Random.rolld100();
             this.coinReward = this.generateHoardCoins(this.selectedChallengeRating).toString();
-            this.gemReward = this.generateGems(this.selectedChallengeRating, d100);
-            this.artReward = this.generateArtObjects(this.selectedChallengeRating, d100);
+            this.gemReward = <dto.Gem[]> this.mergeDuplicates(this.generateGems(this.selectedChallengeRating, d100));
+            this.artReward = <dto.ArtObject[]> this.mergeDuplicates(this.generateArtObjects(this.selectedChallengeRating, d100));
             this.itemReward = this.generateMagicItems(this.selectedChallengeRating, d100);
         }
     }
@@ -499,5 +499,26 @@ export class Treasure {
         return [];
     }
 
+    private mergeDuplicates(items : dto.Item[]) : dto.Item[] {
+        let merged : dto.Item[] = [];
+        let counted : number[] = [];
+        let amount : number;
+        for (let i = 0; i < items.length; i++) {
+            amount = 1;
+            for (let j = i + 1; j < items.length; j++) {
+                if (counted.indexOf(i) < 0 && items[i].id == items[j].id) {
+                    amount++;
+                    counted.push(j);
+                }
+            }
+            if (amount > 1) {
+                items[i].name = amount + "x " + items[i].name;
+            }
+            if (counted.indexOf(i) < 0) {
+                merged.push(items[i]);
+            }
+        }
+        return merged;
+    }
 
 }

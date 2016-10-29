@@ -1,7 +1,20 @@
-
-
-export class ArtObject {
+export class NPC {
     public name : string;
+    public character : string;
+    public ideal : string;
+    public bond : string;
+    public flaw : string;
+
+    public sex : string;
+    
+}
+
+export class Item {
+    public id : string;
+    public name : string;
+}
+
+export class ArtObject extends Item {
     public cost : string;
 
     public toString() : string {
@@ -9,12 +22,51 @@ export class ArtObject {
     }
 
     public fill(json) : ArtObject {
-        //this.name = json.name.charAt(0).toUpperCase() + json.name.slice(1).toLowerCase();
+        this.id = json.id;
         this.name = json.name;
         this.cost = json.cost;
         return this;
     }
 
+}
+
+export class Gem extends Item {
+    public color : string;
+    public cost : string;
+
+    public toString() : string {
+        return this.name + " (" + this.color + ", " + this.cost + ")";
+    }
+
+    public fill(json) : Gem {
+        this.id = json.id;
+        this.name = json.name.charAt(0).toUpperCase() + json.name.slice(1).toLowerCase();
+        this.color = json.colors[Math.floor(Math.random() * json.colors.length)]; // random color, only used for loot anyways
+        this.cost = json.cost;
+        return this;
+    }
+}
+
+
+
+export class MagicItem {
+    public name : string;
+    public rarity : string;
+    public creator : string;
+    public creatorDescription : string;
+    public history : string;
+    public historyDescription : string;
+    public property : string;
+    public propertyDescription : string;
+    public quirk : string;
+    public quirkDescription : string;
+}
+
+
+export class ShopItem extends Item {
+    public amount : number;
+    public cost : Coins;
+    //public restock : clock.Clock;
 }
 
 export class Coins {
@@ -118,22 +170,6 @@ export class Coins {
 }
 
 
-export class Gem {
-    public name : string;
-    public color : string;
-    public cost : string;
-
-    public toString() : string {
-        return this.name + " (" + this.color + ", " + this.cost + ")";
-    }
-
-    public fill(json) : Gem {
-        this.name = json.name.charAt(0).toUpperCase() + json.name.slice(1).toLowerCase();
-        this.color = json.colors[Math.floor(Math.random() * json.colors.length)]; // random color, only used for loot anyways
-        this.cost = json.cost;
-        return this;
-    }
-}
 
 export class Rolls {
     public rolls : Roll[];
@@ -178,30 +214,4 @@ export class Spell {
         this.school = json.school;
         return this;
     }
-}
-
-export class Item {
-    public id : string;
-    public name : string;
-    public cost : Coins;
-}
-
-
-export class MagicItem {
-    public name : string;
-    public rarity : string;
-    public creator : string;
-    public creatorDescription : string;
-    public history : string;
-    public historyDescription : string;
-    public property : string;
-    public propertyDescription : string;
-    public quirk : string;
-    public quirkDescription : string;
-}
-
-
-export class ShopItem extends Item {
-    public amount : number;
-    //public restock : clock.Clock;
 }
