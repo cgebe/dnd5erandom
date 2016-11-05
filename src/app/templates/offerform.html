@@ -1,0 +1,11 @@
+
+<div class="col-md-12">
+    <h3>New Offer</h3>
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" [(ngModel)]="model.name">
+      </div>
+      <button type="submit"  (click)="addItem()" class="btn btn-default">Add</button>
+    </form>
+</div>

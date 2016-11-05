@@ -1,8 +1,6 @@
 import {Component} from '@angular/core';
 
-import database = require("../classes/Database");
-
-import npc = require("../npc/npc");
+import { NPCComponent } from '../components/npc';
 
 @Component({
   selector: 'random',
@@ -10,13 +8,13 @@ import npc = require("../npc/npc");
   templateUrl: './random.html'
 })
 export class Random {
-    npccomponents : npc.NPC[] = [];
+    npccomponents : NPCComponent[] = [];
 
     constructor() {
-        this.npccomponents.push(new npc.NPC());
+        this.npccomponents.push(new NPCComponent());
     }
 
     public addNPCComponent() {
-        this.npccomponents.push(new npc.NPC());
+        this.npccomponents.push(new NPCComponent());
     }
 }

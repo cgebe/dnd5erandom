@@ -1,0 +1,37 @@
+
+
+<div class="row">
+    <div class="col-md-3">
+            <bidder-form (onAddBidder) = "onAddBidder($event)"></bidder-form>
+    </div>
+    <div class="col-md-2">
+            <offer-form (onAddItem) = "onAddItem($event)"></offer-form>
+    </div>
+    <div class="col-md-7">
+        <label>Auction</label>
+        <div class="table-container">
+            <table class="table table-hover">
+                <tr>
+                    <td style="border:none;" *ngIf="bidders.length > 0" width="10%">
+                        Name
+                    </td>
+                    <td style="border:none;" *ngIf="bidders.length > 0" width="10%">
+                        Budget
+                    </td>
+                    <td style="border:none;" width="15%" *ngFor="let offer of offers; let i = index">
+                        {{i + 1}}. {{offer.name}}
+                    </td>
+                    <td style="border:none;">
+                    </td>
+                </tr>
+                <tr *ngFor="let bidder of bidders">
+                    <td>{{bidder.name}}</td>
+                    <td>{{bidder.budget}}</td>
+                    <td *ngFor="let offer of offers; let i = index">
+                        <input type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.bids[i]">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

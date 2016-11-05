@@ -1,6 +1,6 @@
 
 /*
-var items = require("json!../data/dto.json");
+var items = require("json!../data/json");
 var gear = require("json!../data/gear.json");
 var tools = require("json!../data/tools.json")
 var weapons = require("json!../data/weapons.json");
@@ -23,9 +23,9 @@ var ammunition = require("json!../data/loot/ammunition.json");
 var figurines = require("json!../data/loot/figurines.json");
 var magicarmors = require("json!../data/loot/magicarmors.json");
 
-import dto = require("./DTO");
-import random = require("./Random");
-import util = require("./Util");
+import { ArtObject, Gem, MagicItem, Spell } from  '../classes/DTO';
+import { Random } from './Random';
+import { capitalizeFirstLetter } from './Util';
 
 export class Database {
     private static instance:Database = new Database();
@@ -66,17 +66,17 @@ export class MagicItemDatabase {
         return MagicItemDatabase.instance;
     }
 
-    public getRandomMagicItemsByTable(count:number, table:string) : dto.MagicItem[] {
-        let mitems : dto.MagicItem[] = [];
+    public getRandomMagicItemsByTable(count:number, table:string) : MagicItem[] {
+        let mitems : MagicItem[] = [];
         for (let i = 0; i < count; i++) {
             mitems.push(this.getRandomMagicItemByTable(table));
         }
         return mitems;
     }
 
-    public getRandomMagicItemByTable(table:string) : dto.MagicItem {
-        let mi : dto.MagicItem;
-        let d100 = random.Random.rolld100();
+    public getRandomMagicItemByTable(table:string) : MagicItem {
+        let mi : MagicItem;
+        let d100 = Random.rolld100();
         if (d100 <= 70) { // heuristic for search optimization
             mi = this.searchMagicItemFromBeginning(this.magicItemsByTables[table], d100);
         } else {
@@ -85,7 +85,7 @@ export class MagicItemDatabase {
         return mi;
     }
 
-    private searchMagicItemFromBeginning(magicJson, d100:number) : dto.MagicItem {
+    private searchMagicItemFromBeginning(magicJson, d100:number) : MagicItem {
         for (let i = 0; i < magicJson.length; i++) {
             if (parseInt(magicJson[i].min) <= d100 && d100 <= parseInt(magicJson[i].max)) {
                 return this.determineFinalMagicItem(magicJson[i]);
@@ -93,7 +93,7 @@ export class MagicItemDatabase {
         }
     }
 
-    private searchMagicItemFromEnd(magicJson, d100:number) : dto.MagicItem {
+    private searchMagicItemFromEnd(magicJson, d100:number) : MagicItem {
         for (let i = magicJson.length - 1; i >= 0; i--) {
             if (parseInt(magicJson[i].min) <= d100 && d100 <= parseInt(magicJson[i].max)) {
                 return this.determineFinalMagicItem(magicJson[i]);
@@ -101,13 +101,13 @@ export class MagicItemDatabase {
         }
     }
 
-    private determineFinalMagicItem(magicItemJson) : dto.MagicItem {
-        let mi = new dto.MagicItem();
+    private determineFinalMagicItem(magicItemJson) : MagicItem {
+        let mi = new MagicItem();
         mi.name = magicItemJson.name;
         mi.rarity = magicItemJson.rarity;
 
         if (mi.name.match(/Figurine of wondrous power \(roll d8\)/i)) {
-            let d8 : number = random.Random.rolld8();
+            let d8 : number = Random.rolld8();
             if (figurines.length >= d8) {
                 mi.name = figurines[d8 - 1].name;
                 mi.rarity = figurines[d8 - 1].rarity;
@@ -115,7 +115,7 @@ export class MagicItemDatabase {
         }
 
         if (mi.name.match(/Magic armor \(roll d12\)/i)) {
-            let d12 : number = random.Random.rolld12();
+            let d12 : number = Random.rolld12();
             if (magicarmors.length >= d12) {
                 mi.name = magicarmors[d12 - 1].name;
                 mi.rarity = magicarmors[d12 - 1].rarity;
@@ -137,7 +137,7 @@ export class MagicItemDatabase {
             let s : string = mi.name.replace(/[^0-9]+/g, "");
             let lvl : number = parseInt(s);
             let count : number = 0;
-            count = random.Random.rollXdY(4 - lvl, 6); // +1 = 3d6, +2 = 2d6, +3 = 1d6
+            count = Random.rollXdY(4 - lvl, 6); // +1 = 3d6, +2 = 2d6, +3 = 1d6
             mi.name = mi.name.replace(/ammunition,/i, this.getRandomName(ammunition) + ",") + " (" + count + ")";
         }
 
@@ -152,8 +152,8 @@ export class MagicItemDatabase {
                 }
             }
         }
-        mi.name = util.capitalizeFirstLetter(mi.name);
-        mi.rarity = util.capitalizeFirstLetter(mi.rarity);
+        mi.name = capitalizeFirstLetter(mi.name);
+        mi.rarity = capitalizeFirstLetter(mi.rarity);
         return mi;
     }
 
@@ -189,8 +189,8 @@ export class SpellDatabase {
         return SpellDatabase.instance;
     }
 
-    public getRandomSpellByLevel(level:number) : dto.Spell {
-        return new dto.Spell().fill(spells_json[Math.floor(Math.random() * spells_json.length)])
+    public getRandomSpellByLevel(level:number) : Spell {
+        return new Spell().fill(spells_json[Math.floor(Math.random() * spells_json.length)])
     }
 
 }
@@ -217,16 +217,16 @@ export class GemDatabase {
         return GemDatabase.instance;
     }
 
-    public getRandomGemsByCost(count:number, cost:number) : dto.Gem[] {
-        let gems : dto.Gem[] = [];
+    public getRandomGemsByCost(count:number, cost:number) : Gem[] {
+        let gems : Gem[] = [];
         for (let i = 0; i < count; i++) {
             gems.push(this.getRandomGem(this.gemsByCost[cost]));
         }
         return gems;
     }
 
-    private getRandomGem(gemsJson) : dto.Gem {
-        return new dto.Gem().fill(gemsJson[Math.floor(Math.random() * gemsJson.length)]);
+    private getRandomGem(gemsJson) : Gem {
+        return new Gem().fill(gemsJson[Math.floor(Math.random() * gemsJson.length)]);
     }
 }
 
@@ -252,8 +252,8 @@ export class ArtObjectDatabase {
         return ArtObjectDatabase.instance;
     }
 
-    public getRandomArtObjectsByCost(count:number, cost:number) : dto.ArtObject[] {
-        let artobjects : dto.ArtObject[] = [];
+    public getRandomArtObjectsByCost(count:number, cost:number) : ArtObject[] {
+        let artobjects : ArtObject[] = [];
         for (let i = 0; i < count; i++) {
             artobjects.push(this.getRandomArtObject(this.artObjectsByCost[cost]));
         }
@@ -261,7 +261,7 @@ export class ArtObjectDatabase {
     }
 
     private getRandomArtObject(artobjectsJson) {
-        return new dto.ArtObject().fill(artobjectsJson[Math.floor(Math.random() * artobjectsJson.length)]);
+        return new ArtObject().fill(artobjectsJson[Math.floor(Math.random() * artobjectsJson.length)]);
     }
 
 }

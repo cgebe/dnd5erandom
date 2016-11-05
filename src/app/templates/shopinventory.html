@@ -1,9 +1,9 @@
 <div class="row">
     <label class="bold">Slots:</label>
-    <input type="number" [(ngModel)]='slots' min=0 max=100 step=1/>
+    <input style="display:inline-block; width:80px;" class="form-control" type="number" [(ngModel)]='slots' min=0 max=100 step=1/>
 
     <label class="bold">Type:</label>
-    <select (change)="onChangeShopkeeperType($event.target.value)">
+    <select style="display:inline-block; width:200px;" class="form-control" (change)="onChangeShopkeeperType($event.target.value)">
         <option *ngFor="let i of shopkeeperTypes">{{i}}</option>
     </select>
 

@@ -6,7 +6,7 @@ export class NPC {
     public flaw : string;
 
     public sex : string;
-    
+
 }
 
 export class Item {
@@ -94,7 +94,11 @@ export class Coins {
         this.pp = 0;
     }
 
-    inGold() {
+    isZero() : boolean {
+        return this.cp <= 0 && this.sp <= 0 && this.ep <= 0 && this.gp <= 0 && this.pp <= 0;
+    }
+
+    inGold() : number {
         let sps : number;
         let gps : number;
 
@@ -112,7 +116,7 @@ export class Coins {
         return gps;
     }
 
-    toString() {
+    toString() : string {
         let inWords : string = "";
         if (this.pp > 0) {
             inWords += " " + this.pp + " pp,";
@@ -130,6 +134,9 @@ export class Coins {
             inWords += " " + this.cp + " cp,";
         }
         inWords = inWords.substring(1, inWords.length - 1);
+        if (inWords.length <= 0) {
+            return "0";
+        }
         /*
         if (inWords.length > 0) {
             inWords += ".";
@@ -213,5 +220,22 @@ export class Spell {
         this.description = json.description;
         this.school = json.school;
         return this;
+    }
+}
+
+export class Bid {
+    public max : Coins;
+    public fails : number;
+    public current : Coins;
+}
+
+export class Bidder {
+    public name : string;
+    public budget : Coins;
+    public bids : Bid[];
+
+    constructor() {
+        this.budget = new Coins();
+        this.bids = [];
     }
 }

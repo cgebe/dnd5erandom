@@ -1,24 +1,23 @@
 import {Component} from '@angular/core';
 
-import database = require("../classes/ShopInventoryDB");
-import dispatcher = require("../classes/CEventDispatcher");
-import dto = require("../classes/DTO");
-import random = require("../classes/Random");
+import { ShopInventoryDB } from  '../classes/ShopInventoryDB';
+import { Item, ShopItem } from  '../classes/DTO';
+import { Random } from  '../classes/Random';
 
 @Component({
   selector: 'shopinventory',
-  styleUrls: ['../css/main.css', './shopinventory.css'],
-  templateUrl: './shopinventory.html'
+  styleUrls: ['../css/main.css', '../css/shopinventory.css'],
+  templateUrl: '../templates/shopinventory.html'
 })
-export class ShopInventory {
+export class ShopInventoryComponent {
 
     slots = 10;
 
     shopkeeperTypes = 'Alchemist\'s Workshop_Blackmarket_Magic Academy_Miner\'s Exchange_Tackle Shop_Temple_Trading Post_Weapons & Armor'.split('_');
     selectedShopkeeperType = "Alchemist's Workshop";
 
-    inventory : dto.ShopItem[] = [];
-    supplies : dto.ShopItem[] = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
+    inventory : ShopItem[] = [];
+    supplies : ShopItem[] = ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
 
     onChangeSlots(newValue) {
         console.log(newValue);
@@ -30,13 +29,13 @@ export class ShopInventory {
         console.log(newValue);
         this.selectedShopkeeperType = newValue;
         this.inventory = [];
-        this.supplies = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
+        this.supplies = ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
     }
 
     public generateShopInventory() {
         this.inventory = [];
         this.supplies = [];
-        let allShopItems = database.ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
+        let allShopItems = ShopInventoryDB.getInstance().getShopInventory(this.selectedShopkeeperType);
         this.pickItems(allShopItems, this.slots);
     }
 
@@ -45,7 +44,7 @@ export class ShopInventory {
             for (let i = 0; i < this.slots; i++) {
                 let index = Math.floor(Math.random() * this.supplies.length);
                 let randomItem = this.supplies[index];
-                let amount = random.Random.rolld4();
+                let amount = Random.rolld4();
 
                 if (index > -1) {
                    this.supplies.splice(index, 1);
@@ -57,7 +56,7 @@ export class ShopInventory {
             for (let i = 0; i < this.supplies.length; i++) {
                 let index = Math.floor(Math.random() * this.supplies.length);
                 let randomItem = this.supplies[index];
-                let amount = random.Random.rolld4();
+                let amount = Random.rolld4();
 
                 if (index > -1) {
                    this.supplies.splice(index, 1);
@@ -69,15 +68,15 @@ export class ShopInventory {
         this.sortSupply();
     }
 
-    private pickItems(shopItems:dto.ShopItem[], slots) {
-        let availableItems : dto.ShopItem[] = [];
+    private pickItems(shopItems:ShopItem[], slots) {
+        let availableItems : ShopItem[] = [];
         for (let i = 0; i < slots; i++) {
             let index = Math.floor(Math.random() * shopItems.length);
             let randomItem = shopItems[index];
-            let higher = random.Random.rolld4();
+            let higher = Random.rolld4();
             let amount = 0;
             if (higher == 4) {
-                amount = random.Random.rolld4();
+                amount = Random.rolld4();
             } else {
                 amount = 1;
             }
@@ -93,7 +92,7 @@ export class ShopInventory {
         this.sortSupply();
     }
 
-    pickItem(items:dto.Item[]):dto.Item {
+    pickItem(items:Item[]):Item {
         return items[Math.floor(Math.random() * items.length)];
     }
 
@@ -101,11 +100,11 @@ export class ShopInventory {
 
     }
 
-    public incrementItemAmount(item:dto.ShopItem) {
+    public incrementItemAmount(item:ShopItem) {
         item.amount++;
     }
 
-    public decrementItemAmount(item:dto.ShopItem) {
+    public decrementItemAmount(item:ShopItem) {
         if (item.amount > 0) {
             item.amount--;
         }
@@ -118,7 +117,7 @@ export class ShopInventory {
         }
     }
 
-    public removeItem(item:dto.ShopItem) {
+    public removeItem(item:ShopItem) {
         var index = this.inventory.indexOf(item);
         if (index > -1) {
            this.inventory.splice(index, 1);
@@ -127,7 +126,7 @@ export class ShopInventory {
         this.supplies.push(item);
     }
 
-    public addItem(item:dto.ShopItem) {
+    public addItem(item:ShopItem) {
         var index = this.supplies.indexOf(item);
         if (index > -1) {
            this.supplies.splice(index, 1);
@@ -136,7 +135,7 @@ export class ShopInventory {
         this.inventory.push(item);
     }
 
-    public exchangeItem(item:dto.ShopItem) {
+    public exchangeItem(item:ShopItem) {
         // remove old item
         var index1 = this.inventory.indexOf(item);
         if (index1 > -1) {
@@ -150,10 +149,10 @@ export class ShopInventory {
         let randomItem = this.supplies[index2];
 
         this.supplies.splice(index2, 1); // remove from supply
-        let higher = random.Random.rolld4();
+        let higher = Random.rolld4();
         let amount = 0;
         if (higher == 4) {
-            amount = random.Random.rolld4();
+            amount = Random.rolld4();
         } else {
             amount = 1;
         }
