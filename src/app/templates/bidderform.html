@@ -7,11 +7,11 @@
         <input type="text" name="name" class="form-control" [(ngModel)]="model.name">
       </div>
       <div class="form-group">
-        <div><label class="label-input">CP: </label><input style="display:inline-block; width:70px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.cp">
-        <label class="label-input">SP: </label><input style="display:inline-block; width:70px;" type="text" name="sp" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.sp"></div>
-        <div><label class="label-input">EP: </label><input style="display:inline-block; width:70px;" type="text" name="ep" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.ep">
-        <label class="label-input">GP: </label><input style="display:inline-block; width:70px;" type="text" name="gp" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.gp"></div>
-        <div><label class="label-input">PP: </label><input style="display:inline-block; width:70px;" type="text" name="pp" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.pp"></div>
+        <div *ngIf="cpChecked"><label class="label-input">CP: </label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.cp"></div>
+        <div *ngIf="spChecked"><label class="label-input">SP: </label><input style="display:inline-block; width:60px;" type="text" name="sp" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.sp"></div>
+        <div *ngIf="epChecked"><label class="label-input">EP: </label><input style="display:inline-block; width:60px;" type="text" name="ep" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.ep"></div>
+        <div *ngIf="gpChecked"><label class="label-input">GP: </label><input style="display:inline-block; width:60px;" type="text" name="gp" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.gp"></div>
+        <div *ngIf="ppChecked"><label class="label-input">PP: </label><input style="display:inline-block; width:60px;" type="text" name="pp" pattern="[0-9]*" class="form-control" [(ngModel)]="model.budget.pp"></div>
       </div>
       <button type="submit"  (click)="addBidder()" class="btn btn-default">Add</button>
     </form>

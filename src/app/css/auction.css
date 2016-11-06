@@ -1,3 +1,9 @@
 table {
     width: 100%;
 }
+
+.label-input {
+    display: inline-block;
+    width: 20px;
+    text-align:right;
+}

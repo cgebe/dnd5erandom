@@ -1,15 +1,21 @@
 
 
 <div class="row">
-    <div class="col-md-3">
-            <bidder-form (onAddBidder) = "onAddBidder($event)"></bidder-form>
+    <div class="col-md-2">
+            <bidder-form (onAddBidder) = "onAddBidder($event)" [cpChecked]="cpChecked" [spChecked]="spChecked" [epChecked]="epChecked" [gpChecked]="gpChecked" [ppChecked]="ppChecked"></bidder-form>
     </div>
     <div class="col-md-2">
             <offer-form (onAddItem) = "onAddItem($event)"></offer-form>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-8">
         <label>Auction</label>
         <div class="table-container">
+            <label>Choose Currencies:</label>
+            <label>CP</label><input type="checkbox" [(ngModel)]="cpChecked"/>
+            <label>SP</label><input type="checkbox" [(ngModel)]="spChecked"/>
+            <label>EP</label><input type="checkbox" [(ngModel)]="epChecked"/>
+            <label>GP</label><input type="checkbox" [(ngModel)]="gpChecked"/>
+            <label>PP</label><input type="checkbox" [(ngModel)]="ppChecked"/>
             <table class="table table-hover">
                 <tr>
                     <td style="border:none;" *ngIf="bidders.length > 0" width="10%">
@@ -18,7 +24,7 @@
                     <td style="border:none;" *ngIf="bidders.length > 0" width="10%">
                         Budget
                     </td>
-                    <td style="border:none;" width="15%" *ngFor="let offer of offers; let i = index">
+                    <td style="border:none;" width="10%" *ngFor="let offer of offers; let i = index">
                         {{i + 1}}. {{offer.name}}
                     </td>
                     <td style="border:none;">
@@ -26,9 +32,22 @@
                 </tr>
                 <tr *ngFor="let bidder of bidders">
                     <td>{{bidder.name}}</td>
-                    <td>{{bidder.budget}}</td>
+
+                    <div *ngIf="cpChecked"><label class="label-input">CP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[1-9][0-9]*" class="form-control" [(ngModel)]="bidder.budget.cp"></div>
+                    <div *ngIf="spChecked"><label class="label-input">SP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.budget.sp"></div>
+                    <div *ngIf="epChecked"><label class="label-input">EP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.budget.ep"></div>
+                    <div *ngIf="gpChecked"><label class="label-input">GP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.budget.gp"></div>
+                    <div *ngIf="ppChecked"><label class="label-input">PP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.budget.pp"></div>
+
+
                     <td *ngFor="let offer of offers; let i = index">
-                        <input type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.bids[i]">
+                        <div class="form-group">
+                          <div *ngIf="cpChecked"><label class="label-input">CP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.bids[i].max.cp"></div>
+                          <div *ngIf="spChecked"><label class="label-input">SP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.bids[i].max.sp"></div>
+                          <div *ngIf="epChecked"><label class="label-input">EP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.bids[i].max.ep"></div>
+                          <div *ngIf="gpChecked"><label class="label-input">GP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.bids[i].max.gp"></div>
+                          <div *ngIf="ppChecked"><label class="label-input">PP</label><input style="display:inline-block; width:60px;" type="text" name="cp" pattern="[0-9]*" class="form-control" [(ngModel)]="bidder.bids[i].max.pp"></div>
+                        </div>
                     </td>
                 </tr>
             </table>

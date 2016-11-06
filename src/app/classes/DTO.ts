@@ -227,6 +227,11 @@ export class Bid {
     public max : Coins;
     public fails : number;
     public current : Coins;
+
+    constructor() {
+        this.max = new Coins();
+        this.current = new Coins();
+    }
 }
 
 export class Bidder {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Bidder }    from '../classes/DTO';
 
 @Component({
@@ -8,7 +8,11 @@ import { Bidder }    from '../classes/DTO';
 })
 export class BidderFormComponent {
     model = new Bidder();
-
+    @Input() cpChecked : boolean;
+    @Input() spChecked : boolean;
+    @Input() epChecked : boolean;
+    @Input() gpChecked : boolean;
+    @Input() ppChecked : boolean;
     @Output() onAddBidder = new EventEmitter<Bidder>();
 
     addBidder() {
