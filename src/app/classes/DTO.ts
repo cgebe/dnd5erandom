@@ -10,7 +10,7 @@ export class NPC {
 }
 
 export class Item {
-    public id : string;
+    public id : number;
     public name : string;
 }
 
@@ -281,17 +281,17 @@ export class AuctionItem extends Item {
     }
 }
 
-export class Bid {
+export class Bidstate {
     public max : Coins;
     public fails : number;
     public current : Coins;
-    public wholeBudget : boolean;
+    public useWholeBudget : boolean;
 
     constructor() {
         this.max = new Coins();
         this.current = new Coins();
         this.fails = 0;
-        this.wholeBudget = true;
+        this.useWholeBudget = true;
     }
 }
 
@@ -299,10 +299,10 @@ export class Bidder {
     public id : number;
     public name : string;
     public budget : Coins;
-    public bids : Bid[];
+    public bidstates : Bidstate[];
 
     constructor() {
         this.budget = new Coins();
-        this.bids = [];
+        this.bidstates = [];
     }
 }

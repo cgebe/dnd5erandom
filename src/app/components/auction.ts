@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Bid, Bidder, Coins, AuctionItem} from  '../classes/DTO';
+import { Bidstate, Bidder, Coins, AuctionItem} from  '../classes/DTO';
 import { Random } from  '../classes/Random';
 import { BidderFormComponent } from  './bidderform';
 
@@ -23,23 +23,23 @@ export class AuctionComponent {
 
     constructor() {
         this.players.id = -1;
+        this.players.name = "Players"
     }
 
     onAddBidder(newBidder : Bidder) {
         newBidder.id = this.bidders.length;
         this.bidders.push(newBidder);
         for (let i = 0; i < this.offers.length; i++) {
-            newBidder.bids[i] = new Bid();
+            newBidder.bidstates[i] = new Bidstate();
         }
     }
 
     onAddItem(newItem : AuctionItem) {
-        newItem.highestBidder = this.players;
+        newItem.id = this.offers.length;
         this.offers.push(newItem);
-        console.log(newItem.startPrice);
-        this.players.bids.push(new Bid());
+        this.players.bidstates.push(new Bidstate());
         for (let i = 0; i < this.bidders.length; i++) {
-            this.bidders[i].bids.push(new Bid());
+            this.bidders[i].bidstates.push(new Bidstate());
         }
     }
 
@@ -49,84 +49,122 @@ export class AuctionComponent {
         // adjust start price if set
         if (this.offers[index].startPrice.compare(this.offers[index].currentPrice) > 0) {
             this.offers[index].currentPrice = this.offers[index].startPrice;
-            console.log(this.offers[index].currentPrice);
         }
 
-        if (!this.offers[index].hasMinimumRaise || this.offers[index].minimumRaise.isZero()) {
-            if (this.ppChecked) {
-
-            }
-            this.offers[index].minimumRaise = this.offers[index].startPrice;
-            console.log(this.offers[index].currentPrice);
-        }
-
-
-
-        let minimumBid : Coins = this.offers[index].currentPrice.plus(this.offers[index].minimumRaise);
-        console.log("mb " + minimumBid);
-        // player bidding
-        if (this.offers[index].highestBidder == undefined || this.offers[index].highestBidder.id != this.players.id && this.players.bids[index].current.compare(minimumBid) > 0) {
-            // player is now highest bidder
+        // player bid
+        if (this.players.bidstates[index].current.inCopper() > this.offers[index].currentPrice.inCopper() + this.offers[index].minimumRaise.inCopper()) {
+            console.log("f " + this.players.bidstates[index].current);
+            console.log("cp1 " + this.offers[index].currentPrice);
+            this.offers[index].currentPrice = this.players.bidstates[index].current;
             this.offers[index].highestBidder = this.players;
-            this.offers[index].currentPrice = this.players.bids[index].current;
-            console.log("bb" +  this.offers[index].highestBidder.name);
+            console.log("cp2 " + this.offers[index].currentPrice);
         }
 
-        // npc bidding
-        let currentFails : number;
-        let isUsingWholeBudget : boolean;
-        let budget : Coins;
-        let limit : Coins;
         for (let i = 0; i < this.bidders.length; i++) {
-                currentFails = this.bidders[i].bids[index].fails;
-                isUsingWholeBudget = this.bidders[i].bids[index].wholeBudget;
-                if (isUsingWholeBudget) {
-                    limit = this.bidders[i].budget;
-                } else {
-                    limit = this.bidders[i].bids[index].max;
-                }
-                if (this.offers[index].highestBidder == undefined || this.offers[index].highestBidder.id != this.bidders[i].id) {
-                    if (currentFails < 3) {
-                        if (limit.compare(minimumBid) > 0) {
-                            if (this.isNPCBidding(limit, minimumBid)) {
-                                console.log("cp " + i + " " + this.offers[index].currentPrice);
-                                this.bidders[i].bids[index].current = this.getNPCBid(limit, this.offers[index].currentPrice, this.offers[index].minimumRaise);
-                                console.log("c " + i + " " + this.bidders[i].bids[index].current);
-                                //if (this.bidders[i].bids[index].current.compare(this.offers[index].currentPrice) <= 0) {
-                                    //this.bidders[i].bids[index].fails++;
-                                //}
-                            } else {
-                                this.bidders[i].bids[index].fails++;
-                                console.log("fails2 " + this.bidders[i].bids[index].fails++);
-                            }
-                        }
-                        // npc is still in the mood to bid and his budget/limit for this item is not reached yet
+            // check if highest bidder already
+            if (this.offers[index].highestBidder == undefined || this.offers[index].highestBidder.id != this.bidders[i].id) {
+                // check if bidder can bid (has enough money, probability that npc is in the mood to bid)
+                if (this.canBid(this.bidders[i], this.offers[index])) {
+                    let bid : Coins = this.makeBid(this.bidders[i], this.offers[index]);
+                    console.log(bid);
+                    if (bid.inCopper() > this.offers[index].currentPrice.inCopper()) {
+                        // new highest bidder
+                        this.offers[index].currentPrice = bid;
+                        this.offers[index].highestBidder = this.bidders[i];
                     }
+                    this.bidders[i].bidstates[index].current = bid;
+                } else {
+                    this.bidders[i].bidstates[index].fails++;
                 }
-        }
-
-        for (let i = 0; i < this.bidders.length; i++) {
-            if (this.bidders[i].bids[index].current.compare(this.offers[index].currentPrice) > 0) {
-                this.offers[index].highestBidder = this.bidders[i];
-                this.offers[index].currentPrice = this.bidders[i].bids[index].current;
             }
         }
+
+
+
     }
 
-    private isNPCBidding(limit : Coins, minimumBid : Coins) : boolean {
-        let d100 = Random.rolld100() / 100;
-        let relation = minimumBid.inCopper() / limit.inCopper();
-        return d100 / 100 > 1 - relation;
-    }
-
-    private getNPCBid(limit : Coins, currentPrize : Coins, minimumRaise : Coins) : Coins {
-        let d6 = Random.rolld20();
-        let difference = limit.inCopper() - currentPrize.inCopper();
-        if (difference > d6 * minimumRaise.inCopper()) {
-            return currentPrize.plus(minimumRaise.multiply(d6));
-        } else {
-            return currentPrize.plus(limit.minus(currentPrize));
+    private canBid(bidder : Bidder, item : AuctionItem) {
+        // already 3 fails
+        if (bidder.bidstates[item.id].fails >= 3) {
+            return false;
         }
+        // budget too small
+        if (bidder.budget.inCopper() <= item.currentPrice.inCopper()) {
+            return false;
+        }
+        // limit too small if used
+        if (!bidder.bidstates[item.id].useWholeBudget && bidder.bidstates[item.id].max.inCopper() <= item.currentPrice.inCopper()) {
+            return false;
+        }
+
+        let d100 = Random.rolld100();
+        // roll d100, if result higher than relation between budget and currentprize then bid.
+        if (bidder.bidstates[item.id].useWholeBudget && (d100 / 100) <= (item.currentPrice.inCopper() / bidder.budget.inCopper())) {
+            return false;
+        }
+        // roll d100, if result higher than relation between limit and currentprize then bid.
+        if (!bidder.bidstates[item.id].useWholeBudget && (d100 / 100) <= (item.currentPrice.inCopper() / bidder.bidstates[item.id].max.inCopper())) {
+            return false;
+        }
+        return true;
+    }
+
+    private makeBid(bidder : Bidder, item : AuctionItem) : Coins {
+        let minFactor = 0.1;
+        let maxFactor = 0.25;
+        let minimumRaise : number;
+        if (item.hasMinimumRaise) {
+            minimumRaise = item.minimumRaise.inCopper();
+        } else {
+            minimumRaise = minFactor * item.currentPrice.inCopper();
+        }
+
+        let maximumRaise : number;
+        if (bidder.bidstates[item.id].useWholeBudget) {
+            maximumRaise = maxFactor * bidder.budget.inCopper();
+        } else {
+            maximumRaise = maxFactor * bidder.bidstates[item.id].max.inCopper();
+        }
+
+        console.log(minimumRaise);
+        console.log(maximumRaise);
+        console.log(item.currentPrice);
+        console.log(bidder.bidstates[item.id].max);
+
+        let d100 = Random.rolld100();
+        let raise =  minimumRaise + ((maximumRaise - minimumRaise) * (d100 / 100));
+        let coins = new Coins();
+        coins.cp = raise;
+        coins.normalize();
+
+        if (this.ppChecked && coins.pp > 0) {
+            coins.cp = 0;
+            coins.sp = 0;
+            coins.ep = 0;
+            coins.gp = 0;
+        }
+        if (this.gpChecked && coins.gp > 0) {
+            coins.cp = 0;
+            coins.sp = 0;
+            coins.ep = 0;
+        }
+        if (this.epChecked && coins.ep > 0) {
+            coins.cp = 0;
+            coins.sp = 0;
+        }
+        if (this.spChecked && coins.sp > 0) {
+            coins.cp = 0;
+        }
+
+        if (bidder.bidstates[item.id].useWholeBudget && item.currentPrice.inCopper() + raise > bidder.budget.inCopper()) {
+            return bidder.budget;
+        }
+        if (!bidder.bidstates[item.id].useWholeBudget && item.currentPrice.inCopper() + raise > bidder.bidstates[item.id].max.inCopper()) {
+            return bidder.bidstates[item.id].max;
+        }
+        console.log(item.currentPrice);
+        console.log(coins);
+        return item.currentPrice.plus(coins);
     }
 
 }

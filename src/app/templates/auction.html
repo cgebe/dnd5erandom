@@ -45,19 +45,19 @@
                     <td *ngFor="let offer of offers; let i = index">
                         <label class="currency-check-label">Start Price<input class="currency-check" type="checkbox" [(ngModel)]="offers[i].hasStartPrize"/></label>
                         <div *ngIf="offers[i].hasStartPrize">
-                            <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="text" name="cp" pattern="[0-9]*" [(ngModel)]="offers[i].startPrice.cp"></div>
-                            <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="text" name="sp" pattern="[0-9]*" [(ngModel)]="offers[i].startPrice.sp"></div>
-                            <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="text" name="ep" pattern="[0-9]*" [(ngModel)]="offers[i].startPrice.ep"></div>
-                            <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="text" name="gp" pattern="[0-9]*" [(ngModel)]="offers[i].startPrice.gp"></div>
-                            <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="text" name="pp" pattern="[0-9]*" [(ngModel)]="offers[i].startPrice.pp"></div>
+                            <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="number" name="cp" min=0 [(ngModel)]="offers[i].startPrice.cp"></div>
+                            <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="number" name="sp" min=0 [(ngModel)]="offers[i].startPrice.sp"></div>
+                            <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="number" name="ep" min=0 [(ngModel)]="offers[i].startPrice.ep"></div>
+                            <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="number" name="gp" min=0 [(ngModel)]="offers[i].startPrice.gp"></div>
+                            <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="number" name="pp" min=0 [(ngModel)]="offers[i].startPrice.pp"></div>
                         </div>
                         <label class="currency-check-label">Minimum Raise<input class="currency-check" type="checkbox" [(ngModel)]="offers[i].hasMinimumRaise"/></label>
                         <div *ngIf="offers[i].hasMinimumRaise">
-                            <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="text" name="cp" pattern="[0-9]*" [(ngModel)]="offers[i].minimumRaise.cp"></div>
-                            <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="text" name="sp" pattern="[0-9]*" [(ngModel)]="offers[i].minimumRaise.sp"></div>
-                            <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="text" name="ep" pattern="[0-9]*" [(ngModel)]="offers[i].minimumRaise.ep"></div>
-                            <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="text" name="gp" pattern="[0-9]*" [(ngModel)]="offers[i].minimumRaise.gp"></div>
-                            <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="text" name="pp" pattern="[0-9]*" [(ngModel)]="offers[i].minimumRaise.pp"></div>
+                            <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="number" name="cp" min=0 [(ngModel)]="offers[i].minimumRaise.cp"></div>
+                            <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="number" name="sp" min=0 [(ngModel)]="offers[i].minimumRaise.sp"></div>
+                            <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="number" name="ep" min=0 [(ngModel)]="offers[i].minimumRaise.ep"></div>
+                            <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="number" name="gp" min=0 [(ngModel)]="offers[i].minimumRaise.gp"></div>
+                            <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="number" name="pp" min=0 [(ngModel)]="offers[i].minimumRaise.pp"></div>
                         </div>
                     </td>
                 </tr>
@@ -65,27 +65,27 @@
                     <td>{{bidder.name}}</td>
 
                     <td>
-                        <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="text" name="cp" pattern="[1-9][0-9]*" [(ngModel)]="bidder.budget.cp"></div>
-                        <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="text" name="sp" pattern="[0-9]*" [(ngModel)]="bidder.budget.sp"></div>
-                        <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="text" name="ep" pattern="[0-9]*" [(ngModel)]="bidder.budget.ep"></div>
-                        <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="text" name="gp" pattern="[0-9]*" [(ngModel)]="bidder.budget.gp"></div>
-                        <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="text" name="pp" pattern="[0-9]*" [(ngModel)]="bidder.budget.pp"></div>
+                        <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="number" name="cp" pattern="[1-9][0-9]*" [(ngModel)]="bidder.budget.cp"></div>
+                        <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="number" name="sp" min=0 [(ngModel)]="bidder.budget.sp"></div>
+                        <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="number" name="ep" min=0 [(ngModel)]="bidder.budget.ep"></div>
+                        <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="number" name="gp" min=0 [(ngModel)]="bidder.budget.gp"></div>
+                        <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="number" name="pp" min=0 [(ngModel)]="bidder.budget.pp"></div>
                     </td>
 
                     <td *ngFor="let offer of offers; let i = index">
-                        <label class="currency-check-label">Whole Budget<input class="currency-check" type="checkbox" [(ngModel)]="bidder.bids[i].wholeBudget"/></label>
-                        <div *ngIf="!bidder.bids[i].wholeBudget">
-                            <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="text" name="cp" pattern="[0-9]*" [(ngModel)]="bidder.bids[i].max.cp"></div>
-                            <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="text" name="sp" pattern="[0-9]*" [(ngModel)]="bidder.bids[i].max.sp"></div>
-                            <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="text" name="ep" pattern="[0-9]*" [(ngModel)]="bidder.bids[i].max.ep"></div>
-                            <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="text" name="gp" pattern="[0-9]*" [(ngModel)]="bidder.bids[i].max.gp"></div>
-                            <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="text" name="pp" pattern="[0-9]*" [(ngModel)]="bidder.bids[i].max.pp"></div>
+                        <label class="currency-check-label">Whole Budget<input class="currency-check" type="checkbox" [(ngModel)]="bidder.bidstates[i].useWholeBudget"/></label>
+                        <div *ngIf="!bidder.bidstates[i].useWholeBudget">
+                            <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="number" name="cp" min=0 [(ngModel)]="bidder.bidstates[i].max.cp"></div>
+                            <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="number" name="sp" min=0 [(ngModel)]="bidder.bidstates[i].max.sp"></div>
+                            <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="number" name="ep" min=0 [(ngModel)]="bidder.bidstates[i].max.ep"></div>
+                            <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="number" name="gp" min=0 [(ngModel)]="bidder.bidstates[i].max.gp"></div>
+                            <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="number" name="pp" min=0 [(ngModel)]="bidder.bidstates[i].max.pp"></div>
                         </div>
                         <div>
-                            Current Bid <label>{{this.bidders[b].bids[i].current}}</label>
+                            Current Bid <label>{{this.bidders[b].bidstates[i].current}}</label>
                         </div>
                         <div>
-                            <label>{{this.bidders[b].bids[i].fails}}</label>
+                            <label>{{this.bidders[b].bidstates[i].fails}}</label>
                         </div>
                     </td>
                 </tr>
@@ -98,11 +98,11 @@
                     </td>
                     <td *ngFor="let offer of offers; let i = index">
                         Player's bid
-                        <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="text" name="cp" pattern="[0-9]*" [(ngModel)]="players.bids[i].current.cp"></div>
-                        <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="text" name="sp" pattern="[0-9]*" [(ngModel)]="players.bids[i].current.sp"></div>
-                        <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="text" name="ep" pattern="[0-9]*" [(ngModel)]="players.bids[i].current.ep"></div>
-                        <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="text" name="gp" pattern="[0-9]*" [(ngModel)]="players.bids[i].current.gp"></div>
-                        <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="text" name="pp" pattern="[0-9]*" [(ngModel)]="players.bids[i].current.pp"></div>
+                        <div *ngIf="cpChecked"><label class="label-input">CP</label><input class="form-control currency-input" type="number" name="cp" min=0 [(ngModel)]="players.bidstates[i].current.cp"></div>
+                        <div *ngIf="spChecked"><label class="label-input">SP</label><input class="form-control currency-input" type="number" name="sp" min=0 [(ngModel)]="players.bidstates[i].current.sp"></div>
+                        <div *ngIf="epChecked"><label class="label-input">EP</label><input class="form-control currency-input" type="number" name="ep" min=0 [(ngModel)]="players.bidstates[i].current.ep"></div>
+                        <div *ngIf="gpChecked"><label class="label-input">GP</label><input class="form-control currency-input" type="number" name="gp" min=0 [(ngModel)]="players.bidstates[i].current.gp"></div>
+                        <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="number" name="pp" min=0 [(ngModel)]="players.bidstates[i].current.pp"></div>
                     </td>
                 </tr>
                 <tr>
@@ -113,8 +113,8 @@
 
                     </td>
                     <td *ngFor="let offer of offers; let i = index">
-                        <div>Highest Bidder <label>{{this.offers[i].highestBidder.name}}</label></div>
-                        <div>Highest Bid <label>{{this.offers[i].currentPrize}}</label></div>
+                        <div *ngIf="this.offers[i].highestBidder != undefined">Highest Bidder <label>{{this.offers[i].highestBidder.name}}</label></div>
+                        <div *ngIf="this.offers[i].highestBidder != undefined">Highest Bid <label>{{this.offers[i].currentPrice}}</label></div>
 
                         <button class="btn btn-primary" (click)="knockGavel(i)"><i class="fa fa-legal"></i></button>
                     </td>

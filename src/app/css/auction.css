@@ -7,6 +7,10 @@ td {
     text-align:center;
 }
 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
 .label-input {
     display: inline-block;
     width: 20px;
