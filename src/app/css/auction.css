@@ -2,8 +2,33 @@ table {
     width: 100%;
 }
 
+td {
+    vertical-align:middle !important;
+    text-align:center;
+}
+
 .label-input {
     display: inline-block;
     width: 20px;
-    text-align:right;
+    margin-right: 5px;
+}
+
+.currency-check-label {
+    margin-right: 10px;
+}
+
+.currency-check {
+    margin-left:5px;
+    vertical-align: middle;
+    position: relative;
+    bottom: 4px;
+}
+
+.currency-input {
+    display:inline-block;
+    width:60px;
+}
+
+.first-table-row-td {
+    border:none;
 }

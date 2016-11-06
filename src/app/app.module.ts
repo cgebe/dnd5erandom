@@ -19,6 +19,7 @@ import { ShopInventoryComponent }  from './components/shopinventory';
 import { TreasureComponent }  from './components/treasure';
 import { BidderFormComponent }  from './components/bidderform';
 import { OfferFormComponent }  from './components/offerform';
+import { ForNumber }  from './classes/pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { OfferFormComponent }  from './components/offerform';
       BidderFormComponent,
       OfferFormComponent,
       TreasureComponent,
-      ShopInventoryComponent
+      ShopInventoryComponent,
+
+      ForNumber
   ],
   imports     : [
       BrowserModule,

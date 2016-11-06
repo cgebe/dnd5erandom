@@ -14,6 +14,7 @@ export class Item {
     public name : string;
 }
 
+
 export class ArtObject extends Item {
     public cost : string;
 
@@ -98,6 +99,10 @@ export class Coins {
         return this.cp <= 0 && this.sp <= 0 && this.ep <= 0 && this.gp <= 0 && this.pp <= 0;
     }
 
+    inCopper() : number {
+        return this.cp + this.sp * 10 + this.ep * 50 + this.gp * 100 + this.pp * 1000;
+    }
+
     inGold() : number {
         let sps : number;
         let gps : number;
@@ -114,6 +119,40 @@ export class Coins {
         }
         gps += this.pp * 10;
         return gps;
+    }
+
+    plus(other : Coins) : Coins {
+        let sum : Coins = new Coins();
+        sum.cp = this.cp + other.cp;
+        sum.sp = this.sp + other.sp;
+        sum.ep = this.ep + other.ep;
+        sum.gp = this.gp + other.gp;
+        sum.pp = this.pp + other.pp;
+        return sum;
+    }
+
+    minus(other : Coins) : Coins {
+        let difference : Coins = new Coins();
+        difference.cp = this.cp - other.cp;
+        difference.sp = this.sp - other.sp;
+        difference.ep = this.ep - other.ep;
+        difference.gp = this.gp - other.gp;
+        difference.pp = this.pp - other.pp;
+        return difference;
+    }
+
+    multiply(factor : number) : Coins {
+        let product : Coins = new Coins();
+        product.cp = this.cp * factor;
+        product.sp = this.sp * factor;
+        product.ep = this.ep * factor;
+        product.gp = this.gp * factor;
+        product.pp = this.pp * factor;
+        return product;
+    }
+
+    compare(other : Coins) : number {
+        return this.inCopper() - other.inCopper();
     }
 
     toString() : string {
@@ -223,18 +262,41 @@ export class Spell {
     }
 }
 
+
+export class AuctionItem extends Item {
+    public currentPrice : Coins;
+    public hasStartPrize : boolean;
+    public startPrice : Coins;
+    public hasMinimumRaise : boolean;
+    public minimumRaise : Coins;
+    public highestBidder : Bidder;
+
+    constructor() {
+        super();
+        this.currentPrice = new Coins();
+        this.hasStartPrize = false;
+        this.startPrice = new Coins();
+        this.hasMinimumRaise = false;
+        this.minimumRaise = new Coins();
+    }
+}
+
 export class Bid {
     public max : Coins;
     public fails : number;
     public current : Coins;
+    public wholeBudget : boolean;
 
     constructor() {
         this.max = new Coins();
         this.current = new Coins();
+        this.fails = 0;
+        this.wholeBudget = true;
     }
 }
 
 export class Bidder {
+    public id : number;
     public name : string;
     public budget : Coins;
     public bids : Bid[];
