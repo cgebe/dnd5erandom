@@ -95,6 +95,30 @@ export class Coins {
         this.pp = 0;
     }
 
+    truncate(places : number) {
+        this.cp = this.truncateCurrency(this.cp, places);
+        this.sp = this.truncateCurrency(this.sp, places);
+        this.ep = this.truncateCurrency(this.ep, places);
+        this.gp = this.truncateCurrency(this.gp, places);
+        this.pp = this.truncateCurrency(this.pp, places);
+    }
+
+    private truncateCurrency(amount : number, places : number) {
+        if (amount.toString().length > places) {
+            let result : string = amount.toString().substring(0, amount.toString().length - places);
+            for (let i = 0; i < places; i++) {
+                result += '0';
+            }
+            return parseInt(result);
+        } else {
+            let result : string = amount.toString().substring(0, 1);
+            for (let i = 0; i < amount.toString().length - 1; i++) {
+                result += '0';
+            }
+            return parseInt(result);
+        }
+    }
+
     isZero() : boolean {
         return this.cp <= 0 && this.sp <= 0 && this.ep <= 0 && this.gp <= 0 && this.pp <= 0;
     }

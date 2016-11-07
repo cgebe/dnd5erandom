@@ -10,10 +10,11 @@ import { BidderFormComponent } from  './bidderform';
   templateUrl: '../templates/auction.html'
 })
 export class AuctionComponent {
-    arr = new Array();
+
     bidders : Bidder[] = [];
     offers : AuctionItem[] = [];
     players : Bidder = new Bidder();
+    truncateDigits : number = 1;
 
     cpChecked : boolean;
     spChecked : boolean;
@@ -43,6 +44,21 @@ export class AuctionComponent {
         }
     }
 
+    onChangeTruncate() {
+        for (let i = 0; this.bidders.length; i++) {
+            for (let j = 0; this.bidders[i].bidstates.length; j++) {
+                if (this.bidders[i].bidstates[j].current != undefined) {
+                    this.bidders[i].bidstates[j].current.truncate(this.truncateDigits);
+                }
+            }
+        }
+        for (let i = 0; this.offers.length; i++) {
+            if (this.offers[i].currentPrice != undefined) {
+                this.offers[i].currentPrice.truncate(this.truncateDigits);
+            }
+        }
+    }
+
 
     knockGavel(index : number) {
         console.log("index " + index);
@@ -60,17 +76,22 @@ export class AuctionComponent {
             console.log("cp2 " + this.offers[index].currentPrice);
         }
 
+        let tempHighestPrice : Coins = this.offers[index].currentPrice;
+        let tempHighestBidder : Bidder = this.offers[index].highestBidder;
         for (let i = 0; i < this.bidders.length; i++) {
-            // check if highest bidder already
+            // check if highest already bidder
             if (this.offers[index].highestBidder == undefined || this.offers[index].highestBidder.id != this.bidders[i].id) {
                 // check if bidder can bid (has enough money, probability that npc is in the mood to bid)
                 if (this.canBid(this.bidders[i], this.offers[index])) {
                     let bid : Coins = this.makeBid(this.bidders[i], this.offers[index]);
                     console.log(bid);
                     if (bid.inCopper() > this.offers[index].currentPrice.inCopper()) {
-                        // new highest bidder
-                        this.offers[index].currentPrice = bid;
-                        this.offers[index].highestBidder = this.bidders[i];
+                        // bids above current price
+                        if (bid.inCopper() > tempHighestPrice.inCopper()) {
+                            // new highest bidder
+                            tempHighestPrice = bid;
+                            tempHighestBidder = this.bidders[i];
+                        }
                     }
                     this.bidders[i].bidstates[index].current = bid;
                 } else {
@@ -79,7 +100,12 @@ export class AuctionComponent {
             }
         }
 
+        // set new highest bidder
+        this.offers[index].currentPrice = tempHighestPrice;
+        this.offers[index].highestBidder = tempHighestBidder;
 
+
+        // TODO: check if fails exceed fails count close auction
 
     }
 
@@ -111,7 +137,7 @@ export class AuctionComponent {
 
     private makeBid(bidder : Bidder, item : AuctionItem) : Coins {
         let minFactor = 0.1;
-        let maxFactor = 0.25;
+        let maxFactor = 0.2;
         let minimumRaise : number;
         if (item.hasMinimumRaise) {
             minimumRaise = item.minimumRaise.inCopper();
@@ -155,6 +181,9 @@ export class AuctionComponent {
         if (this.spChecked && coins.sp > 0) {
             coins.cp = 0;
         }
+        console.log(coins);
+        coins.truncate(this.truncateDigits);
+        console.log(coins);
 
         if (bidder.bidstates[item.id].useWholeBudget && item.currentPrice.inCopper() + raise > bidder.budget.inCopper()) {
             return bidder.budget;

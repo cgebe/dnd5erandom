@@ -20,6 +20,7 @@
                 <label class="currency-check-label">EP<input class="currency-check" type="checkbox" [(ngModel)]="epChecked"/></label>
                 <label class="currency-check-label">GP<input class="currency-check" type="checkbox" [(ngModel)]="gpChecked"/></label>
                 <label class="currency-check-label">PP<input class="currency-check" type="checkbox" [(ngModel)]="ppChecked"/></label>
+                <label>Truncate Digits:<input class="form-control currency-input" type="number" name="truncateDigits" min=0 (change)="onChangeTruncate()" [(ngModel)]="truncateDigits"></label>
             </div>
             <table *ngIf="bidders.length > 0 || offers.length > 0" class="table table-hover table-bordered">
                 <tr>
