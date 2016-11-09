@@ -7,12 +7,12 @@ import { Bidder }    from '../classes/DTO';
     templateUrl: '../templates/bidderform.html'
 })
 export class BidderFormComponent {
-    model = new Bidder();
+    model : Bidder = new Bidder("player"); // default to player
     @Output() onAddBidder = new EventEmitter<Bidder>();
 
     addBidder() {
         this.onAddBidder.emit(this.model);
-        this.model = new Bidder();
+        this.model = new Bidder(this.model.type);
     }
 
 }

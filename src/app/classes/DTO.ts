@@ -294,6 +294,7 @@ export class AuctionItem extends Item {
     public hasMinimumRaise : boolean;
     public minimumRaise : Coins;
     public highestBidder : Bidder;
+    public gavelKnocks : number;
 
     constructor() {
         super();
@@ -302,6 +303,7 @@ export class AuctionItem extends Item {
         this.startPrice = new Coins();
         this.hasMinimumRaise = false;
         this.minimumRaise = new Coins();
+        this.gavelKnocks = 0;
     }
 }
 
@@ -310,22 +312,26 @@ export class Bidstate {
     public fails : number;
     public current : Coins;
     public useWholeBudget : boolean;
+    public inRace : boolean;
 
     constructor() {
         this.max = new Coins();
         this.current = new Coins();
         this.fails = 0;
         this.useWholeBudget = true;
+        this.inRace = true;
     }
 }
 
 export class Bidder {
     public id : number;
     public name : string;
+    public type : string;
     public budget : Coins;
     public bidstates : Bidstate[];
 
-    constructor() {
+    constructor(type : string) {
+        this.type = type;
         this.budget = new Coins();
         this.bidstates = [];
     }

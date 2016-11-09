@@ -13,19 +13,14 @@ export class AuctionComponent {
 
     bidders : Bidder[] = [];
     offers : AuctionItem[] = [];
-    players : Bidder = new Bidder();
     truncateDigits : number = 1;
+    maxFails : number = 3;
 
     cpChecked : boolean;
     spChecked : boolean;
     epChecked : boolean;
     gpChecked : boolean = true;
     ppChecked : boolean;
-
-    constructor() {
-        this.players.id = -1;
-        this.players.name = "Players"
-    }
 
     onAddBidder(newBidder : Bidder) {
         newBidder.id = this.bidders.length;
@@ -38,21 +33,20 @@ export class AuctionComponent {
     onAddItem(newItem : AuctionItem) {
         newItem.id = this.offers.length;
         this.offers.push(newItem);
-        this.players.bidstates.push(new Bidstate());
         for (let i = 0; i < this.bidders.length; i++) {
             this.bidders[i].bidstates.push(new Bidstate());
         }
     }
 
     onChangeTruncate() {
-        for (let i = 0; this.bidders.length; i++) {
-            for (let j = 0; this.bidders[i].bidstates.length; j++) {
+        for (let i = 0; i < this.bidders.length; i++) {
+            for (let j = 0; j < this.bidders[i].bidstates.length; j++) {
                 if (this.bidders[i].bidstates[j].current != undefined) {
                     this.bidders[i].bidstates[j].current.truncate(this.truncateDigits);
                 }
             }
         }
-        for (let i = 0; this.offers.length; i++) {
+        for (let i = 0; i < this.offers.length; i++) {
             if (this.offers[i].currentPrice != undefined) {
                 this.offers[i].currentPrice.truncate(this.truncateDigits);
             }
@@ -61,57 +55,82 @@ export class AuctionComponent {
 
 
     knockGavel(index : number) {
-        console.log("index " + index);
-        // adjust start price if set
-        if (this.offers[index].startPrice.compare(this.offers[index].currentPrice) > 0) {
-            this.offers[index].currentPrice = this.offers[index].startPrice;
-        }
+        // dont compute bids if gavel knocked already the third time
+        if (this.offers[index].gavelKnocks < 3) {
+            this.offers[index].gavelKnocks++;
+            // adjust start price if set
+            this.setStartPrice(this.offers[index]);
 
-        // player bid
-        if (this.players.bidstates[index].current.inCopper() > this.offers[index].currentPrice.inCopper() + this.offers[index].minimumRaise.inCopper()) {
-            console.log("f " + this.players.bidstates[index].current);
-            console.log("cp1 " + this.offers[index].currentPrice);
-            this.offers[index].currentPrice = this.players.bidstates[index].current;
-            this.offers[index].highestBidder = this.players;
-            console.log("cp2 " + this.offers[index].currentPrice);
-        }
+            let playerRaised = false;
+            // player bidding
+            playerRaised = this.playerBidding(this.bidders, index, this.offers[index]);
 
-        let tempHighestPrice : Coins = this.offers[index].currentPrice;
-        let tempHighestBidder : Bidder = this.offers[index].highestBidder;
-        for (let i = 0; i < this.bidders.length; i++) {
-            // check if highest already bidder
-            if (this.offers[index].highestBidder == undefined || this.offers[index].highestBidder.id != this.bidders[i].id) {
-                // check if bidder can bid (has enough money, probability that npc is in the mood to bid)
-                if (this.canBid(this.bidders[i], this.offers[index])) {
-                    let bid : Coins = this.makeBid(this.bidders[i], this.offers[index]);
-                    console.log(bid);
-                    if (bid.inCopper() > this.offers[index].currentPrice.inCopper()) {
-                        // bids above current price
-                        if (bid.inCopper() > tempHighestPrice.inCopper()) {
-                            // new highest bidder
-                            tempHighestPrice = bid;
-                            tempHighestBidder = this.bidders[i];
-                        }
+            // npc bidding
+            if (!playerRaised)
+                this.npcBidding(this.bidders, index, this.offers[index], this.maxFails);
+        }
+    }
+
+    private setStartPrice(item : AuctionItem) {
+        if (item.startPrice.compare(item.currentPrice) > 0) {
+            item.currentPrice = item.startPrice;
+        }
+    }
+
+    private playerBidding(bidders : Bidder[], index : number, item : AuctionItem) : boolean {
+        let playerRaised = false;
+        for (let i = 0; i < bidders.length; i++) {
+            if (item.highestBidder == undefined || item.highestBidder.id != bidders[i].id) {
+                if (bidders[i].type == "player") {
+                    if (bidders[i].bidstates[index].current.inCopper() > item.currentPrice.inCopper() + item.minimumRaise.inCopper()) {
+                        item.currentPrice = bidders[i].bidstates[index].current;
+                        item.highestBidder = bidders[i];
+                        item.gavelKnocks = 0;
+                        playerRaised = true;
                     }
-                    this.bidders[i].bidstates[index].current = bid;
-                } else {
-                    this.bidders[i].bidstates[index].fails++;
                 }
             }
         }
+        return playerRaised;
+    }
 
+    private npcBidding(bidders : Bidder[], index : number, item : AuctionItem, maxFails : number) {
+        let tempHighestPrice : Coins = item.currentPrice;
+        let tempHighestBidder : Bidder = item.highestBidder;
+        for (let i = 0; i < bidders.length; i++) {
+            // check if highest already bidder
+            if (item.highestBidder == undefined || item.highestBidder.id != bidders[i].id) {
+                if (bidders[i].type == "npc") {
+                    // check if bidder can bid (has enough money, probability that npc is in the mood to bid)
+                    if (this.canBid(bidders[i], item)) {
+                        let bid : Coins = this.makeBid(bidders[i], item);
+                        if (bid.inCopper() > item.currentPrice.inCopper()) {
+                            // bids above current price
+                            if (bid.inCopper() > tempHighestPrice.inCopper()) {
+                                // new highest bidder
+                                tempHighestPrice = bid;
+                                tempHighestBidder = bidders[i];
+                                item.gavelKnocks = 0;
+                            }
+                        }
+                        bidders[i].bidstates[index].current = bid;
+                    } else {
+                        bidders[i].bidstates[index].fails++;
+                        if (bidders[i].bidstates[index].fails >= maxFails) {
+                            bidders[i].bidstates[index].inRace = false;
+                        }
+                    }
+                }
+            }
+        }
         // set new highest bidder
-        this.offers[index].currentPrice = tempHighestPrice;
-        this.offers[index].highestBidder = tempHighestBidder;
-
-
-        // TODO: check if fails exceed fails count close auction
-
+        item.currentPrice = tempHighestPrice;
+        item.highestBidder = tempHighestBidder;
     }
 
     private canBid(bidder : Bidder, item : AuctionItem) {
-        // already 3 fails
-        if (bidder.bidstates[item.id].fails >= 3) {
+        // already maxFails?
+        if (bidder.bidstates[item.id].fails >= this.maxFails) {
             return false;
         }
         // budget too small
@@ -152,11 +171,6 @@ export class AuctionComponent {
             maximumRaise = maxFactor * bidder.bidstates[item.id].max.inCopper();
         }
 
-        console.log(minimumRaise);
-        console.log(maximumRaise);
-        console.log(item.currentPrice);
-        console.log(bidder.bidstates[item.id].max);
-
         let d100 = Random.rolld100();
         let raise =  minimumRaise + ((maximumRaise - minimumRaise) * (d100 / 100));
         let coins = new Coins();
@@ -181,9 +195,8 @@ export class AuctionComponent {
         if (this.spChecked && coins.sp > 0) {
             coins.cp = 0;
         }
-        console.log(coins);
+
         coins.truncate(this.truncateDigits);
-        console.log(coins);
 
         if (bidder.bidstates[item.id].useWholeBudget && item.currentPrice.inCopper() + raise > bidder.budget.inCopper()) {
             return bidder.budget;
@@ -191,8 +204,7 @@ export class AuctionComponent {
         if (!bidder.bidstates[item.id].useWholeBudget && item.currentPrice.inCopper() + raise > bidder.bidstates[item.id].max.inCopper()) {
             return bidder.bidstates[item.id].max;
         }
-        console.log(item.currentPrice);
-        console.log(coins);
+
         return item.currentPrice.plus(coins);
     }
 

@@ -5,6 +5,12 @@
       <div class="form-group">
         <label>Name</label>
         <input type="text" name="name" class="form-control" [(ngModel)]="model.name">
+        <div>
+            <input style="vertical-align:middle" type="radio" [(ngModel)]="model.type"  name="type" value="player">
+            <span style="vertical-align:middle">Player</span>
+            <input style="vertical-align:middle" type="radio" [(ngModel)]="model.type"  name="type" value="npc">
+            <span style="vertical-align:middle">Non-Player</span>
+        </div>
       </div>
       <button type="submit"  (click)="addBidder()" class="btn btn-default">Add</button>
     </form>
