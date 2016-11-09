@@ -80,8 +80,10 @@ export class AuctionComponent {
     private playerBidding(bidders : Bidder[], index : number, item : AuctionItem) : boolean {
         let playerRaised = false;
         for (let i = 0; i < bidders.length; i++) {
+            // check if highest already bidder
             if (item.highestBidder == undefined || item.highestBidder.id != bidders[i].id) {
                 if (bidders[i].type == "player") {
+                    // player bid more then current price?
                     if (bidders[i].bidstates[index].current.inCopper() > item.currentPrice.inCopper() + item.minimumRaise.inCopper()) {
                         item.currentPrice = bidders[i].bidstates[index].current;
                         item.highestBidder = bidders[i];
@@ -129,14 +131,10 @@ export class AuctionComponent {
     }
 
     private canBid(bidder : Bidder, item : AuctionItem) {
-        // already maxFails?
+        // already maximum of fails?
         if (bidder.bidstates[item.id].fails >= this.maxFails) {
             return false;
         }
-        console.log(item.minimumRaise.inCopper());
-        console.log(item.currentPrice.inCopper() + item.minimumRaise.inCopper());
-        console.log(bidder.budget.inCopper());
-
         // budget too small
         if (!item.hasMinimumRaise && bidder.budget.inCopper() <= item.currentPrice.inCopper()) {
             return false;
@@ -144,7 +142,6 @@ export class AuctionComponent {
         if (item.hasMinimumRaise && bidder.budget.inCopper() <= item.currentPrice.inCopper() + item.minimumRaise.inCopper()) {
             return false;
         }
-
         // limit too small if used
         if (!item.hasMinimumRaise && !bidder.bidstates[item.id].useWholeBudget && bidder.bidstates[item.id].max.inCopper() <= item.currentPrice.inCopper()) {
             return false;
@@ -166,22 +163,24 @@ export class AuctionComponent {
     }
 
     private makeBid(bidder : Bidder, item : AuctionItem) : Coins {
+        // TODO: maybe variable?
         let minFactor = 0.1;
         let maxFactor = 0.2;
+        // determine minimum raise in cp
         let minimumRaise : number;
         if (item.hasMinimumRaise) {
             minimumRaise = item.minimumRaise.inCopper();
         } else {
             minimumRaise = minFactor * item.currentPrice.inCopper();
         }
-
+        // determine minimum raise in cp
         let maximumRaise : number;
         if (bidder.bidstates[item.id].useWholeBudget) {
             maximumRaise = maxFactor * bidder.budget.inCopper();
         } else {
             maximumRaise = maxFactor * bidder.bidstates[item.id].max.inCopper();
         }
-
+        // compute random raise in cp between minimum and maximum based on d100 roll
         let d100 : number = Random.rolld100();
         let coins : Coins = new Coins();
         let raise : number;
@@ -191,9 +190,9 @@ export class AuctionComponent {
             raise = minimumRaise + ((maximumRaise - minimumRaise) * (d100 / 100));
         }
 
+        // convert cp raise into coins
         coins.cp = raise;
         coins.normalize();
-
         if (this.ppChecked && coins.pp > 0) {
             coins.cp = 0;
             coins.sp = 0;
@@ -212,12 +211,13 @@ export class AuctionComponent {
         if (this.spChecked && coins.sp > 0) {
             coins.cp = 0;
         }
-
         coins.truncate(this.truncateDigits);
 
+        // if raise exceeds budget, bid budget
         if (bidder.bidstates[item.id].useWholeBudget && item.currentPrice.inCopper() + raise > bidder.budget.inCopper()) {
             return bidder.budget;
         }
+        // if raise exceeds max, bid limit
         if (!bidder.bidstates[item.id].useWholeBudget && item.currentPrice.inCopper() + raise > bidder.bidstates[item.id].max.inCopper()) {
             return bidder.bidstates[item.id].max;
         }
