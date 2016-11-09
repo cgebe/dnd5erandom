@@ -21,6 +21,7 @@
                 <label class="currency-check-label">GP<input class="currency-check" type="checkbox" [(ngModel)]="gpChecked"/></label>
                 <label class="currency-check-label">PP<input class="currency-check" type="checkbox" [(ngModel)]="ppChecked"/></label>
                 <label>Truncate Digits:<input class="form-control currency-input" type="number" name="truncateDigits" min=0 (change)="onChangeTruncate()" [(ngModel)]="truncateDigits"></label>
+                <label>Maximum Fails:<input class="form-control currency-input" type="number" name="maxFails" min=0 [(ngModel)]="maxFails"></label>
             </div>
             <table *ngIf="bidders.length > 0 || offers.length > 0" class="table table-hover table-bordered">
                 <tr>
@@ -98,7 +99,7 @@
                             <div *ngIf="gpChecked"><label class="label-input">GP</label><input [disabled]="!bidstate.inRace" class="form-control currency-input" type="number" name="gp" min=0 [(ngModel)]="bidstate.current.gp"></div>
                             <div *ngIf="ppChecked"><label class="label-input">PP</label><input [disabled]="!bidstate.inRace" class="form-control currency-input" type="number" name="pp" min=0 [(ngModel)]="bidstate.current.pp"></div>
                             <div>
-                                Current Bid <label>{{bidstate.current}}</label>
+                                <div>Current Bid</div><label>{{bidstate.current}}</label>
                             </div>
                         </div>
                         <div *ngIf="bidder.type == 'npc'">
@@ -111,12 +112,20 @@
                                 <div *ngIf="ppChecked"><label class="label-input">PP</label><input class="form-control currency-input" type="number" name="pp" min=0 [(ngModel)]="bidstate.max.pp"></div>
                             </div>
                             <div>
-                                Current Bid <label>{{bidstate.current}}</label>
+                                <div>Current Bid</div><label>{{bidstate.current}}</label>
                             </div>
                             <div>
-                                <div><i *ngIf="bidstate.fails >= 1" class="fa fa-close"></i>
-                                <i *ngIf="bidstate.fails >= 2"class="fa fa-close"></i>
-                                <i *ngIf="bidstate.fails >= 3"class="fa fa-close"></i></div>
+                                <div>
+                                <i *ngIf="bidstate.fails >= 1" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 2" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 3" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 4" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 5" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 6" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 7" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 8" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 9" class="fa fa-close"></i>
+                                <i *ngIf="bidstate.fails >= 10" class="fa fa-close"></i></div>
                             </div>
                         </div>
                     </td>
@@ -130,12 +139,12 @@
                     </td>
                     <td *ngFor="let offer of offers; let i = index">
                         <div *ngIf="offer.gavelKnocks < 3 && this.offers[i].highestBidder != undefined">
-                            <div>Highest Bidder <label>{{offer.highestBidder.name}}</label></div>
-                            <div>Highest Bid <label>{{offer.currentPrice}}</label></div>
+                            <div>Highest Bidder</div><label>{{offer.highestBidder.name}}</label>
+                            <div>Highest Bid</div><label>{{offer.currentPrice}}</label>
                         </div>
                         <div *ngIf="offer.gavelKnocks >= 3 && this.offers[i].highestBidder != undefined">
-                            <div>Buyer <label>{{offer.highestBidder.name}}</label></div>
-                            <div>Selling Price <label>{{offer.currentPrice}}</label></div>
+                            <div>Buyer</div><label>{{offer.highestBidder.name}}</label>
+                            <div>Selling Price</div><label>{{offer.currentPrice}}</label>
                         </div>
                         <button class="btn btn-primary" (click)="knockGavel(i)"><i class="fa fa-legal"></i></button>
                     </td>

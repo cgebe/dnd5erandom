@@ -133,15 +133,26 @@ export class AuctionComponent {
         if (bidder.bidstates[item.id].fails >= this.maxFails) {
             return false;
         }
+        console.log(item.minimumRaise.inCopper());
+        console.log(item.currentPrice.inCopper() + item.minimumRaise.inCopper());
+        console.log(bidder.budget.inCopper());
+
         // budget too small
-        if (bidder.budget.inCopper() <= item.currentPrice.inCopper()) {
+        if (!item.hasMinimumRaise && bidder.budget.inCopper() <= item.currentPrice.inCopper()) {
             return false;
         }
-        // limit too small if used
-        if (!bidder.bidstates[item.id].useWholeBudget && bidder.bidstates[item.id].max.inCopper() <= item.currentPrice.inCopper()) {
+        if (item.hasMinimumRaise && bidder.budget.inCopper() <= item.currentPrice.inCopper() + item.minimumRaise.inCopper()) {
             return false;
         }
 
+        // limit too small if used
+        if (!item.hasMinimumRaise && !bidder.bidstates[item.id].useWholeBudget && bidder.bidstates[item.id].max.inCopper() <= item.currentPrice.inCopper()) {
+            return false;
+        }
+        if (item.hasMinimumRaise && !bidder.bidstates[item.id].useWholeBudget && bidder.bidstates[item.id].max.inCopper() <= item.currentPrice.inCopper() + item.minimumRaise.inCopper()) {
+            return false;
+        }
+        // TODO: if truncated, values are changed/rounded
         let d100 = Random.rolld100();
         // roll d100, if result higher than relation between budget and currentprize then bid.
         if (bidder.bidstates[item.id].useWholeBudget && (d100 / 100) <= (item.currentPrice.inCopper() / bidder.budget.inCopper())) {
@@ -171,9 +182,15 @@ export class AuctionComponent {
             maximumRaise = maxFactor * bidder.bidstates[item.id].max.inCopper();
         }
 
-        let d100 = Random.rolld100();
-        let raise =  minimumRaise + ((maximumRaise - minimumRaise) * (d100 / 100));
-        let coins = new Coins();
+        let d100 : number = Random.rolld100();
+        let coins : Coins = new Coins();
+        let raise : number;
+        if (minimumRaise > maximumRaise) {
+            raise = minimumRaise;
+        } else {
+            raise = minimumRaise + ((maximumRaise - minimumRaise) * (d100 / 100));
+        }
+
         coins.cp = raise;
         coins.normalize();
 
