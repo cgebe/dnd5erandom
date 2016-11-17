@@ -1,83 +1,81 @@
 <div class="row">
-    <label>CR: </label>
-    <select style="display:inline-block; width:80px;" class="form-control" (change)="onChangeChallengeRating($event.target.value)">
-        <option *ngFor="let i of challengeRatings">{{i}}</option>
-    </select>
+  <label>CR: </label>
+  <select style="display:inline-block; width:80px;" class="form-control" (change)="onChangeChallengeRating($event.target.value)">
+    <option *ngFor="let i of challengeRatings">{{i}}</option>
+  </select>
 
-    <label>Type: </label>
-    <select style="display:inline-block; width:120px;" class="form-control" (change)="onChangeTreasureType($event.target.value)">
-        <option *ngFor="let i of treasureTypes">{{i}}</option>
-    </select>
+  <label>Type: </label>
+  <select style="display:inline-block; width:120px;" class="form-control" (change)="onChangeTreasureType($event.target.value)">
+    <option *ngFor="let i of treasureTypes">{{i}}</option>
+  </select>
 
-    <button class="btn btn-primary" (click)="generateTreasure()"><i class="fa fa-refresh"></i></button>
+  <button class="btn btn-primary" (click)="generateTreasure()"><i class="fa fa-refresh"></i></button>
 </div>
 
 
-
-<div class="row">
-    <div class="col-md-12">
-    <table style="width:100%" class="table table-hover">
+<div class="treasure-container">
+  <div class="col-md-12">
+    <div class="row">
+      <table style="width:100%" class="table table-hover">
         <thead>
-            <tr>
-                <label>Coins</label>
-            </tr>
+          <tr>
+            <label>Coins</label>
+          </tr>
         </thead>
         <tbody>
-            <tr *ngIf="coinReward != null">
-                <td width="100%">{{coinReward}}</td>
-            </tr>
+          <tr *ngIf="coinReward != null">
+            <td width="100%">{{coinReward}}</td>
+          </tr>
         </tbody>
-    </table>
-</div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-    <table class="table table-hover">
+      </table>
+    </div>
+    <div class="row">
+
+      <table class="table table-hover">
         <thead>
-            <tr>
-                <label>Gems</label>
-            </tr>
+          <tr>
+            <label>Gems</label>
+          </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let gem of gemReward">
-                <td width="85%">{{gem.name}} ({{gem.color}})</td>
-                <td width="15%">{{gem.cost}}</td>
-            </tr>
+          <tr *ngFor="let gem of gemReward">
+            <td width="85%">{{gem.name}} ({{gem.color}})</td>
+            <td width="15%">{{gem.cost}}</td>
+          </tr>
         </tbody>
-    </table>
-</div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-    <table class="table table-hover">
+      </table>
+    </div>
+    <div class="row">
+
+      <table class="table table-hover">
         <thead>
-            <tr>
-                <label>Art Objects</label>
-            </tr>
+          <tr>
+            <label>Art Objects</label>
+          </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let art of artReward">
-                <td width="85%">{{art.name}}</td>
-                <td width="15%">{{art.cost}}</td>
-            </tr>
+          <tr *ngFor="let art of artReward">
+            <td width="85%">{{art.name}}</td>
+            <td width="15%">{{art.cost}}</td>
+          </tr>
         </tbody>
-    </table>
-</div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-    <table class="table table-hover">
+      </table>
+    </div>
+    <div class="row">
+
+      <table class="table table-hover">
         <thead>
-            <tr>
-                <label>Magic Items</label>
-            </tr>
+          <tr>
+            <label>Magic Items</label>
+          </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of itemReward">
-                <td width="85%">{{item.name}}</td>
-                <td width="15%">{{item.rarity}}</td>
-            </tr>
+          <tr *ngFor="let item of itemReward">
+            <td width="85%">{{item.name}}</td>
+            <td width="15%">{{item.rarity}}</td>
+          </tr>
         </tbody>
-    </table>
-</div>
+      </table>
+    </div>
+  </div>
 </div>

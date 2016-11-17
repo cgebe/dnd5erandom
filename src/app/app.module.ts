@@ -19,6 +19,7 @@ import { ShopInventoryComponent }  from './components/shopinventory';
 import { TreasureComponent }  from './components/treasure';
 import { BidderFormComponent }  from './components/bidderform';
 import { OfferFormComponent }  from './components/offerform';
+import { SpellListComponent }  from './components/spelllist';
 import { ForNumber }  from './classes/pipe';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ForNumber }  from './classes/pipe';
       OfferFormComponent,
       TreasureComponent,
       ShopInventoryComponent,
+      SpellListComponent,
 
       ForNumber
   ],

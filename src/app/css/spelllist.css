@@ -1,0 +1,8 @@
+.property {
+    padding-right: 5px;
+}
+
+.table-container {
+    height: 400px;
+    overflow-y: auto;
+}

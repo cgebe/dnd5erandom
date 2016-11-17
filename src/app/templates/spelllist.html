@@ -1,0 +1,72 @@
+<div class="row">
+    <label>Search Spells</label>
+    <input style="width: 200px; display: inline" type="text" name="name" class="form-control" (change)="onChangeSearch($event.target.value)" [(ngModel)]="searchField">
+    <button class="btn btn-primary" (click)="searchSpells()"><i class="fa fa-search"></i></button>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-container">
+        <table class="table table-hover">
+            <tbody>
+                <tr *ngFor="let spell of searchResults">
+                    <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td align="center" width="100%">
+                                    <label>{{spell.name}}</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%">
+                                    <label class="property">School: </label>{{spell.school}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%">
+                                    <label class="property">Level: </label>{{spell.level}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%">
+                                    <label class="property">Casting Time: </label>{{spell.castingTime}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%">
+                                    <label class="property">Range: </label>{{spell.range}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%">
+                                    <label class="property">Components: </label>{{spell.components}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%">
+                                    <label class="property">Duration: </label>{{spell.duration}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%">
+                                    <label class="property">Source: </label>{{spell.source}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%">
+                                    <hr>
+                                    {{spell.description}}
+                                    <hr>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>

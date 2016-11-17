@@ -169,14 +169,20 @@ export class MagicItemDatabase {
 
 export class SpellDatabase {
     private static instance:SpellDatabase = new SpellDatabase();
+    private spells : Spell[];
     private spellsByLevel : {[key : number] : Array<Object>};
 
     constructor() {
         if (SpellDatabase.instance) {
             throw new Error("Instantiation failed!");
         }
+        this.spells = [];
         this.spellsByLevel = {};
         for (let i = 0; i < spells_json.length; i++) {
+            // spells
+            this.spells.push(new Spell().fill(spells_json[i]));
+
+            // spells by level
             if (this.spellsByLevel[parseInt(spells_json[i]['level'])] == undefined) {
                 this.spellsByLevel[parseInt(spells_json[i]['level'])] = [];
             }
@@ -189,9 +195,15 @@ export class SpellDatabase {
         return SpellDatabase.instance;
     }
 
+    public getSpells() : Spell[] {
+        return this.spells;
+    }
+
     public getRandomSpellByLevel(level:number) : Spell {
         return new Spell().fill(spells_json[Math.floor(Math.random() * spells_json.length)])
     }
+
+
 
 }
 

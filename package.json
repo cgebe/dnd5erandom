@@ -2,11 +2,15 @@
   "name": "dnd5random",
   "version": "1.0.0",
   "description": "random dnd generator",
+  "angular-cli": {},
   "scripts": {
     "build": "webpack --inline --colors --progress --display-error-details --display-cached",
     "watch": "npm run build -- --watch",
     "server": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 8000  --content-base src",
-    "start": "npm run server"
+    "start": "npm run server",
+    "lint": "tslint \"src/**/*.ts\"",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor"
   },
   "contributors": [
     "cgebe",
@@ -15,20 +19,13 @@
   "license": "MIT",
   "devDependencies": {
     "@types/core-js": "^0.9.32",
-    "@types/node": "^6.0.38",
+    "@types/jasmine": "^2.2.30",
+    "@types/node": "^6.0.48",
+    "angular-cli": "1.0.0-beta.19-3",
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^1.1.1",
-    "css-loader": "^0.23.1",
-    "raw-loader": "^0.5.1",
-    "to-string-loader": "^1.1.4",
-    "typescript": "^2.0.2",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0",
-    "webpack-merge": "^0.8.4",
-
-    "@types/jasmine": "^2.2.30",
-    "angular-cli": "1.0.0-beta.19-3",
     "codelyzer": "1.0.0-beta.1",
+    "css-loader": "^0.23.1",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
     "karma": "1.2.0",
@@ -37,10 +34,15 @@
     "karma-jasmine": "^1.0.2",
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "4.0.9",
+    "raw-loader": "^0.5.1",
+    "to-string-loader": "^1.1.4",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
-    "webdriver-manager": "10.2.5"
+    "webdriver-manager": "10.2.5",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0",
+    "webpack-merge": "^0.8.4"
   },
   "dependencies": {
     "@angular/common": "~2.1.0",
@@ -63,7 +65,6 @@
     "zone.js": "~0.6.23",
     "json-loader": "0.5.4",
     "x-ray": "2.3.0",
-
     "ts-helpers": "^1.1.1"
   },
   "keywords": [
