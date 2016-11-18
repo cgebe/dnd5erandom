@@ -40,7 +40,9 @@ export class NPCComponent {
             this.npcinfo = npc;
             this.npcs.push(npc);
         } else {
-            this.currentindex--;
+            if (this.currentindex > 0) {
+                this.currentindex--;
+            }
             this.npcinfo = this.npcs[this.currentindex];
         }
     }
