@@ -35,7 +35,7 @@ export class SpellListComponent {
         this.sortResult();
     }
 
-    sortResult() {
+    private sortResult() {
         this.searchResults.sort((n1,n2) => {
             if (n1.level > n2.level) {
                 return 1;

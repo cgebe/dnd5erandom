@@ -8,13 +8,5 @@ import { NPCComponent } from '../components/npc';
   templateUrl: './random.html'
 })
 export class Random {
-    npccomponents : NPCComponent[] = [];
 
-    constructor() {
-        this.npccomponents.push(new NPCComponent());
-    }
-
-    public addNPCComponent() {
-        this.npccomponents.push(new NPCComponent());
-    }
 }

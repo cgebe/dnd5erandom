@@ -1,33 +1,40 @@
-<div class="row">
-    <button class="btn btn-primary" (click)="generateNPC()"><i class="fa fa-refresh"></i></button>
-</div>
-
 
 <div class="row">
     <div class="col-md-12">
-        <table class="table table-hover">
-            <tbody>
-                <tr>
-                    <td width="20%"><label>Name:</label></td>
-                    <td width="80%">{{npc.name}}</td>
-                </tr>
-                <tr>
-                    <td width="20%"><label>Character:</label></td>
-                    <td width="80%">{{npc.character}}</td>
-                </tr>
-                <tr>
-                    <td width="20%"><label>Ideal:</label></td>
-                    <td width="80%">{{npc.ideal}}</td>
-                </tr>
-                <tr>
-                    <td width="20%"><label>Bond:</label></td>
-                    <td width="80%">{{npc.bond}}</td>
-                </tr>
-                <tr>
-                    <td width="20%"><label>Flaw:</label></td>
-                    <td width="80%">{{npc.flaw}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="npc-container">
+            <ul class="nav nav-tabs">
+              <li *ngFor="let npc of npcs; let i = index;" style="cursor:pointer" [ngClass]="{'active': i == currentindex}">
+                  <a (click)="setActiveNPC(i)">{{npc.name}}</a>
+              </li>
+              <li>
+                  <a (click)="addNPC()" style="cursor:pointer"><i class="fa fa-plus"></i></a>
+              </li>
+            </ul>
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td width="20%"><label>Name:</label></td>
+                        <td width="80%">{{npcinfo.name}}</td>
+                    </tr>
+                    <tr>
+                        <td width="20%"><label>Character:</label></td>
+                        <td width="80%">{{npcinfo.character}}</td>
+                    </tr>
+                    <tr>
+                        <td width="20%"><label>Ideal:</label></td>
+                        <td width="80%">{{npcinfo.ideal}}</td>
+                    </tr>
+                    <tr>
+                        <td width="20%"><label>Bond:</label></td>
+                        <td width="80%">{{npcinfo.bond}}</td>
+                    </tr>
+                    <tr>
+                        <td width="20%"><label>Flaw:</label></td>
+                        <td width="80%">{{npcinfo.flaw}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button style="margin: 10px;" class="btn btn-primary" (click)="removeNPC()"><i class="fa fa-remove"></i></button>
+        </div>
     </div>
 </div>
